@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f0f0f" />
+
+    <title>@ViewData["Title"]</title>
+    <meta name="description" content="@ViewData["Description"]" />
+
+    @{
+        var path      = Context.Request.Path.Value?.TrimEnd('/');
+        var canonical = ViewData["Canonical"]?.ToString()
+                        ?? $"https://www.istanbulankaranakliyat.tr{(string.IsNullOrEmpty(path) ? "" : path)}";
+    }
+    <link rel="canonical" href="@canonical" />
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:locale"      content="tr_TR" />
+    <meta property="og:site_name"   content="İstanbul Ankara Nakliyat" />
+    <meta property="og:title"       content="@ViewData["Title"]" />
+    <meta property="og:description" content="@ViewData["Description"]" />
+    <meta property="og:url"         content="@canonical" />
+    <meta property="og:image"       content="https://www.istanbulankaranakliyat.tr/img/og-image.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content="@ViewData["Title"]" />
+    <meta name="twitter:description" content="@ViewData["Description"]" />
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+
+    <!-- Bootstrap Grid (sadece layout) -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-grid.min.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <!-- LocalBusiness JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "LocalBusiness",
+        "@@id": "https://www.istanbulankaranakliyat.tr/#organization",
+        "name": "İstanbul Ankara Nakliyat",
+        "url": "https://www.istanbulankaranakliyat.tr",
+        "telephone": "+905325436837",
+        "email": "istanbulankaranakliyat.tr@gmail.com",
+        "address": {
+            "@@type": "PostalAddress",
+            "addressLocality": "İstanbul",
+            "addressCountry": "TR"
+        },
+        "areaServed": ["İstanbul", "Ankara"],
+        "priceRange": "₺₺",
+        "image": "https://www.istanbulankaranakliyat.tr/img/og-image.jpg"
+    }
+    </script>
+
+    <!-- WebSite JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "WebSite",
+        "@@id": "https://www.istanbulankaranakliyat.tr/#website",
+        "url": "https://www.istanbulankaranakliyat.tr",
+        "name": "İstanbul Ankara Nakliyat",
+        "inLanguage": "tr-TR"
+    }
+    </script>
+
+    @if (ViewData["Schema"] != null)
+    {
+        @Html.Raw(ViewData["Schema"])
+    }
+</head>
+<body>
+
+    <!-- ══ HEADER ══════════════════════════════════════════════ -->
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Ana Navigasyon">
+
+            <a href="/" class="site-logo" aria-label="İstanbul Ankara Nakliyat - Ana Sayfa">
+                <img src="~/img/logo-seffaf.png"
+                     alt="İstanbul Ankara Nakliyat"
+                     width="72" height="72"
+                     fetchpriority="high" />
+            </a>
+
+            <ul class="nav-links" role="list">
+                <li><a href="/">Ana Sayfa</a></li>
+                <li><a href="/istanbul-ankara-nakliyat">İstanbul → Ankara</a></li>
+                <li><a href="/ankara-istanbul-nakliyat">Ankara → İstanbul</a></li>
+                <li><a href="/hizmetler">Hizmetler</a></li>
+                <li><a href="/nakliyat-ucreti">Fiyatlar</a></li>
+                <li><a href="/galeri">Galeri</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/hakkimizda">Hakkımızda</a></li>
+                <li><a href="/iletisim">İletişim</a></li>
+            </ul>
+
+            <a href="tel:+905325436837" class="header-phone" aria-label="Hemen Ara: 0532 543 68 37">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <span>0532 543 68 37</span>
+            </a>
+
+            <button class="nav-toggle" id="navToggle"
+                    aria-label="Menüyü Aç/Kapat"
+                    aria-expanded="false"
+                    aria-controls="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </nav>
+
+        <!-- Mobil Menü -->
+        <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+            <ul role="list">
+                <li><a href="/">Ana Sayfa</a></li>
+                <li><a href="/istanbul-ankara-nakliyat">İstanbul → Ankara</a></li>
+                <li><a href="/ankara-istanbul-nakliyat">Ankara → İstanbul</a></li>
+                <li><a href="/hizmetler">Hizmetler</a></li>
+                <li><a href="/nakliyat-ucreti">Fiyatlar</a></li>
+                <li><a href="/galeri">Galeri</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/hakkimizda">Hakkımızda</a></li>
+                <li><a href="/iletisim">İletişim</a></li>
+                <li><a href="tel:+905325436837" class="mobile-cta">📞 0532 543 68 37</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ══ MAIN ════════════════════════════════════════════════ -->
+    <main id="main-content">
+        @RenderBody()
+    </main>
+
+    <!-- ══ MÜŞTERİ YORUM FORMU ════════════════════════════════ -->
+    <section class="review-form-section" id="yorum-formu" aria-labelledby="review-form-heading">
+        <div class="container">
+            <div class="text-center" style="margin-bottom:2.5rem;">
+                <h2 id="review-form-heading" class="section-title">Deneyiminizi Paylaşın</h2>
+                <p class="section-subtitle">Taşıma sürecinizi nasıl buldunuz? Yorumunuz diğer müşterilere yol gösterir.</p>
+            </div>
+
+            <div class="review-form-wrap">
+
+            @if (Context.Request.Query["yorum"] == "tesekkur")
+            {
+                <div class="review-thanks">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <h3>Teşekkür Ederiz!</h3>
+                    <p>Yorumunuz alındı. İnceleme sonrası "Müşterilerimiz Ne Diyor?" bölümünde yayınlanacaktır.</p>
+                </div>
+            }
+            else
+            {
+                @if (Context.Request.Query["yorum"] == "hata")
+                {
+                    <div class="review-error">Lütfen adınızı ve en az 10 karakter yorum giriniz.</div>
+                }
+                <form method="post" action="/yorum/gonder" class="review-form">
+                    @Html.AntiForgeryToken()
+                    <div class="review-stars-pick" id="starPicker" role="group" aria-label="Puan seçin">
+                        <button type="button" class="star-btn" data-val="1" aria-label="1 yıldız">★</button>
+                        <button type="button" class="star-btn" data-val="2" aria-label="2 yıldız">★</button>
+                        <button type="button" class="star-btn" data-val="3" aria-label="3 yıldız">★</button>
+                        <button type="button" class="star-btn" data-val="4" aria-label="4 yıldız">★</button>
+                        <button type="button" class="star-btn active" data-val="5" aria-label="5 yıldız">★</button>
+                    </div>
+                    <input type="hidden" name="puan" id="puanInput" value="5" />
+                    <div class="review-form-row">
+                        <input type="text" name="ad" placeholder="Adınız Soyadınız" required maxlength="60" autocomplete="name" />
+                    </div>
+                    <div class="review-form-row">
+                        <textarea name="yorum" placeholder="Taşıma deneyiminizi paylaşın... (min. 10 karakter)" required minlength="10" maxlength="500" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Yorumu Gönder</button>
+                </form>
+            }
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ FOOTER ══════════════════════════════════════════════ -->
+    <footer class="site-footer" aria-label="Site Footer">
+        <div class="container">
+            <div class="row footer-top">
+
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer-brand">
+                        <a href="/" class="footer-logo" aria-label="İstanbul Ankara Nakliyat - Ana Sayfa">
+                            <img src="~/img/logo-seffaf.png"
+                                 alt="İstanbul Ankara Nakliyat"
+                                 width="64" height="64"
+                                 loading="lazy" />
+                            <span>İstanbul Ankara Nakliyat</span>
+                        </a>
+                        <p>İstanbul ve Ankara arasında güvenli, hızlı ve profesyonel ev taşıma, ofis taşıma ve parça eşya taşımacılığı hizmeti.</p>
+                        <a href="mailto:istanbulankaranakliyat.tr@gmail.com" class="footer-email">
+                            istanbulankaranakliyat.tr&#64;gmail.com
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h3 class="footer-heading">Hizmetler</h3>
+                    <ul class="footer-links" role="list">
+                        <li><a href="/evden-eve-nakliyat">Evden Eve Nakliyat</a></li>
+                        <li><a href="/ofis-tasima">Ofis Taşıma</a></li>
+                        <li><a href="/parca-esya-tasima">Parça Eşya Taşıma</a></li>
+                        <li><a href="/esya-depolama">Eşya Depolama</a></li>
+                        <li><a href="/ambalaj-hizmeti">Ambalaj Hizmeti</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h3 class="footer-heading">Güzergahlar</h3>
+                    <ul class="footer-links" role="list">
+                        <li><a href="/istanbul-ankara-nakliyat">İstanbul → Ankara</a></li>
+                        <li><a href="/ankara-istanbul-nakliyat">Ankara → İstanbul</a></li>
+                        <li><a href="/nakliyat-ucreti">Nakliyat Fiyatları</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/iletisim">İletişim</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+                    <h3 class="footer-heading">İletişim</h3>
+                    <ul class="footer-contact" role="list">
+                        <li>
+                            <a href="tel:+905325436837">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                                0532 543 68 37
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/905325436837" target="_blank" rel="noopener noreferrer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                WhatsApp
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:istanbulankaranakliyat.tr@gmail.com">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-1 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                                E-posta Gönder
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; @DateTime.Now.Year İstanbul Ankara Nakliyat &mdash; Tüm Hakları Saklıdır.</p>
+                <ul role="list">
+                    <li><a href="/gizlilik-politikasi">Gizlilik Politikası</a></li>
+                    <li><a href="/kullanim-kosullari">Kullanım Koşulları</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ══ FAB ═════════════════════════════════════════════════ -->
+    <div class="fab-container">
+        <a href="tel:+905325436837"
+           class="fab fab-call"
+           aria-label="Hemen Ara: 0532 543 68 37">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        </a>
+        <a href="https://wa.me/905325436837"
+           target="_blank" rel="noopener noreferrer"
+           class="fab fab-whatsapp"
+           aria-label="WhatsApp ile İletişime Geç">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+    </div>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

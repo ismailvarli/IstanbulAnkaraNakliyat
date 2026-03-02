@@ -1,0 +1,254 @@
+@model IstanbulAnkaraNakliyat.Models.IlceSayfaModel
+@{
+    var yon       = Model.Yon == IstanbulAnkaraNakliyat.Models.NakliyatYon.IstanbulToAnkara;
+    var anaURL    = yon ? "/istanbul-ankara-nakliyat" : "/ankara-istanbul-nakliyat";
+    var anaText   = yon ? "İstanbul Ankara Nakliyat" : "Ankara İstanbul Nakliyat";
+    var fiyatFrom = yon ? 8000 : 7500;
+    var fiyatTo   = yon ? 22000 : 20000;
+}
+
+@section Scripts {
+<script type="application/ld+json">
+{
+    "@@context": "https://schema.org",
+    "@@graph": [
+        {
+            "@@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.istanbulankaranakliyat.tr/" },
+                { "@@type": "ListItem", "position": 2, "name": "@anaText",   "item": "https://www.istanbulankaranakliyat.tr@anaURL" },
+                { "@@type": "ListItem", "position": 3, "name": "@Model.H1",  "item": "@Model.PageUrl" }
+            ]
+        },
+        {
+            "@@type": "Service",
+            "name": "@Model.H1 Hizmeti",
+            "provider": { "@@id": "https://www.istanbulankaranakliyat.tr/#organization" },
+            "areaServed": "@Model.DisplayName",
+            "description": "@Model.SeoDescription",
+            "url": "@Model.PageUrl"
+        },
+        {
+            "@@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@@type": "Question",
+                    "name": "@Model.DisplayName'@(Model.DisplayName.Last() switch { 'a' or 'ı' or 'o' or 'u' => "dan", _ => "den" })  @Model.VarisIl'a nakliyat fiyatı ne kadar?",
+                    "acceptedAnswer": { "@@type": "Answer", "text": "@Model.DisplayName ilçesinden @Model.VarisIl'a nakliyat @fiyatFrom.ToString("N0") ₺ - @fiyatTo.ToString("N0") ₺ arasında değişmektedir. Eşya miktarı, kat durumu ve özel hizmet taleplerine göre net fiyat için ücretsiz keşif yapıyoruz." }
+                },
+                {
+                    "@@type": "Question",
+                    "name": "@Model.DisplayName'da ücretsiz keşif yapıyor musunuz?",
+                    "acceptedAnswer": { "@@type": "Answer", "text": "Evet. @Model.DisplayName ve tüm mahallelerine ücretsiz keşif ekibimiz geliyor. @Model.MahallelerJoined mahallelerini de kapsayan keşif randevusu almak için 0532 543 68 37 numaramızı arayabilirsiniz." }
+                },
+                {
+                    "@@type": "Question",
+                    "name": "@Model.DisplayName'dan @Model.VarisIl'a taşıma kaç günde yapılır?",
+                    "acceptedAnswer": { "@@type": "Answer", "text": "@Model.DisplayName ilçesinden @Model.VarisIl'a taşıma genellikle aynı gün tamamlanır; yükleme, nakliye ve boşaltma dahil ortalama 8-12 saatte kapıdan kapıya teslimat yapılmaktadır." }
+                }
+            ]
+        }
+    ]
+}
+</script>
+}
+
+<!-- ══ BREADCRUMB ═════════════════════════════════════════════ -->
+<div class="container">
+    <nav class="breadcrumb" aria-label="Konum">
+        <a href="/">Ana Sayfa</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <a href="@anaURL">@anaText</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span aria-current="page">@Model.H1</span>
+    </nav>
+</div>
+
+<!-- ══ PAGE HEADER ════════════════════════════════════════════ -->
+<div class="page-header">
+    <div class="container">
+        <p style="font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.6rem;">
+            @Model.KalkisIl &rsaquo; @Model.VarisIl
+        </p>
+        <h1>@Model.H1</h1>
+        <p>@Model.Ozellik ilçesinden @Model.VarisIl'a kapıdan kapıya, sigortalı taşıma hizmeti</p>
+    </div>
+</div>
+
+<!-- ══ ANA İÇERİK ════════════════════════════════════════════ -->
+<section>
+    <div class="container">
+        <div class="row">
+
+            <!-- Sol: Ana İçerik -->
+            <div class="col-lg-8">
+
+                <h2>@Model.DisplayName @Model.VarisIl Nakliyat Hizmeti</h2>
+                <p style="margin-bottom:1.25rem;">
+                    @Model.Ozellik olan <strong>@Model.DisplayName</strong> ilçesinden
+                    <strong>@Model.VarisIl</strong>'a profesyonel nakliyat hizmetimizle yanınızdayız.
+                    @Model.MahallelerJoined dahil @Model.DisplayName'ın tüm mahallelerinde
+                    <strong>ücretsiz keşif</strong> yapıyor, eşyalarınızı hasarsız ve zamanında teslim ediyoruz.
+                </p>
+                <p style="margin-bottom:2rem;">
+                    10 yılı aşkın deneyimimiz ve sigortalı araç filomuzla
+                    @Model.KalkisIl &ndash; @Model.VarisIl güzergahında hizmet vermekteyiz.
+                    Ev taşıma, ofis taşıma ve parça eşya taşımacılığında
+                    <strong>@Model.DisplayName</strong>'da güvenilir çözüm ortağınızız.
+                </p>
+
+                <!-- Hizmetler listesi -->
+                <h3 style="margin-bottom:1rem;">@Model.DisplayName'da Verdiğimiz Hizmetler</h3>
+                <div class="row" style="row-gap:1rem;margin-bottom:2.5rem;">
+                    <div class="col-md-6">
+                        <div class="service-card" style="padding:1.25rem;">
+                            <div class="service-icon" aria-hidden="true" style="width:36px;height:36px;font-size:1.1rem;">🏠</div>
+                            <h4>Evden Eve Nakliyat</h4>
+                            <p style="font-size:.85rem;">@Model.DisplayName'daki evinizden @Model.VarisIl'ın istediğiniz ilçesine tam kapıdan kapıya taşıma.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-card" style="padding:1.25rem;">
+                            <div class="service-icon" aria-hidden="true" style="width:36px;height:36px;font-size:1.1rem;">🏢</div>
+                            <h4>Ofis Taşıma</h4>
+                            <p style="font-size:.85rem;">@Model.DisplayName'daki ofisinizi minimum iş kaybıyla @Model.VarisIl'a taşıyoruz.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-card" style="padding:1.25rem;">
+                            <div class="service-icon" aria-hidden="true" style="width:36px;height:36px;font-size:1.1rem;">📦</div>
+                            <h4>Parça Eşya Taşıma</h4>
+                            <p style="font-size:.85rem;">Az eşyanız mı var? @Model.DisplayName'dan @Model.VarisIl'a parsiyel taşıma ile ekonomik çözüm.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-card" style="padding:1.25rem;">
+                            <div class="service-icon" aria-hidden="true" style="width:36px;height:36px;font-size:1.1rem;">🎁</div>
+                            <h4>Ambalaj &amp; Montaj</h4>
+                            <p style="font-size:.85rem;">Profesyonel ambalaj, söküm ve yeni adresinizde kurulum hizmeti ile eksiksiz taşıma.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mahalle listesi -->
+                <div style="background:var(--gray-100);border-radius:var(--radius-lg);padding:1.75rem;margin-bottom:2.5rem;">
+                    <h3 style="margin-bottom:1rem;">@Model.DisplayName Mahalleleri — Hizmet Bölgelerimiz</h3>
+                    <p style="margin-bottom:1rem;font-size:.95rem;">
+                        @Model.DisplayName'ın <strong>@Model.MahallelerJoined</strong> ve diğer
+                        tüm mahallelerinde ücretsiz keşif yapıyor ve @Model.VarisIl'a taşıma hizmeti veriyoruz.
+                    </p>
+                    <div style="display:flex;flex-wrap:wrap;gap:.5rem;">
+                        @foreach (var m in Model.Mahalleler)
+                        {
+                            <span style="background:var(--white);border:1px solid var(--gray-200);border-radius:50px;padding:.3rem .85rem;font-size:.82rem;font-weight:500;">@m</span>
+                        }
+                    </div>
+                </div>
+
+                <!-- FAQ -->
+                <h3 style="margin-bottom:1.25rem;">Sık Sorulan Sorular</h3>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        @Model.DisplayName'dan @Model.VarisIl'a nakliyat fiyatı ne kadar?
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        @Model.DisplayName ilçesinden @Model.VarisIl'a nakliyat
+                        @fiyatFrom.ToString("N0") ₺ ile @fiyatTo.ToString("N0") ₺ arasında değişmektedir.
+                        Fiyat; eşya miktarı, kat sayısı, asansör durumu ve ek hizmetlere göre belirlenir.
+                        Kesin fiyat için <strong>ücretsiz keşif</strong> hizmetimizden yararlanabilirsiniz.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        @Model.DisplayName'da keşif hizmeti veriyor musunuz?
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Evet. @Model.DisplayName ilçesinin @Model.MahallelerJoined mahallelerini kapsayan
+                        ücretsiz keşif hizmeti sunuyoruz. Uzman eksperimiz evinize gelir, eşyalarınızı
+                        inceler ve size net bir fiyat teklifi sunar.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        @Model.DisplayName'dan @Model.VarisIl'a taşıma kaç saatte tamamlanır?
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        @Model.KalkisIl – @Model.VarisIl arası yaklaşık 450 km olup yükleme, nakliye
+                        ve boşaltma dahil ortalama <strong>8–12 saat</strong> içinde teslimat yapılmaktadır.
+                        Aynı gün teslimat için sabah erken saatte yola çıkılmaktadır.
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sağ: Sidebar -->
+            <div class="col-lg-4" style="margin-top:1rem;">
+                <!-- Teklif Formu -->
+                <div class="contact-form" style="margin-bottom:1.5rem;">
+                    <h3 style="margin-bottom:1.25rem;">Ücretsiz Teklif Al</h3>
+                    <p style="font-size:.88rem;color:var(--gray-600);margin-bottom:1.25rem;">
+                        @Model.DisplayName'dan @Model.VarisIl'a taşıma için hemen arayın.
+                    </p>
+                    <a href="tel:+905325436837" class="btn btn-dark" style="width:100%;justify-content:center;margin-bottom:.75rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        0532 543 68 37
+                    </a>
+                    <a href="https://wa.me/905325436837" target="_blank" rel="noopener noreferrer" class="btn btn-wa" style="width:100%;justify-content:center;">
+                        WhatsApp ile Yaz
+                    </a>
+                </div>
+
+                <!-- Neden Biz -->
+                <div style="background:var(--black);color:var(--white);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1.5rem;">
+                    <h4 style="color:var(--white);margin-bottom:1rem;">Neden Bizi Seçmelisiniz?</h4>
+                    @foreach (var item in new[]{ "✓  Sigortalı araç ve ekip", "✓  Ücretsiz keşif", "✓  Aynı gün teslimat", "✓  Profesyonel ambalaj", "✓  Gizli ücret yok" })
+                    {
+                        <div style="font-size:.88rem;padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.85);">@item</div>
+                    }
+                </div>
+
+                <!-- Yakın İlçeler -->
+                <div>
+                    <h4 style="margin-bottom:.85rem;font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gray-600);">
+                        @Model.KalkisIl'daki Yakın İlçeler
+                    </h4>
+                    @foreach (var ilce in Model.YakinIlceler)
+                    {
+                        <a href="/@ilce.Slug-@Model.YonSuffix"
+                           style="display:flex;align-items:center;justify-content:space-between;padding:.65rem .85rem;border:1px solid var(--gray-200);border-radius:var(--radius);margin-bottom:.45rem;font-size:.9rem;font-weight:500;transition:all .2s;">
+                            <span>@ilce.Name @Model.VarisIl Nakliyat</span>
+                            <span style="color:var(--gray-400);">›</span>
+                        </a>
+                    }
+                    <a href="@anaURL" style="display:block;text-align:center;margin-top:.75rem;font-size:.85rem;color:var(--gray-600);text-decoration:underline;">
+                        Tüm @Model.KalkisIl İlçelerini Gör →
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ══ CTA ════════════════════════════════════════════════════ -->
+<section class="cta-band">
+    <div class="container">
+        <h2>@Model.DisplayName'dan @Model.VarisIl'a Taşınmaya Hazır mısınız?</h2>
+        <p>Ücretsiz keşif için hemen arayın, en uygun fiyatı birlikte belirleyelim.</p>
+        <div class="cta-actions">
+            <a href="tel:+905325436837" class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                0532 543 68 37
+            </a>
+            <a href="https://wa.me/905325436837" target="_blank" rel="noopener noreferrer" class="btn btn-wa">
+                WhatsApp
+            </a>
+            <a href="@anaURL" class="btn btn-outline">
+                @anaText
+            </a>
+        </div>
+    </div>
+</section>
