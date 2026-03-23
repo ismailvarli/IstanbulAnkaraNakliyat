@@ -1,6 +1,18 @@
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddWebOptimizer(pipeline =>
+{
+    // CSS: bootstrap-grid + site.css → tek istek
+    pipeline.AddCssBundle("/css/bundle.css",
+        "lib/bootstrap/dist/css/bootstrap-grid.min.css",
+        "css/site.css");
+
+    // JS: site.js → minified
+    pipeline.AddJavaScriptBundle("/js/bundle.js",
+        "js/site.js");
+});
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
@@ -10,6 +22,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseWebOptimizer();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();

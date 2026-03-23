@@ -1,0 +1,378 @@
+@{
+    Layout = "_Layout";
+}
+
+@section Scripts {
+<script type="application/ld+json">
+{
+    "@@context": "https://schema.org",
+    "@@graph": [
+        {
+            "@@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.istanbulankaranakliyat.tr/" },
+                { "@@type": "ListItem", "position": 2, "name": "İstanbul Ankara Nakliyat", "item": "https://www.istanbulankaranakliyat.tr/istanbul-ankara-nakliyat" },
+                { "@@type": "ListItem", "position": 3, "name": "Adalar Ankara Nakliyat", "item": "https://www.istanbulankaranakliyat.tr/adalar-ankara-nakliyat" }
+            ]
+        },
+        {
+            "@@type": "Service",
+            "name": "Adalar Ankara Nakliyat Hizmeti",
+            "provider": { "@@id": "https://www.istanbulankaranakliyat.tr/#organization" },
+            "areaServed": "Adalar, İstanbul",
+            "description": "İstanbul Adaları'ndan (Büyükada, Heybeliada, Burgazada, Kınalıada) Ankara'ya feribot ve kara taşımacılığını kapsayan özel nakliyat hizmeti.",
+            "url": "https://www.istanbulankaranakliyat.tr/adalar-ankara-nakliyat"
+        },
+        {
+            "@@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@@type": "Question",
+                    "name": "Büyükada'dan Ankara'ya nakliyat nasıl yapılıyor?",
+                    "acceptedAnswer": { "@@type": "Answer", "text": "Büyükada'dan Ankara'ya nakliyat iki aşamadan oluşur. İlk aşamada eşyalar adadan iskeleyeye taşınır (büyük parçalar için fayton veya el arabası kullanılır), ardından feribot veya özel tekneyle Kabataş ya da Bostancı iskelesine çıkarılır. İkinci aşamada karada nakliyat aracına yüklenerek Ankara'ya gidilir. Bu süreç önceden detaylı planlanmayı gerektirmektedir." }
+                },
+                {
+                    "@@type": "Question",
+                    "name": "Adalarda motorlu araç yasağı nakliyatı nasıl etkiliyor?",
+                    "acceptedAnswer": { "@@type": "Answer", "text": "İstanbul Adaları'nda motorlu kara araçları yasak olduğundan nakliyat araçları adaya girememektedir. Eşyalar fayton, el arabası ya da insan taşımasıyla iskeleyeye getirilir, feribot ile karaya çıkarılır ve ancak ondan sonra nakliyat kamyonuna yüklenir. Bu ekstra adımlar hem süreye hem de maliyete yansımaktadır; keşif aşamasında tüm bu aşamalar hesaba katılır." }
+                },
+                {
+                    "@@type": "Question",
+                    "name": "Adalar'dan Ankara'ya nakliyat fiyatı ne kadar?",
+                    "acceptedAnswer": { "@@type": "Answer", "text": "Adalar'dan Ankara'ya nakliyat; standart taşımaya ek olarak feribot koordinasyonu, iskele taşıma ve aktarma maliyetleri de dahil edildiğinden fiyat keşif sonrası netleşmektedir. Genel fiyat aralığı olarak 1+1 için 10.000–16.000 ₺, 2+1 için 15.000–24.000 ₺ başlangıç olarak düşünülebilir. Kesin fiyat için ücretsiz keşif randevusu alınması gerekmektedir." }
+                },
+                {
+                    "@@type": "Question",
+                    "name": "Büyükada – Ankara taşıması kaç gün sürer?",
+                    "acceptedAnswer": { "@@type": "Answer", "text": "Büyükada – Ankara taşıması, feribot geçişi ve kara taşımacılığının birleşimi nedeniyle genellikle 1,5–2 günlük bir planlama gerektirir. Eşyaların adadan çıkarılması, feribot geçişi, İstanbul'da araca yükleme ve Ankara'ya ulaşım en verimli şekilde düzenlendiğinde toplam süre 16–24 saat olabilmektedir. Eşyanın hacmi ve iskele yoğunluğu bu süreyi etkileyebilir." }
+                },
+                {
+                    "@@type": "Question",
+                    "name": "Adalardaki eski ahşap villaların eşyaları için özel ambalaj yapıyor musunuz?",
+                    "acceptedAnswer": { "@@type": "Answer", "text": "Evet. Adalardaki tarihi ahşap villaların antika mobilyaları, değerli tabloları ve kırılgan eşyaları için özel ambalaj hizmeti sunuyoruz. Balonlu naylon, koruyucu köpük, ahşap kasa ve özel streç film kullanılarak feribot yolculuğu ve kara taşımacılığı süresince eşyaların zarar görmesi önlenir." }
+                }
+            ]
+        }
+    ]
+}
+</script>
+}
+
+<!-- BREADCRUMB -->
+<div class="container">
+    <nav class="breadcrumb" aria-label="Konum">
+        <a href="/">Ana Sayfa</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <a href="/istanbul-ankara-nakliyat">İstanbul Ankara Nakliyat</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span aria-current="page">Adalar Ankara Nakliyat</span>
+    </nav>
+</div>
+
+<!-- HERO -->
+<div class="page-header">
+    <div class="container">
+        <p style="font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.6rem;">
+            İstanbul &rsaquo; Ankara &nbsp;·&nbsp; yaklaşık 450 km
+        </p>
+        <h1>Adalar Ankara Nakliyat</h1>
+        <p>İstanbul Adaları'ndan Ankara'ya feribot ve kara taşımacılığıyla özel nakliyat hizmeti</p>
+        <div style="display:flex;gap:.75rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <a href="tel:+905325436837" class="btn btn-primary" style="background:#fff;color:#0a0a0a;border-color:#fff;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                Ücretsiz Keşif: 0532 543 68 37
+            </a>
+            <a href="https://wa.me/905325436837" target="_blank" rel="noopener noreferrer" class="btn btn-wa">WhatsApp ile Yaz</a>
+        </div>
+    </div>
+</div>
+
+<!-- STATS -->
+<div style="background:var(--gray-100);border-bottom:1px solid var(--gray-200);">
+    <div class="container">
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0;text-align:center;">
+            <div style="padding:1.1rem 1.5rem;border-right:1px solid var(--gray-200);">
+                <div style="font-size:1.1rem;font-weight:800;">10+ Yıl</div>
+                <div style="font-size:.75rem;color:var(--gray-600);margin-top:.1rem;">Sektör Deneyimi</div>
+            </div>
+            <div style="padding:1.1rem 1.5rem;border-right:1px solid var(--gray-200);">
+                <div style="font-size:1.1rem;font-weight:800;">~450 km</div>
+                <div style="font-size:.75rem;color:var(--gray-600);margin-top:.1rem;">İstanbul–Ankara Mesafe</div>
+            </div>
+            <div style="padding:1.1rem 1.5rem;border-right:1px solid var(--gray-200);">
+                <div style="font-size:1.1rem;font-weight:800;">Feribot + Kara</div>
+                <div style="font-size:.75rem;color:var(--gray-600);margin-top:.1rem;">İki Aşamalı Taşıma</div>
+            </div>
+            <div style="padding:1.1rem 1.5rem;border-right:1px solid var(--gray-200);">
+                <div style="font-size:1.1rem;font-weight:800;">Sigortalı</div>
+                <div style="font-size:.75rem;color:var(--gray-600);margin-top:.1rem;">Tüm Eşyalar</div>
+            </div>
+            <div style="padding:1.1rem 1.5rem;">
+                <div style="font-size:1.1rem;font-weight:800;">7/24</div>
+                <div style="font-size:.75rem;color:var(--gray-600);margin-top:.1rem;">Müşteri Desteği</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ANA İÇERİK -->
+<section style="padding:64px 0;">
+    <div class="container">
+        <div class="row">
+
+            <!-- Sol: Ana İçerik -->
+            <div class="col-lg-8">
+
+                <h2 style="margin-bottom:1rem;">Adalar'dan Ankara'ya Nakliyat</h2>
+                <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                    <strong>İstanbul Adaları</strong>; Büyükada, Heybeliada, Burgazada ve Kınalıada'dan oluşan, motorlu araçların yasak olduğu benzersiz bir yaşam alanıdır. Fayton ve bisikletin hâlâ tercih edilen ulaşım aracı olduğu bu adalarda İstanbul'un kozmopolit dokusundan farklı, sakin ve tarihi bir atmosfer hüküm sürer. Büyükada, adaların en kalabalığı ve en büyüğüdür; on dokuzuncu yüzyıldan kalma ahşap Rum ve Ermeni villalarıyla tarihi bir miras taşımaktadır. Adalarda hem yıl boyu yaşayan kalıcı sakinler hem de yaz aylarında gelen tatilciler bulunmaktadır. <strong>Adalar'dan Ankara'ya nakliyat</strong>, İstanbul ilçeleri arasında kesinlikle en özel planlama gerektiren taşıma sürecidir; İstanbul Ankara Nakliyat olarak bu benzersiz süreci adım adım yönetiyoruz.
+                </p>
+                <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                    Adalarda motorlu araçlar yasak olduğundan nakliyat süreci standart bir ev taşımasından çok farklı işlemektedir. Eşyalar öncelikle adadan iskeleyeye taşınmak zorundadır. Kanepe, yatak, gardırop gibi büyük mobilyalar için fayton veya at arabası kiralanarak iskeleyeye ulaşım sağlanmaktadır. Büyükada iskelesinde koordinasyon kritik önem taşır: feribot kalkış saatleriyle yükleme zamanlaması örtüşmezse beklemeler uzayabilir. Eşyalar feribotle Kabataş veya Bostancı iskelesine çıkarıldıktan sonra nakliyat kamyonuna yüklenerek Ankara güzergahına girilmektedir. Bu iki aşamalı süreç hem toplam süreye hem de taşıma maliyetine doğrudan yansımaktadır.
+                </p>
+                <p style="margin-bottom:2rem;line-height:1.9;color:var(--gray-700);">
+                    Adalar'dan Ankara'ya taşınma kararı çoğunlukla ada yaşamını kapatmak ya da mevsimlik yazlığı sonlandırmak anlamına gelir. Adalardan ayrılma kararının ardında genellikle emeklilik sonrası büyük şehre dönüş, çocukların eğitim için Ankara'ya yerleşmesi ya da adanın sosyal ve ticari olanaklarının sınırlı kalması yatmaktadır. Adalardaki tarihi ahşap villalarda yaşayan sakinlerin değerli antika mobilyaları, eski tablo koleksiyonları ve kırılgan dekoratif objeleri taşıma sürecinde en fazla özen gösterilmesi gereken eşyalar arasındadır. İstanbul Ankara Nakliyat olarak bu tür özel eşyalar için feribot yolculuğuna dayanıklı, güçlendirilmiş ambalaj çözümleri sunmaktayız. Her taşıma öncesinde ada koşullarını bilen uzman eksperimiz yerinde keşif yaparak bu süreci sizin için en güvenli şekilde planlar.
+                </p>
+
+
+                <figure style="margin:1.75rem 0 2rem;">
+                    <img src="~/img/galeri/galeri1.jpeg" alt="Adalar nakliyat hizmeti" loading="lazy"
+                         style="width:100%;border-radius:var(--radius-lg);object-fit:cover;max-height:380px;"
+                         onerror="this.style.display='none'">
+                </figure>
+                <!-- HİZMET KAPSAMI -->
+                <h2 style="margin-bottom:1.25rem;">Adalar'da Sunduğumuz Nakliyat Hizmetleri</h2>
+                <div class="row" style="row-gap:1.25rem;margin-bottom:2.5rem;">
+                    <div class="col-md-6">
+                        <div class="service-card" style="height:100%;padding:1.5rem;">
+                            <div class="service-icon" aria-hidden="true" style="width:40px;height:40px;font-size:1.2rem;">⛵</div>
+                            <h3 style="font-size:1rem;margin-bottom:.6rem;">Feribot + Kara Taşıması</h3>
+                            <p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;">
+                                Ada iskelesinden feribot geçişi ve ardından kara taşımacılığını kapsayan iki aşamalı tam hizmet. Feribot saatleri ve kara güzergahı entegre planlanır.
+                            </p>
+                            <a href="/evden-eve-nakliyat" style="font-size:.85rem;font-weight:600;margin-top:.75rem;display:inline-block;">Detaylı Bilgi →</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-card" style="height:100%;padding:1.5rem;">
+                            <div class="service-icon" aria-hidden="true" style="width:40px;height:40px;font-size:1.2rem;">🏠</div>
+                            <h3 style="font-size:1rem;margin-bottom:.6rem;">Evden Eve Nakliyat</h3>
+                            <p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;">
+                                Büyükada, Heybeliada, Burgazada veya Kınalıada'daki evinizden Ankara'nın istediğiniz semtine kapıdan kapıya taşıma.
+                            </p>
+                            <a href="/evden-eve-nakliyat" style="font-size:.85rem;font-weight:600;margin-top:.75rem;display:inline-block;">Detaylı Bilgi →</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-card" style="height:100%;padding:1.5rem;">
+                            <div class="service-icon" aria-hidden="true" style="width:40px;height:40px;font-size:1.2rem;">📦</div>
+                            <h3 style="font-size:1rem;margin-bottom:.6rem;">Parça Eşya Taşıma</h3>
+                            <p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;">
+                                Adadan Ankara'ya birkaç parça mobilya ya da kutu eşya göndermek için parsiyel yük çözümü. Feribot geçişi dahil koordinasyon sağlanır.
+                            </p>
+                            <a href="/parca-esya-tasima" style="font-size:.85rem;font-weight:600;margin-top:.75rem;display:inline-block;">Detaylı Bilgi →</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-card" style="height:100%;padding:1.5rem;">
+                            <div class="service-icon" aria-hidden="true" style="width:40px;height:40px;font-size:1.2rem;">🎁</div>
+                            <h3 style="font-size:1rem;margin-bottom:.6rem;">Özel Ambalaj Hizmeti</h3>
+                            <p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;">
+                                Ahşap villa eşyaları, antika mobilya, tablo ve kırılgan objeler için güçlendirilmiş feribot yolculuğuna dayanıklı özel ambalaj.
+                            </p>
+                            <a href="/ambalaj-hizmeti" style="font-size:.85rem;font-weight:600;margin-top:.75rem;display:inline-block;">Detaylı Bilgi →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- İLÇEYE ÖZGÜ -->
+                <h2 style="margin-bottom:1rem;">Adalar Nakliyatında Bilmeniz Gerekenler</h2>
+                <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                    Adalar'dan gerçekleştirilen taşımalarda zaman planlaması son derece kritiktir. Büyükada iskelesindeki feribot seferlerinin saatleri önceden araştırılarak yükleme zamanı buna göre düzenlenmektedir. Erken sabah saatlerinde adadan iskeleyeye taşınan eşyalar, ilk uygun feribot seferine yetiştirilmekte ve karaya çıkışın ardından hemen araca yüklenmektedir. Bu koordinasyon başarıyla tamamlandığında Ankara'ya gün içinde hareket etmek mümkün olmaktadır. Feribot yoğunluğunun fazla olduğu yaz aylarında operasyon tarihi önceden belirlenmeli ve rezervasyon yapılmalıdır.
+                </p>
+                <p style="margin-bottom:2.5rem;line-height:1.9;color:var(--gray-700);">
+                    Adalardaki tarihi ahşap villalar, nakliyat sürecinde özel dikkat gerektiren konut tiplerinin başında gelir. Geniş odalar ve yüksek tavanlar büyük mobilyaların çıkarılmasını kolaylaştırmakla birlikte, köhne ahşap merdivenlerde ve dar iç koridorlarda büyük parçaların taşınması özenli ekip çalışması gerektirmektedir. Antika koltuklar, el işlemeli ahşap mobilyalar ve değerli tablolar için standart ambalaj malzemeleri yeterli olmayabilir; bu nedenle köpük dolgulu özel kutular, ahşap kasalar ve çok katlı balonlu naylon ile güçlendirilmiş ambalaj çözümleri sunulmaktadır. Eşyalarınızın hem feribot geçişi sırasında denizin nemine karşı hem de kara taşımacılığındaki titreşimlere karşı korunması taşıma planımızın öncelikli hedefidir.
+                </p>
+
+                <!-- SÜREÇ -->
+                <h2 style="margin-bottom:1.5rem;">Adalar Nakliyat Sürecimiz</h2>
+                <div style="margin-bottom:2.5rem;">
+                    <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;">
+                        <div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">1</div>
+                        <div><h3 style="font-size:1rem;margin-bottom:.4rem;">Ücretsiz Keşif</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">Uzman eksperimiz adanıza feribotle gelir. Eşya miktarı, bina koşulları ve iskeleyeye ulaşım güzergahı yerinde değerlendirilir. Fayton ihtiyacı belirlenir.</p></div>
+                    </div>
+                    <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;">
+                        <div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">2</div>
+                        <div><h3 style="font-size:1rem;margin-bottom:.4rem;">Feribot ve Güzergah Planı</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">Feribot saatleri ve kara güzergahı entegre planlanır. İskelede bekleme süresi minimuma indirilmesi için yükleme takvimi ayarlanır.</p></div>
+                    </div>
+                    <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;">
+                        <div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">3</div>
+                        <div><h3 style="font-size:1rem;margin-bottom:.4rem;">Ada İçi Taşıma ve Ambalajlama</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">Eşyalar fayton veya el arabası ile iskeleyeye taşınır. Özel ambalaj uygulandıktan sonra feribot beklenirken güvenli şekilde depolanır.</p></div>
+                    </div>
+                    <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;">
+                        <div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">4</div>
+                        <div><h3 style="font-size:1rem;margin-bottom:.4rem;">Feribot Geçişi ve Araçlara Yükleme</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">Eşyalar feribotle karaya çıkarılır, nakliyat kamyonuna yüklenir ve Ankara güzergahına girilir. ~450 km kara yolculuğu başlar.</p></div>
+                    </div>
+                    <div style="display:flex;gap:1.25rem;align-items:flex-start;">
+                        <div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">5</div>
+                        <div><h3 style="font-size:1rem;margin-bottom:.4rem;">Ankara'da Teslim ve Montaj</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">Ankara'daki yeni adresinizde eşyalar boşaltılır, mobilyalar monte edilir. Antika ve değerli eşyalar müşteri gözetiminde yerleştirilir.</p></div>
+                    </div>
+                </div>
+
+                <!-- FİYAT -->
+                <h2 style="margin-bottom:1rem;">Adalar – Ankara Nakliyat Fiyatları 2026</h2>
+                <p style="color:var(--gray-600);margin-bottom:1.25rem;font-size:.95rem;">
+                    Adalar'dan Ankara'ya taşımada feribot koordinasyonu ve ada içi taşıma maliyetleri de hesaba katılmaktadır. Kesin fiyat ücretsiz keşif sonrası netleşir.
+                </p>
+                <div class="price-table" style="margin-bottom:2.5rem;">
+                    <div class="price-row price-row--header"><span>Daire / Hacim</span><span>Yaklaşık m³</span><span>Fiyat Aralığı</span></div>
+                    <div class="price-row"><span>1+1 Daire</span><span>15–25 m³</span><span>10.000 – 16.000 ₺</span></div>
+                    <div class="price-row"><span>2+1 Daire</span><span>25–40 m³</span><span>15.000 – 24.000 ₺</span></div>
+                    <div class="price-row"><span>3+1 / Villa</span><span>40–80 m³</span><span>Keşif Sonrası</span></div>
+                    <div class="price-row"><span>Parça Eşya</span><span>Değişken</span><span>Keşif Sonrası</span></div>
+                </div>
+
+                <!-- ADALAR -->
+                <div style="background:var(--gray-100);border-radius:var(--radius-lg);padding:1.75rem;margin-bottom:2.5rem;">
+                    <h3 style="margin-bottom:.75rem;">İstanbul Adaları — Hizmet Bölgelerimiz</h3>
+                    <p style="margin-bottom:1rem;font-size:.95rem;color:var(--gray-700);">
+                        İstanbul'a bağlı tüm adalarda ücretsiz keşif yapıyor ve Ankara'ya nakliyat hizmeti sunuyoruz:
+                    </p>
+                    <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem;">
+                        @foreach (var m in new[]{"Büyükada","Heybeliada","Burgazada","Kınalıada"})
+                        {
+                            <span style="background:var(--white);border:1px solid var(--gray-200);border-radius:50px;padding:.3rem .9rem;font-size:.82rem;font-weight:500;">@m</span>
+                        }
+                    </div>
+                    <p style="font-size:.85rem;color:var(--gray-500);margin:0;">Her adadan iskeleli koordinasyon ve feribot + kara taşımacılığı dahil tam hizmet sunulmaktadır.</p>
+                </div>
+
+                <!-- NEDEN BİZ -->
+                <h2 style="margin-bottom:1.25rem;">Neden İstanbul Ankara Nakliyat?</h2>
+                <div class="row" style="row-gap:1rem;margin-bottom:2.5rem;">
+                    @{
+                        var nedenler = new[] {
+                            new { I="⛵", T="Ada Deneyimi", A="İstanbul Adaları'ndan taşıma konusunda deneyimliyiz. Feribot koordinasyonu, fayton kiralama ve iskele yükleme süreçlerini biliyoruz." },
+                            new { I="🛡️", T="Nakliyat Sigortası", A="Eşyalarınız feribot geçişi dahil tüm süreç boyunca sigortalıdır. Antika ve değerli eşyalar için ek sigorta sunulmaktadır." },
+                            new { I="🔍", T="Ücretsiz Ada Keşfi", A="Eksperimiz adanıza bizzat gelir. Feribot saatleri, iskele koşulları ve bina durumu yerinde değerlendirilerek sabit fiyat teklifi hazırlanır." },
+                            new { I="📦", T="Özel Ambalaj", A="Ahşap villa eşyaları ve antika mobilyalar için güçlendirilmiş, feribot yolculuğuna dayanıklı ambalaj çözümleri. Nem ve titreşime karşı özel koruma." },
+                            new { I="💬", T="7/24 İletişim", A="Ada taşımalarının karmaşık koordinasyonu boyunca her an ulaşabilirsiniz. WhatsApp üzerinden anlık bilgi paylaşımı yapılır." },
+                            new { I="💰", T="Şeffaf Fiyatlandırma", A="Feribot, fayton ve aktarma maliyetleri dahil tüm kalemler keşif sonrası yazılı olarak bildirilir. Sürpriz fatura çıkmaz." }
+                        };
+                    }
+                    @foreach (var n in nedenler)
+                    {
+                        <div class="col-md-6">
+                            <div style="display:flex;gap:1rem;align-items:flex-start;padding:1.1rem;border:1px solid var(--gray-200);border-radius:var(--radius);">
+                                <span style="font-size:1.5rem;flex-shrink:0;line-height:1;">@n.I</span>
+                                <div>
+                                    <h4 style="font-size:.9rem;margin-bottom:.3rem;">@n.T</h4>
+                                    <p style="font-size:.83rem;color:var(--gray-600);margin:0;line-height:1.6;">@n.A</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <!-- SSS -->
+                <h2 style="margin-bottom:1.25rem;">Sıkça Sorulan Sorular</h2>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Büyükada'dan Ankara'ya nakliyat nasıl yapılıyor?
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Büyükada'dan Ankara'ya nakliyat iki ana aşamadan oluşur. İlk aşamada eşyalar adadan iskeleyeye taşınır; büyük parçalar için fayton veya el arabası kullanılır. Ardından eşyalar feribotle Kabataş veya Bostancı iskelesine çıkarılır. İkinci aşamada nakliyat kamyonuna yüklenerek Ankara güzergahına girilir. Bu süreç detaylı planlama gerektirdiğinden keşif aşaması özellikle önem taşır.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Adalarda motorlu araç yasağı nakliyatı nasıl etkiliyor?
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Adalarda motorlu kara araçları yasak olduğundan nakliyat kamyonları adaya girememektedir. Eşyalar fayton, el arabası ya da insan taşımasıyla iskeleyeye getirilir. Bu ekstra adım hem toplam süreye hem de maliyete yansımaktadır. Büyük ve ağır mobilyalar için fayton kiralama koordinasyonu tarafımızca sağlanmaktadır.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Adalar'dan Ankara'ya nakliyat fiyatı ne kadar?
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Adalar'dan Ankara'ya taşımada standart nakliyata ek olarak feribot koordinasyonu, ada içi taşıma ve iskele maliyetleri de hesaba katılmaktadır. Genel başlangıç olarak 1+1 için 10.000–16.000 ₺, 2+1 için 15.000–24.000 ₺ düşünülebilir. Kesin fiyat ücretsiz keşif sonrası netleşmektedir; verilen fiyat değişmez.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Büyükada – Ankara taşıması kaç gün sürer?
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Büyükada – Ankara taşıması feribot geçişi ve kara yolculuğunun birleşimi nedeniyle 1,5–2 günlük bir planlama gerektirmektedir. Sabah erken saatte adadan çıkılan ve koordinasyon sorunsuz tamamlanan bir taşımada Ankara'ya aynı gün akşam ulaşmak mümkündür. Eşyanın hacmine ve iskele yoğunluğuna göre bu süre değişebilir.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Adalardaki eski ahşap villaların eşyaları için özel ambalaj yapıyor musunuz?
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Evet. Adalardaki tarihi ahşap villaların antika mobilyaları, değerli tabloları ve kırılgan dekoratif objeleri için özel ambalaj hizmeti sunuyoruz. Köpük dolgulu kutular, ahşap kasalar, çok katlı balonlu naylon ve nem bariyeri sağlayan özel örtüler kullanılarak eşyalarınız hem feribot yolculuğundaki neme hem de kara taşımacılığındaki titreşimlere karşı korunmaktadır.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sağ: Sidebar -->
+            <div class="col-lg-4">
+                <div class="page-sidebar">
+
+                    <!-- CTA -->
+                    <div style="background:var(--black);border-radius:var(--radius-lg);padding:1.75rem;margin-bottom:1.5rem;text-align:center;">
+                        <h3 style="color:#fff;font-size:1.1rem;margin-bottom:.5rem;">Hemen Teklif Alın</h3>
+                        <p style="color:rgba(255,255,255,.65);font-size:.85rem;margin-bottom:1.25rem;">Adalar'dan Ankara'ya ücretsiz keşif ve sabit fiyat teklifi</p>
+                        <a href="tel:+905325436837" class="btn btn-primary" style="background:#fff;color:#0a0a0a;border-color:#fff;width:100%;margin-bottom:.75rem;display:block;">
+                            0532 543 68 37
+                        </a>
+                        <a href="https://wa.me/905325436837" target="_blank" rel="noopener noreferrer" class="btn btn-wa" style="width:100%;display:block;">
+                            WhatsApp ile Yaz
+                        </a>
+                    </div>
+
+                    <!-- Yakın İlçeler -->
+                    <div style="background:var(--gray-100);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1.5rem;">
+                        <h4 style="font-size:.95rem;margin-bottom:1rem;">Yakın İlçelerden de Taşıyoruz</h4>
+                        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.5rem;">
+                            <li><a href="/kadikoy-ankara-nakliyat" style="font-size:.88rem;font-weight:500;">Kadıköy → Ankara</a></li>
+                            <li><a href="/pendik-ankara-nakliyat" style="font-size:.88rem;font-weight:500;">Pendik → Ankara</a></li>
+                            <li><a href="/tuzla-ankara-nakliyat" style="font-size:.88rem;font-weight:500;">Tuzla → Ankara</a></li>
+                            <li><a href="/maltepe-ankara-nakliyat" style="font-size:.88rem;font-weight:500;">Maltepe → Ankara</a></li>
+                            <li><a href="/kartal-ankara-nakliyat" style="font-size:.88rem;font-weight:500;">Kartal → Ankara</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Hizmetler -->
+                    <div style="background:var(--gray-100);border-radius:var(--radius-lg);padding:1.5rem;">
+                        <h4 style="font-size:.95rem;margin-bottom:1rem;">Hizmetlerimiz</h4>
+                        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.5rem;">
+                            <li><a href="/evden-eve-nakliyat" style="font-size:.88rem;font-weight:500;">Evden Eve Nakliyat</a></li>
+                            <li><a href="/ofis-tasima" style="font-size:.88rem;font-weight:500;">Ofis Taşıma</a></li>
+                            <li><a href="/parca-esya-tasima" style="font-size:.88rem;font-weight:500;">Parça Eşya Taşıma</a></li>
+                            <li><a href="/esya-depolama" style="font-size:.88rem;font-weight:500;">Eşya Depolama</a></li>
+                            <li><a href="/ambalaj-hizmeti" style="font-size:.88rem;font-weight:500;">Ambalaj Hizmeti</a></li>
+                            <li><a href="/ceyiz-tasima" style="font-size:.88rem;font-weight:500;">Çeyiz Taşıma</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

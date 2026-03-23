@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /Privacy
+Disallow: /yorum/gonder
+Disallow: /iletisim/gonder
+
+Sitemap: https://www.istanbulankaranakliyat.tr/sitemap.xml

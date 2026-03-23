@@ -36,6 +36,44 @@
         });
     }
 
+    /* ── Desktop Dropdown (hover + 250ms gecikme) ────────────── */
+    document.querySelectorAll('.nav-dropdown').forEach(function (item) {
+        var timer;
+        var ddToggle = item.querySelector('.nav-dropdown-toggle');
+
+        function openDropdown() {
+            clearTimeout(timer);
+            item.classList.add('open');
+            ddToggle.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeDropdown() {
+            timer = setTimeout(function () {
+                item.classList.remove('open');
+                ddToggle.setAttribute('aria-expanded', 'false');
+            }, 250);
+        }
+
+        item.addEventListener('mouseenter', openDropdown);
+        item.addEventListener('mouseleave', closeDropdown);
+
+        // Dropdown menü üzerindeyken timer'ı iptal et
+        var ddMenu = item.querySelector('.dropdown-menu');
+        if (ddMenu) {
+            ddMenu.addEventListener('mouseenter', function () { clearTimeout(timer); });
+            ddMenu.addEventListener('mouseleave', closeDropdown);
+        }
+    });
+
+    /* ── Mobil Dropdown ──────────────────────────────────────── */
+    document.querySelectorAll('.mobile-dropdown-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var item = btn.closest('.mobile-dropdown');
+            var isOpen = item.classList.toggle('open');
+            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+    });
+
     /* ── FAQ Accordion ───────────────────────────────────────── */
     document.querySelectorAll('.faq-question').forEach(function (btn) {
         btn.addEventListener('click', function () {

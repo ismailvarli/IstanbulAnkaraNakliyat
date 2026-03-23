@@ -362,59 +362,7 @@ public class NakliyatController : Controller
         return View();
     }
 
-    // ══════════════════════════════════════════════════════════════
-    //  İLÇE SAYFASILARI
-    // ══════════════════════════════════════════════════════════════
-    [HttpGet("{slug}-ankara-nakliyat")]
-    public IActionResult AnkaraHedef(string slug)
-    {
-        if (!_istanbul.TryGetValue(slug, out var d))
-            return NotFound();
-
-        var model = new IlceSayfaModel
-        {
-            DisplayName  = d.Name,
-            Slug         = slug,
-            Ozellik      = d.Ozellik,
-            Mahalleler   = d.Mahalleler,
-            Yon          = NakliyatYon.IstanbulToAnkara,
-            YakinIlceler = d.Yakin.Select(x => (x.N, x.S)).ToArray()
-        };
-
-        ViewData["Title"]       = model.SeoTitle;
-        ViewData["Description"] = model.SeoDescription;
-        ViewData["Canonical"]   = model.PageUrl;
-
-        return View("Ilce", model);
-    }
-
-    [HttpGet("{slug}-istanbul-nakliyat")]
-    public IActionResult IstanbulHedef(string slug)
-    {
-        if (!_ankara.TryGetValue(slug, out var d))
-            return NotFound();
-
-        var model = new IlceSayfaModel
-        {
-            DisplayName  = d.Name,
-            Slug         = slug,
-            Ozellik      = d.Ozellik,
-            Mahalleler   = d.Mahalleler,
-            Yon          = NakliyatYon.AnkaraToIstanbul,
-            YakinIlceler = d.Yakin.Select(x => (x.N, x.S)).ToArray()
-        };
-
-        ViewData["Title"]       = model.SeoTitle;
-        ViewData["Description"] = model.SeoDescription;
-        ViewData["Canonical"]   = model.PageUrl;
-
-        return View("Ilce", model);
-    }
-
     // ── Tüm ilçe listesi (sitemap için) ─────────────────────────
-    public static IEnumerable<(string Slug, string Suffix)> TumIlceSayfalar()
-    {
-        foreach (var k in _istanbul.Keys) yield return (k, "ankara-nakliyat");
-        foreach (var k in _ankara.Keys)   yield return (k, "istanbul-nakliyat");
-    }
+    public static IReadOnlyList<string> IstanbulSlugs => _istanbul.Keys.ToList();
+    public static IReadOnlyList<string> AnkaraSlugs   => _ankara.Keys.ToList();
 }

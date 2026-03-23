@@ -3,10 +3,16 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0f0f0f" />
+    <meta name="theme-color" content="#1a1a1a" />
+    <link rel="icon" type="image/png" href="~/img/logo.png" />
+    <link rel="apple-touch-icon" href="~/img/logo.png" />
 
     <title>@ViewData["Title"]</title>
     <meta name="description" content="@ViewData["Description"]" />
+    @if (ViewData["Noindex"] != null)
+    {
+        <meta name="robots" content="noindex, nofollow" />
+    }
 
     @{
         var path      = Context.Request.Path.Value?.TrimEnd('/');
@@ -33,14 +39,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 
-    <!-- Bootstrap Grid (sadece layout) -->
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-grid.min.css" />
-
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <!-- Site CSS -->
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <!-- Bundle: bootstrap-grid + site.css -->
+    <link rel="stylesheet" href="~/css/bundle.css" asp-append-version="true" />
 
     <!-- LocalBusiness JSON-LD -->
     <script type="application/ld+json">
@@ -95,13 +98,22 @@
 
             <ul class="nav-links" role="list">
                 <li><a href="/">Ana Sayfa</a></li>
-                <li><a href="/istanbul-ankara-nakliyat">İstanbul → Ankara</a></li>
-                <li><a href="/ankara-istanbul-nakliyat">Ankara → İstanbul</a></li>
-                <li><a href="/hizmetler">Hizmetler</a></li>
-                <li><a href="/nakliyat-ucreti">Fiyatlar</a></li>
+                <li><a href="/hakkimizda">Hakkımızda</a></li>              
+                <li class="nav-dropdown">
+                    <a href="/hizmetler" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                        Hizmetler
+                        <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="/istanbul-ankara-nakliyat">İstanbul'dan Ankara'ya Nakliyat</a></li>
+                        <li><a href="/ankara-istanbul-nakliyat">Ankara'dan İstanbul'a Nakliyat</a></li>
+                        
+                       
+                    </ul>
+                </li>
                 <li><a href="/galeri">Galeri</a></li>
                 <li><a href="/blog">Blog</a></li>
-                <li><a href="/hakkimizda">Hakkımızda</a></li>
+                <li><a href="/nakliyat-ucreti">Fiyatlar</a></li>
                 <li><a href="/iletisim">İletişim</a></li>
             </ul>
 
@@ -125,13 +137,27 @@
         <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
             <ul role="list">
                 <li><a href="/">Ana Sayfa</a></li>
+                <li><a href="/hakkimizda">Hakkımızda</a></li>
                 <li><a href="/istanbul-ankara-nakliyat">İstanbul → Ankara</a></li>
                 <li><a href="/ankara-istanbul-nakliyat">Ankara → İstanbul</a></li>
-                <li><a href="/hizmetler">Hizmetler</a></li>
+                <li class="mobile-dropdown">
+                    <button class="mobile-dropdown-toggle" aria-expanded="false">
+                        Hizmetler
+                        <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+                    </button>
+                    <ul class="mobile-dropdown-menu">
+                        <li><a href="/hizmetler">Tüm Hizmetler</a></li>
+                        <li><a href="/evden-eve-nakliyat">Evden Eve Nakliyat</a></li>
+                        <li><a href="/ofis-tasima">Ofis Taşıma</a></li>
+                        <li><a href="/parca-esya-tasima">Parça Eşya Taşıma</a></li>
+                        <li><a href="/esya-depolama">Eşya Depolama</a></li>
+                        <li><a href="/ambalaj-hizmeti">Ambalaj Hizmeti</a></li>
+                        <li><a href="/ceyiz-tasima">Çeyiz Taşıma</a></li>
+                    </ul>
+                </li>
                 <li><a href="/nakliyat-ucreti">Fiyatlar</a></li>
                 <li><a href="/galeri">Galeri</a></li>
                 <li><a href="/blog">Blog</a></li>
-                <li><a href="/hakkimizda">Hakkımızda</a></li>
                 <li><a href="/iletisim">İletişim</a></li>
                 <li><a href="tel:+905325436837" class="mobile-cta">📞 0532 543 68 37</a></li>
             </ul>
@@ -284,7 +310,7 @@
         </a>
     </div>
 
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/bundle.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
 </body>
