@@ -1,0 +1,345 @@
+@{
+    Layout = "_Layout";
+}
+
+@section Scripts {
+<script type="application/ld+json">
+{
+    "@@context": "https://schema.org",
+    "@@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.istanbulankaranakliyat.tr/" },
+        { "@@type": "ListItem", "position": 2, "name": "Ankara Nakliyat", "item": "https://www.istanbulankaranakliyat.tr/ankara-nakliyat" },
+        { "@@type": "ListItem", "position": 3, "name": "Ankara Mahalle Rehberi", "item": "https://www.istanbulankaranakliyat.tr/ankara-mahalle-rehberi" }
+    ]
+}
+</script>
+<script type="application/ld+json">
+{
+    "@@context": "https://schema.org",
+    "@@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@@type": "Question",
+            "name": "Ankara'nın en uygun fiyatlı ilçesi hangisi?",
+            "acceptedAnswer": { "@@type": "Answer", "text": "Mamak, Sincan ve Keçiören'in kuzey mahalleleri (Bağlum, Güçlükaya) Ankara'nın en uygun kiralık ve satılık fiyatlarını sunar. Etimesgut/Eryaman da TOKİ konutları ile uygun seçenekler barındırır." }
+        },
+        {
+            "@@type": "Question",
+            "name": "İstanbul'dan Ankara'ya taşınırken hangi ilçeyi seçmeliyim?",
+            "acceptedAnswer": { "@@type": "Answer", "text": "Seçim yaşam tarzınıza bağlıdır. Şehir merkezi ve kültüre yakın olmak isteyenler için Çankaya, bütçe dostu modern konut arayanlar için Etimesgut/Eryaman, yeşil alan ve doğa sevenler için Gölbaşı iyi seçeneklerdir." }
+        },
+        {
+            "@@type": "Question",
+            "name": "Ankara'da çalışıyorum, hangi ilçe işyerine yakın ve ulaşımı kolay?",
+            "acceptedAnswer": { "@@type": "Answer", "text": "TBMM ve bakanlıklara yakın çalışanlar için Çankaya ve Yenimahalle, Ostim/İvedik sanayi bölgesi için Yenimahalle, Kızılay için Çankaya, Altındağ veya Etimesgut metro hattı iyi seçeneklerdir." }
+        },
+        {
+            "@@type": "Question",
+            "name": "Gölbaşı'nda yaşamak nasıl?",
+            "acceptedAnswer": { "@@type": "Answer", "text": "Gölbaşı, Mogan ve Eymir göllerinin çevresinde konumlanan, görece sessiz ve yeşil bir ilçedir. Ulaşım için özel araç gerekmektedir. Orta-üst gelir grubunun tercih ettiği villa ve site projelerine ev sahipliği yapar." }
+        }
+    ]
+}
+</script>
+}
+
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb-list">
+            <li><a href="/">Ana Sayfa</a></li><li>›</li>
+            <li><a href="/ankara-nakliyat">Ankara Nakliyat</a></li><li>›</li>
+            <li aria-current="page">Ankara Mahalle Rehberi</li>
+        </ol>
+    </div>
+</nav>
+
+<div class="page-header">
+    <div class="container">
+        <h1>Ankara Mahalle Rehberi 2026</h1>
+        <p>İstanbul'dan Ankara'ya taşınmadan önce bilinmesi gerekenler — ilçe karşılaştırması, kira, ulaşım ve yaşam kalitesi</p>
+        <div style="display:flex;gap:.75rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <a href="tel:+905325436837" class="btn btn-primary" style="background:#fff;color:#0a0a0a;border-color:#fff;">
+                📞 Ankara Taşıma Teklifi: 0532 543 68 37
+            </a>
+            <a href="https://wa.me/905325436837" target="_blank" rel="noopener noreferrer" class="btn btn-wa">WhatsApp ile Yaz</a>
+        </div>
+    </div>
+</div>
+
+<section style="padding:64px 0;">
+    <div class="container">
+        <div class="row g-5">
+
+            <!-- Ana İçerik -->
+            <div class="col-lg-8">
+
+                <h2 style="margin-bottom:1rem;">Ankara'ya Taşınmadan Önce İlçe Seçimi</h2>
+                <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                    İstanbul'dan Ankara'ya taşınmak büyük bir karar. 450 km'lik mesafeyi aştıktan sonra sizi bekleyen şehirde hangi ilçeye yerleşeceğiniz, günlük yaşam kalitenizi, ulaşım sürenizi ve bütçenizi doğrudan etkiler. Ankara'nın büyükşehir sınırları içinde 25 ilçe bulunur; ancak günlük yaşam açısından öne çıkan ilçeler Çankaya, Keçiören, Yenimahalle, Etimesgut, Mamak, Gölbaşı, Sincan ve Pursaklar'dır.
+                </p>
+                <p style="margin-bottom:2.5rem;line-height:1.9;color:var(--gray-700);">
+                    Bu rehberde sekiz önemli Ankara ilçesini kira fiyatları, ulaşım kolaylığı, sosyal olanaklar ve yaşam tarzı açısından karşılaştırıyoruz. Hangi ilçenin size uygun olduğuna karar verdikten sonra İstanbul'daki evinizden Ankara'daki yeni adresinize <a href="/evden-eve-nakliyat" style="color:var(--black);">güvenli nakliyat</a> için bizi arayabilirsiniz.
+                </p>
+
+                <!-- İlçe Kartları -->
+                @{
+                    var ilceler = new[]
+                    {
+                        new {
+                            Ad = "Çankaya",
+                            Slug = "cankaya",
+                            Ozellik = "Prestijli Merkez",
+                            Renk = "#1a1a1a",
+                            Aciklama = "Ankara'nın kalbi ve en gelişmiş ilçesi. ODTÜ, Bilkent, büyükelçilikler ve devlet kurumlarıyla çevrili Çankaya; Kızılay, Kavaklidere, Oran, Balgat ve Çukurambar gibi farklı yaşam tarzlarına hitap eden mahalleler barındırır.",
+                            KiraMin = "12.000",
+                            KiraMax = "25.000+",
+                            Ulasim = "Metro, otobüs, ankaray",
+                            Hedef = "Akademisyenler, üst-orta gelir, yöneticiler",
+                            Artı = "Merkezi konum, prestij, kültürel imkânlar, restoranlar",
+                            Eksi = "Yüksek kira, trafik, park sorunu"
+                        },
+                        new {
+                            Ad = "Etimesgut / Eryaman",
+                            Slug = "etimesgut",
+                            Ozellik = "Modern & Uygun Fiyat",
+                            Renk = "#2d6a4f",
+                            Aciklama = "Eryaman, Elvankent ve Göksu gibi TOKİ ve site projelerinin yoğun olduğu batı Ankara ilçesi. Genç aileler ve ilk kez ev sahipleri için ideal. Metrobüs hattı ile Kızılay'a 25-35 dakikada ulaşılır.",
+                            KiraMin = "7.000",
+                            KiraMax = "14.000",
+                            Ulasim = "Metro (Eryaman), otobüs",
+                            Hedef = "Genç aileler, memurlar, öğretmenler",
+                            Artı = "Uygun kira, yeni binalar, geniş siteler, çocuk dostu",
+                            Eksi = "Merkeze uzaklık, uzun ulaşım süreleri"
+                        },
+                        new {
+                            Ad = "Keçiören",
+                            Slug = "kecioren",
+                            Ozellik = "Büyük & Sosyal",
+                            Renk = "#d62828",
+                            Aciklama = "Nüfus bakımından Ankara'nın en büyük ilçesi olan Keçiören, Etlik'ten Bağlum'a geniş bir konut yelpazesi sunar. Güçlü hastane ve okul altyapısıyla ailelerin tercih ettiği ilçedir. Fiyat-kalite dengesi yüksektir.",
+                            KiraMin = "8.000",
+                            KiraMax = "16.000",
+                            Ulasim = "Otobüs, dolmuş; metro yok ama geniş ağ",
+                            Hedef = "Geniş aileler, sağlık sektörü çalışanları",
+                            Artı = "Uygun fiyat, köklü yapı, sosyal hizmetler",
+                            Eksi = "Metro bağlantısı yok, trafikli bazı mahalleler"
+                        },
+                        new {
+                            Ad = "Yenimahalle",
+                            Slug = "yenimahalle",
+                            Ozellik = "Sanayi & Ulaşım Merkezi",
+                            Renk = "#3a0ca3",
+                            Aciklama = "Batıkent, Demetevler ve Şentepe konut alanlarının yanı sıra Ostim ve İvedik sanayi bölgelerini barındıran Yenimahalle, TEM'e yakınlığıyla İstanbul güzergahındaki taşınmalarda lojistik avantaj sunar.",
+                            KiraMin = "8.500",
+                            KiraMax = "16.000",
+                            Ulasim = "Metro (Batıkent-Kızılay), otobüs",
+                            Hedef = "Sanayi çalışanları, mühendisler, teknisyenler",
+                            Artı = "Metro bağlantısı, TEM yakınlığı, sanayi iş imkânı",
+                            Eksi = "Bazı mahallelerde hava kalitesi, trafik"
+                        },
+                        new {
+                            Ad = "Gölbaşı",
+                            Slug = "golbasi",
+                            Ozellik = "Yeşil & Premium",
+                            Renk = "#006400",
+                            Aciklama = "Mogan ve Eymir gölleri çevresindeki konumuyla Ankara'nın en yeşil ilçesi olan Gölbaşı, Incek ve Tulumtaş gibi premium site projelerine ev sahipliği yapar. Gölbaşı Teknokent yüksek teknoloji firmaları için de önemli bir merkezdir.",
+                            KiraMin = "12.000",
+                            KiraMax = "30.000+",
+                            Ulasim = "Özel araç gerekli; Ankara-Konya yolu",
+                            Hedef = "Üst gelir, doğaseverler, villa arayanlar",
+                            Artı = "Doğa, sakinlik, temiz hava, lüks konutlar",
+                            Eksi = "Toplu taşıma yetersiz, merkeze uzak, yüksek kira"
+                        },
+                        new {
+                            Ad = "Mamak",
+                            Slug = "mamak",
+                            Ozellik = "Uygun & Büyüyen",
+                            Renk = "#6c757d",
+                            Aciklama = "Ankara'nın doğusunda yer alan Mamak, kentsel dönüşüm projeleriyle hızla gelişen bir ilçedir. Tuzluçayır, Şahintepe ve Hüseyingazi gibi mahalleleriyle uygun fiyatlı konut arayanlar için cazip bir alternatif sunar.",
+                            KiraMin = "6.500",
+                            KiraMax = "12.000",
+                            Ulasim = "Otobüs; Ankaray erişimi sınırlı",
+                            Hedef = "Düşük-orta gelir, gençler, bekarlar",
+                            Artı = "Düşük kira, gelişim potansiyeli, genç nüfus",
+                            Eksi = "Altyapı eksiklikleri, merkeze uzak mahalleler"
+                        },
+                        new {
+                            Ad = "Sincan",
+                            Slug = "sincan",
+                            Ozellik = "Sanayi & TOKİ",
+                            Renk = "#c77dff",
+                            Aciklama = "TEM otoyoluna yakınlığıyla İstanbul güzergahı için stratejik konumda olan Sincan; Pirinçlik sanayi bölgesi, Yenikent ve Fatih mahallelerindeki toplu konut alanlarıyla sanayi ve işçi sınıfı ailelerin yoğun olduğu bir ilçedir.",
+                            KiraMin = "6.500",
+                            KiraMax = "12.000",
+                            Ulasim = "Metro (Batıkent uzantısı), otobüs, TEM yakın",
+                            Hedef = "Sanayi işçileri, memurlar, uygun konut arayanlar",
+                            Artı = "Çok uygun kira, TEM erişimi, metro bağlantısı",
+                            Eksi = "Endüstriyel çevre, bazı mahallelerde eski yapı"
+                        },
+                        new {
+                            Ad = "Pursaklar",
+                            Slug = "pursaklar",
+                            Ozellik = "Yeni Gelişim",
+                            Renk = "#e76f51",
+                            Aciklama = "Ankara'nın en yeni ilçesi olan Pursaklar, Keçiören ve Sincan'a bitişik konumuyla hızla büyüyen bir yerleşim alanıdır. TOKİ konutları ve yeni apartman projelerinin yoğun olduğu Pursaklar, genç aileler ve çalışanlar için uygun fiyatlı seçenekler sunar.",
+                            KiraMin = "6.000",
+                            KiraMax = "11.000",
+                            Ulasim = "Otobüs; Keçiören üzerinden metro erişimi",
+                            Hedef = "Yeni aileler, genç çiftler, bütçe odaklı taşınanlar",
+                            Artı = "En uygun kira, yeni binalar, gelişen altyapı",
+                            Eksi = "Toplu taşıma kısıtlı, ticaret eksikliği"
+                        }
+                    };
+                }
+
+                @foreach (var ilce in ilceler)
+                {
+                    <div style="border:1px solid #e0e0e0;border-radius:12px;overflow:hidden;margin-bottom:2rem;">
+                        <div style="background:@ilce.Renk;color:#fff;padding:1.25rem 1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;">
+                            <div>
+                                <h2 style="font-size:1.2rem;font-weight:800;margin:0;color:#fff;">@ilce.Ad</h2>
+                                <span style="font-size:.8rem;opacity:.85;">@ilce.Ozellik</span>
+                            </div>
+                            <div style="background:rgba(255,255,255,.15);padding:.4rem 1rem;border-radius:20px;font-size:.82rem;font-weight:600;">
+                                @ilce.KiraMin – @ilce.KiraMax ₺/ay
+                            </div>
+                        </div>
+                        <div style="padding:1.5rem;">
+                            <p style="line-height:1.8;color:var(--gray-700);margin-bottom:1.25rem;font-size:.95rem;">@ilce.Aciklama</p>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div style="background:#f8f9fa;border-radius:8px;padding:1rem;">
+                                        <div style="font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#888;margin-bottom:.5rem;">Ulaşım</div>
+                                        <div style="font-size:.88rem;color:var(--gray-700);">@ilce.Ulasim</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div style="background:#f8f9fa;border-radius:8px;padding:1rem;">
+                                        <div style="font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#888;margin-bottom:.5rem;">Kim İçin Uygun?</div>
+                                        <div style="font-size:.88rem;color:var(--gray-700);">@ilce.Hedef</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div style="background:#f0fff4;border-radius:8px;padding:1rem;">
+                                        <div style="font-size:.8rem;font-weight:700;color:#2d6a4f;margin-bottom:.5rem;">✅ Avantajlar</div>
+                                        <div style="font-size:.88rem;color:var(--gray-700);">@ilce.Artı</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div style="background:#fff8f0;border-radius:8px;padding:1rem;">
+                                        <div style="font-size:.8rem;font-weight:700;color:#c05621;margin-bottom:.5rem;">⚠️ Dezavantajlar</div>
+                                        <div style="font-size:.88rem;color:var(--gray-700);">@ilce.Eksi</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top:1rem;">
+                                <a href="/@ilce.Slug-istanbul-nakliyat" style="font-size:.85rem;font-weight:600;color:var(--black);text-decoration:none;">
+                                    @ilce.Ad – İstanbul Nakliyat Detayları →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <!-- Karşılaştırma Tablosu -->
+                <h2 style="margin-bottom:1rem;margin-top:1rem;">Hızlı Karşılaştırma Tablosu</h2>
+                <div style="overflow-x:auto;margin-bottom:2.5rem;">
+                    <table style="width:100%;border-collapse:collapse;font-size:.88rem;">
+                        <thead>
+                            <tr style="background:var(--black);color:#fff;">
+                                <th style="padding:10px 14px;text-align:left;">İlçe</th>
+                                <th style="padding:10px 14px;text-align:center;">Kira (₺/ay)</th>
+                                <th style="padding:10px 14px;text-align:center;">Metro</th>
+                                <th style="padding:10px 14px;text-align:center;">Merkeze Uzaklık</th>
+                                <th style="padding:10px 14px;text-align:center;">Hedef Kitle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom:1px solid #e0e0e0;"><td style="padding:10px 14px;font-weight:600;">Çankaya</td><td style="padding:10px 14px;text-align:center;">12.000–25.000+</td><td style="padding:10px 14px;text-align:center;">✅</td><td style="padding:10px 14px;text-align:center;">0–5 km</td><td style="padding:10px 14px;text-align:center;">Üst gelir</td></tr>
+                            <tr style="border-bottom:1px solid #e0e0e0;background:#fafafa;"><td style="padding:10px 14px;font-weight:600;">Etimesgut</td><td style="padding:10px 14px;text-align:center;">7.000–14.000</td><td style="padding:10px 14px;text-align:center;">✅</td><td style="padding:10px 14px;text-align:center;">15–25 km</td><td style="padding:10px 14px;text-align:center;">Genç aileler</td></tr>
+                            <tr style="border-bottom:1px solid #e0e0e0;"><td style="padding:10px 14px;font-weight:600;">Keçiören</td><td style="padding:10px 14px;text-align:center;">8.000–16.000</td><td style="padding:10px 14px;text-align:center;">❌</td><td style="padding:10px 14px;text-align:center;">8–15 km</td><td style="padding:10px 14px;text-align:center;">Orta gelir</td></tr>
+                            <tr style="border-bottom:1px solid #e0e0e0;background:#fafafa;"><td style="padding:10px 14px;font-weight:600;">Yenimahalle</td><td style="padding:10px 14px;text-align:center;">8.500–16.000</td><td style="padding:10px 14px;text-align:center;">✅</td><td style="padding:10px 14px;text-align:center;">10–18 km</td><td style="padding:10px 14px;text-align:center;">Sanayi sektörü</td></tr>
+                            <tr style="border-bottom:1px solid #e0e0e0;"><td style="padding:10px 14px;font-weight:600;">Gölbaşı</td><td style="padding:10px 14px;text-align:center;">12.000–30.000+</td><td style="padding:10px 14px;text-align:center;">❌</td><td style="padding:10px 14px;text-align:center;">20–30 km</td><td style="padding:10px 14px;text-align:center;">Üst gelir</td></tr>
+                            <tr style="border-bottom:1px solid #e0e0e0;background:#fafafa;"><td style="padding:10px 14px;font-weight:600;">Mamak</td><td style="padding:10px 14px;text-align:center;">6.500–12.000</td><td style="padding:10px 14px;text-align:center;">❌</td><td style="padding:10px 14px;text-align:center;">8–18 km</td><td style="padding:10px 14px;text-align:center;">Düşük-orta gelir</td></tr>
+                            <tr style="border-bottom:1px solid #e0e0e0;"><td style="padding:10px 14px;font-weight:600;">Sincan</td><td style="padding:10px 14px;text-align:center;">6.500–12.000</td><td style="padding:10px 14px;text-align:center;">✅</td><td style="padding:10px 14px;text-align:center;">20–30 km</td><td style="padding:10px 14px;text-align:center;">Sanayi işçileri</td></tr>
+                            <tr><td style="padding:10px 14px;font-weight:600;">Pursaklar</td><td style="padding:10px 14px;text-align:center;">6.000–11.000</td><td style="padding:10px 14px;text-align:center;">❌</td><td style="padding:10px 14px;text-align:center;">18–25 km</td><td style="padding:10px 14px;text-align:center;">Bütçe odaklı</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="font-size:.82rem;color:#888;margin-bottom:2.5rem;">* Kira fiyatları 2026 yılı yaklaşık değerlerdir. Mahalle ve bina özelliğine göre farklılık gösterebilir.</p>
+
+                <!-- SSS -->
+                <h2 style="margin-bottom:1.25rem;">Sık Sorulan Sorular</h2>
+                <div style="display:flex;flex-direction:column;gap:.75rem;margin-bottom:2.5rem;">
+                    @foreach (var faq in new[] {
+                        new { Q="Ankara'nın en uygun fiyatlı ilçesi hangisi?", A="Mamak, Sincan ve Pursaklar, Ankara'nın en uygun kiralık konut fiyatlarını sunar. Etimesgut/Eryaman ise yeni binalarda görece uygun seçenekler barındırır." },
+                        new { Q="İstanbul'dan Ankara'ya taşınırken hangi ilçeyi seçmeliyim?", A="Seçim yaşam tarzınıza bağlıdır. Merkezi konum için Çankaya, uygun fiyat için Etimesgut veya Mamak, doğa için Gölbaşı, metro bağlantısı için Yenimahalle veya Sincan tercih edilebilir." },
+                        new { Q="Ankara'da toplu taşıma hangi ilçede en güçlü?", A="Çankaya ve Yenimahalle metro ağı açısından en güçlü ilçelerdir. Etimesgut metro hattı da güçlüdür. Keçiören'de metro yoktur ancak kapsamlı otobüs ağı mevcuttur." },
+                        new { Q="Gölbaşı'nda yaşamak nasıl?", A="Sakin, yeşil ve prestijli bir yaşam sunar. Ancak toplu taşıma yetersizdir; özel araç şarttır. Kira fiyatları yüksektir. Mogan ve Eymir gölleri çevresindeki villa ve siteleri arayanlara idealdir." }
+                    })
+                    {
+                        <div style="border:1px solid #e0e0e0;border-radius:8px;overflow:hidden;">
+                            <div style="padding:14px 18px;font-weight:600;background:var(--gray-100);">@faq.Q</div>
+                            <div style="padding:14px 18px;border-top:1px solid #e0e0e0;font-size:.92rem;color:var(--gray-700);">@faq.A</div>
+                        </div>
+                    }
+                </div>
+
+                <!-- CTA -->
+                <div style="background:var(--black);color:#fff;border-radius:12px;padding:2rem;text-align:center;">
+                    <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:.75rem;">Ankara'ya Taşınmaya Hazır Mısınız?</h3>
+                    <p style="opacity:.85;margin-bottom:1.25rem;font-size:.92rem;">İstanbul'dan Ankara'ya sigortalı ve güvenli nakliyat için hemen teklif alın.</p>
+                    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+                        <a href="tel:+905325436837" style="background:#fff;color:var(--black);padding:12px 28px;border-radius:6px;font-weight:700;text-decoration:none;">📞 0532 543 68 37</a>
+                        <a href="https://wa.me/905325436837" target="_blank" style="background:#25D366;color:#fff;padding:12px 28px;border-radius:6px;font-weight:700;text-decoration:none;">WhatsApp</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div style="position:sticky;top:24px;display:flex;flex-direction:column;gap:1.5rem;">
+
+                    <div style="background:var(--black);color:#fff;border-radius:10px;padding:1.75rem;">
+                        <h3 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">İstanbul → Ankara Taşıma</h3>
+                        <p style="font-size:.88rem;opacity:.85;margin-bottom:1.25rem;">Seçtiğiniz Ankara ilçesine kapıdan kapıya nakliyat için hemen arayın.</p>
+                        <a href="tel:+905325436837" style="display:block;background:#fff;color:var(--black);text-align:center;padding:12px;border-radius:6px;font-weight:700;text-decoration:none;margin-bottom:.75rem;">📞 0532 543 68 37</a>
+                        <a href="https://wa.me/905325436837" target="_blank" style="display:block;background:#25D366;color:#fff;text-align:center;padding:12px;border-radius:6px;font-weight:700;text-decoration:none;">WhatsApp ile Yaz</a>
+                    </div>
+
+                    <div style="border:1px solid #e0e0e0;border-radius:10px;padding:1.5rem;">
+                        <h4 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">Maliyet Hesapla</h4>
+                        <p style="font-size:.88rem;color:var(--gray-600);margin-bottom:.75rem;">Taşıma maliyetinizi anında hesaplayın.</p>
+                        <a href="/nakliyat-maliyet-hesaplayici" style="display:block;background:var(--black);color:#fff;text-align:center;padding:11px;border-radius:6px;font-weight:600;text-decoration:none;font-size:.9rem;">🧮 Hesaplayıcıyı Aç →</a>
+                    </div>
+
+                    <div style="border:1px solid #e0e0e0;border-radius:10px;padding:1.5rem;">
+                        <h4 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">Ankara İlçe Sayfaları</h4>
+                        <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.88rem;">
+                            <a href="/cankaya-istanbul-nakliyat" style="color:var(--black);text-decoration:none;padding:6px 0;border-bottom:1px solid #f0f0f0;">Çankaya →</a>
+                            <a href="/kecioren-istanbul-nakliyat" style="color:var(--black);text-decoration:none;padding:6px 0;border-bottom:1px solid #f0f0f0;">Keçiören →</a>
+                            <a href="/etimesgut-istanbul-nakliyat" style="color:var(--black);text-decoration:none;padding:6px 0;border-bottom:1px solid #f0f0f0;">Etimesgut →</a>
+                            <a href="/yenimahalle-istanbul-nakliyat" style="color:var(--black);text-decoration:none;padding:6px 0;border-bottom:1px solid #f0f0f0;">Yenimahalle →</a>
+                            <a href="/golbasi-istanbul-nakliyat" style="color:var(--black);text-decoration:none;padding:6px 0;border-bottom:1px solid #f0f0f0;">Gölbaşı →</a>
+                            <a href="/mamak-istanbul-nakliyat" style="color:var(--black);text-decoration:none;padding:6px 0;border-bottom:1px solid #f0f0f0;">Mamak →</a>
+                            <a href="/sincan-istanbul-nakliyat" style="color:var(--black);text-decoration:none;padding:6px 0;">Sincan →</a>
+                        </div>
+                    </div>
+
+                    <div style="border:1px solid #e0e0e0;border-radius:10px;padding:1.5rem;">
+                        <h4 style="font-size:1rem;font-weight:700;margin-bottom:.75rem;">Faydalı Rehberler</h4>
+                        <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.88rem;">
+                            <a href="/blog/istanbul-ankara-tasima-rehberi" style="color:var(--black);text-decoration:none;">İstanbul'dan Ankara'ya Taşınma →</a>
+                            <a href="/blog/evden-eve-nakliyat-oncesi-hazirlik" style="color:var(--black);text-decoration:none;">Taşınma Hazırlık Listesi →</a>
+                            <a href="/blog/nakliyat-fiyati-nasil-hesaplanir" style="color:var(--black);text-decoration:none;">Nakliyat Fiyatı Nasıl Hesaplanır →</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

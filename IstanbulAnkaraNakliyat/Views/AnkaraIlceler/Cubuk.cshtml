@@ -96,6 +96,19 @@
             <div class="col-6 col-md-2-4">
                 <div style="font-size:1.5rem;font-weight:700;color:var(--black);">7/24</div>
                 <div style="font-size:.82rem;color:#555;">Müşteri Desteği</div>
+
+                <div style="border:1px solid #e0e0e0;border-radius:10px;padding:24px;">
+                    <h4 style="font-size:1rem;font-weight:700;margin-bottom:12px;">Maliyet Hesapla</h4>
+                    <p style="font-size:.88rem;color:var(--gray-600);margin-bottom:.75rem;">Taşıma maliyetinizi anında hesaplayın.</p>
+                    <a href="/nakliyat-maliyet-hesaplayici" style="display:block;background:var(--black);color:#fff;text-align:center;padding:10px;border-radius:6px;font-weight:600;text-decoration:none;font-size:.88rem;">🧮 Hesaplayıcıyı Aç →</a>
+                </div>
+
+                <div style="border:1px solid #e0e0e0;border-radius:10px;padding:24px;">
+                    <h4 style="font-size:1rem;font-weight:700;margin-bottom:12px;">Müşteri Yorumları</h4>
+                    <p style="font-size:.88rem;color:var(--gray-600);margin-bottom:.75rem;">Gerçek müşterilerimizin deneyimlerini okuyun.</p>
+                    <a href="/yorumlar" style="display:block;background:var(--black);color:#fff;text-align:center;padding:10px;border-radius:6px;font-weight:600;text-decoration:none;font-size:.88rem;">⭐ Yorumları Gör →</a>
+                </div>
+
             </div>
         </div>
     </div>
@@ -105,52 +118,45 @@
     <div class="row g-5">
         <div class="col-lg-8">
 
-            <h2 style="font-size:1.6rem;font-weight:700;margin-bottom:20px;">Çubuk'tan İstanbul'a Nakliyat</h2>
-            <p>Çubuk, Ankara'nın kuzeyinde yer alan ve tarım ile kırsal yaşamın ön planda olduğu bir ilçedir. İlçe merkezi ve çevresindeki köy mahalleleri, sakin ve geniş arazilerden oluşmaktadır. Bu yapı yükleme süreçlerini kolaylaştırırken kırsal kesimde stabilize yollar özel araç seçimi gerektirebilir.</p>
-            <p>Çubuk'tan İstanbul'a taşınmak isteyen vatandaşlara hem komple ev taşıması hem de parsiyel yük hizmeti sunmaktayız. Az eşyayla İstanbul'a geçmek isteyenler için parsiyel yük seçeneği önemli bir maliyet avantajı sağlamaktadır. Tüm taşımalarda eşyalarınız nakliyat sigortasıyla güvence altındadır.</p>
-
+            <h2 style="margin-bottom:1rem;">Çubuk'tan İstanbul'a Nakliyat</h2>
+            <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                <strong>Çubuk</strong>, Ankara merkezine yaklaşık 40 km uzaklıkta, kuzey yönünde yer alan ve turşuluğuyla ün kazanmış bir tarım ilçesidir. Çubuk I ve II barajları çevresindeki konutlar, Çubuk Merkez'deki küçük apartmanlar ve Kıbrıs mahallesi ile Gökçeören gibi semtler taşıma coğrafyasını oluşturmaktadır. <strong>Çubuk'tan İstanbul'a nakliyat</strong> güzergahı, Ankara üzerinden TEM'e bağlanarak gerçekleştirilir.
+            </p>
+            <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                Çubuk Merkez ve Kıbrıs mahallesindeki apartmanlarda standart operasyon uygulanmaktadır. Ancak Gökçeören, Kağlayangil ve Esenkaya gibi köy mahallelerinde dar ve stabilize yollara rastlanabilir; bu noktalarda küçük araçla yükleme yapılıp Çubuk çıkışındaki büyük yolda aktarma gerçekleştirilir. Baraj çevresindeki konutlarda mevsimsel kullanım nedeniyle ikinci ev eşyası taşımaları da sıkça yapılmaktadır.
+            </p>
+            <p style="margin-bottom:2rem;line-height:1.9;color:var(--gray-700);">
+                Az eşyayla İstanbul'a geçmek isteyen Çubuklu müşterilerimiz için <strong>parsiyel yük</strong> hizmeti en uygun maliyet seçeneğidir. Kıbrıs mahallesi sakinleri ve turşu üreticisi ailelerin taşınmalarında deneyimli ekibimiz güvenilir bir çözüm sunar. Tüm taşımalarda nakliyat sigortası standarttır; keşif ücretsizdir.
+            </p>
 
             <figure style="margin:1.75rem 0 2rem;">
-                <img src="~/img/galeri/galeri6.jpeg" loading="lazy"
+                <img src="~/img/galeri/galeri6.webp" loading="lazy"
                      style="width:100%;border-radius:var(--radius-lg);object-fit:cover;max-height:380px;"
                      onerror="this.style.display='none'">
             </figure>
-            <h3 style="font-size:1.25rem;font-weight:700;margin:36px 0 16px;">Hizmetlerimiz</h3>
-            <div class="row g-3">
-                @foreach (var s in new[] {
-                    new { I="🏠", T="Evden Eve Nakliyat", A="Çubuk'taki evinizden İstanbul'a kapıdan kapıya taşıma hizmeti." },
-                    new { I="📦", T="Parsiyel Yük", A="Az eşya taşımalarında diğer yüklerle birleştirilerek ekonomik taşıma." },
-                    new { I="🔧", T="Söküm-Montaj", A="Tüm mobilya ve beyaz eşyalarda söküm ve montaj hizmeti dahildir." },
-                    new { I="🚜", T="Kırsal Ev Taşıma", A="Köy mahalleleri ve tarım alanlarındaki evlerden özel araçlarla taşıma." },
-                    new { I="🛡️", T="Sigortalı Taşıma", A="Nakliyat sigortasıyla tüm eşyalarınız güvence altındadır." },
-                    new { I="🏢", T="Ofis Taşıma", A="Çubuk'taki iş yerlerinden İstanbul'a düzenli ofis taşıma hizmeti." }
-                })
-                {
-                    <div class="col-md-6">
-                        <div class="service-card" style="border:1px solid #e0e0e0;border-radius:8px;padding:20px;height:100%;">
-                            <div class="service-icon" style="font-size:2rem;margin-bottom:10px;">@s.I</div>
-                            <h4 style="font-size:1rem;font-weight:700;margin-bottom:8px;">@s.T</h4>
-                            <p style="font-size:.9rem;color:#555;margin:0;">@s.A</p>
-                        </div>
-                    </div>
-                }
+            <h2 style="margin-bottom:1.25rem;">Çubuk'ta Sunduğumuz Nakliyat Hizmetleri</h2>
+            <div class="row" style="row-gap:1.25rem;margin-bottom:2.5rem;">
+                <div class="col-md-6"><div class="service-card" style="height:100%;padding:1.5rem;"><div class="service-icon" aria-hidden="true" style="width:40px;height:40px;font-size:1.2rem;">🏠</div><h3 style="font-size:1rem;margin-bottom:.6rem;">Evden Eve Nakliyat</h3><p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;">Çubuk Merkez, Kıbrıs Mahallesi, Gökçeören ve Esenkaya'dan İstanbul'a tam kapıdan kapıya taşıma.</p><a href="/evden-eve-nakliyat" style="font-size:.85rem;font-weight:600;margin-top:.75rem;display:inline-block;">Detaylı Bilgi →</a></div></div>
+                <div class="col-md-6"><div class="service-card" style="height:100%;padding:1.5rem;"><div class="service-icon" aria-hidden="true" style="width:40px;height:40px;font-size:1.2rem;">📦</div><h3 style="font-size:1rem;margin-bottom:.6rem;">Parsiyel / Parça Eşya Taşıma</h3><p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;">Çubuk'tan İstanbul'a az eşyayla taşınanlar için ekonomik parsiyel yük çözümü.</p><a href="/parca-esya-tasima" style="font-size:.85rem;font-weight:600;margin-top:.75rem;display:inline-block;">Detaylı Bilgi →</a></div></div>
+                <div class="col-md-6"><div class="service-card" style="height:100%;padding:1.5rem;"><div class="service-icon" aria-hidden="true" style="width:40px;height:40px;font-size:1.2rem;">🏢</div><h3 style="font-size:1rem;margin-bottom:.6rem;">Ofis Taşıma</h3><p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;">Çubuk'taki iş yerinizi minimum iş kaybıyla İstanbul'a taşıyoruz.</p><a href="/ofis-tasima" style="font-size:.85rem;font-weight:600;margin-top:.75rem;display:inline-block;">Detaylı Bilgi →</a></div></div>
+                <div class="col-md-6"><div class="service-card" style="height:100%;padding:1.5rem;"><div class="service-icon" aria-hidden="true" style="width:40px;height:40px;font-size:1.2rem;">🎁</div><h3 style="font-size:1rem;margin-bottom:.6rem;">Ambalaj &amp; Paketleme</h3><p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;">Balonlu naylon, streç film ve köpük koruyucularla profesyonel ambalaj hizmeti.</p><a href="/ambalaj-hizmeti" style="font-size:.85rem;font-weight:600;margin-top:.75rem;display:inline-block;">Detaylı Bilgi →</a></div></div>
             </div>
 
-            <h3 style="font-size:1.25rem;font-weight:700;margin:36px 0 16px;">Taşıma Süreci</h3>
-            <div style="counter-reset:steps;">
-                @foreach (var step in new[] {
-                    "Ücretsiz keşif için randevu alınır, eşya listesi çıkarılır.",
-                    "Taşıma günü ve fiyat netleştirilir, sözleşme imzalanır.",
-                    "Profesyonel ekip eşyaları paketler ve araca yükler.",
-                    "İstanbul'a hareket edilir, güzergah boyunca takip sağlanır.",
-                    "İstanbul'daki yeni adresinizde eşyalar boşaltılır ve yerleştirilir."
-                })
-                {
-                    <div style="display:flex;gap:16px;margin-bottom:16px;align-items:flex-start;">
-                        <div style="background:var(--black);color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">@(Array.IndexOf(new[]{"Ücretsiz keşif için randevu alınır, eşya listesi çıkarılır.","Taşıma günü ve fiyat netleştirilir, sözleşme imzalanır.","Profesyonel ekip eşyaları paketler ve araca yükler.","İstanbul'a hareket edilir, güzergah boyunca takip sağlanır.","İstanbul'daki yeni adresinizde eşyalar boşaltılır ve yerleştirilir."},step)+1)</div>
-                        <p style="margin:0;padding-top:4px;">@step</p>
-                    </div>
-                }
+            <h2 style="margin-bottom:1rem;">Çubuk Nakliyatında Bilmeniz Gerekenler</h2>
+            <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                Çubuk'un kırsal mahallelerinde dar ve stabilize yollar bulunabilmektedir. Bu gibi durumlarda küçük araçla yükleme yapılıp ana yolda aktarım yöntemi uygulanmaktadır. Parsiyel yük hizmetimiz az eşyayla taşınanlar için en uygun maliyet seçeneğidir.
+            </p>
+            <p style="margin-bottom:2.5rem;line-height:1.9;color:var(--gray-700);">
+                Çubuk'tan İstanbul'a güzergah TEM bağlantısıyla hızlı tamamlanır. Tüm taşımalarda nakliyat sigortası standarttır; keşif ücretsizdir.
+            </p>
+
+            <h2 style="margin-bottom:1.5rem;">Çubuk Nakliyat Sürecimiz</h2>
+            <div style="margin-bottom:2.5rem;">
+                <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">1</div><div><h3 style="font-size:1rem;margin-bottom:.4rem;">Ücretsiz Keşif</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">Eksperimiz Çubuk adresinize gelir. Bina tipi, kat, yol koşulları ve eşya miktarını değerlendirir.</p></div></div>
+                <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">2</div><div><h3 style="font-size:1rem;margin-bottom:.4rem;">Sabit Fiyat Teklifi</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">Tüm kalemleri kapsayan yazılı teklif verilir. Verilen fiyat değişmez; sürpriz fatura çıkmaz.</p></div></div>
+                <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">3</div><div><h3 style="font-size:1rem;margin-bottom:.4rem;">Profesyonel Ambalajlama</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">Taşıma günü erken saatte Çubuk'a geliyoruz. Mobilyalar battaniye ve streç filmle, kırılganlar balonlu naylonla paketlenir.</p></div></div>
+                <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">4</div><div><h3 style="font-size:1rem;margin-bottom:.4rem;">Sigortalı Nakliye</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">Eşyalarınız kapalı kasalı araçlara yüklenerek TEM üzerinden İstanbul'a hareket edilir. ~450 km yolculuk 10–13 saatte tamamlanır.</p></div></div>
+                <div style="display:flex;gap:1.25rem;align-items:flex-start;"><div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">5</div><div><h3 style="font-size:1rem;margin-bottom:.4rem;">Yerleştirme ve Montaj</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">İstanbul'daki yeni adresinizde eşyalar boşaltılır, mobilyalar monte edilir. İşlem tamamlanana kadar yanınızdayız.</p></div></div>
             </div>
 
             <h3 style="font-size:1.25rem;font-weight:700;margin:36px 0 16px;">Fiyat Tablosu</h3>

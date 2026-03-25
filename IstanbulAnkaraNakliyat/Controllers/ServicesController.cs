@@ -112,4 +112,49 @@ public class ServicesController : Controller
         ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/istanbul-ankara-ceyiz-tasima";
         return View();
     }
+
+    [HttpGet("/istanbul-mahalle-rehberi")]
+    public IActionResult IstanbulMahalleRehberi()
+    {
+        ViewData["Title"]       = "İstanbul Mahalle Rehberi 2026 | Hangi İlçeye Taşınmalısınız?";
+        ViewData["Description"] = "Ankara'dan İstanbul'a taşınmadan önce bilinmesi gerekenler. Kadıköy, Beşiktaş, Ataşehir, Beylikdüzü ve diğer ilçelerin kira, ulaşım ve yaşam karşılaştırması.";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/istanbul-mahalle-rehberi";
+        return View();
+    }
+
+    [HttpGet("/nakliyat-sozlugu")]
+    public IActionResult NakliyatSozlugu()
+    {
+        ViewData["Title"]       = "Nakliyat Sözlüğü | Taşıma Terimlerinin Açıklamaları";
+        ViewData["Description"] = "Parsiyel, asansörlü taşıma, söküm-montaj, nakliyat sigortası ve daha fazlası. Nakliyat sektörünün tüm terimlerini sade Türkçe ile açıklıyoruz.";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/nakliyat-sozlugu";
+        return View();
+    }
+
+    [HttpGet("/ankara-mahalle-rehberi")]
+    public IActionResult AnkaraMahalleRehberi()
+    {
+        ViewData["Title"]       = "Ankara Mahalle Rehberi 2026 | Hangi İlçeye Taşınmalısınız?";
+        ViewData["Description"] = "Ankara'ya taşınmadan önce bilinmesi gerekenler. Çankaya, Keçiören, Eryaman, Gölbaşı ve diğer ilçelerin kira, ulaşım ve yaşam karşılaştırması.";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/ankara-mahalle-rehberi";
+        return View();
+    }
+
+    [HttpGet("/nakliyat-maliyet-hesaplayici")]
+    public IActionResult NakliyatMaliyetHesaplayici()
+    {
+        ViewData["Title"]       = "Nakliyat Maliyet Hesaplayıcı 2026 | Taşıma Ücretini Hesapla";
+        ViewData["Description"] = "İstanbul Ankara nakliyat maliyetini anında hesaplayın. Daire tipi, kat ve asansör bilginizi girin, tahmini fiyat aralığını öğrenin.";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/nakliyat-maliyet-hesaplayici";
+        return View();
+    }
+
+    [HttpGet("/nakliyat")]
+    public IActionResult Nakliyat()
+    {
+        ViewData["Title"]       = "Nakliyat | İstanbul Ankara Profesyonel Taşımacılık 2026";
+        ViewData["Description"] = "Evden eve nakliyat, şehirlerarası taşıma, parça eşya ve ofis taşıma hizmetleri. İstanbul Ankara güzergahında sigortalı, güvenilir nakliyat: 0532 543 68 37";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/nakliyat";
+        return View();
+    }
 }

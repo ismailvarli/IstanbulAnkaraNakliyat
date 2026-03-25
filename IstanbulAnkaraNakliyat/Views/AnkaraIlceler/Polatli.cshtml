@@ -96,6 +96,19 @@
             <div class="col-6 col-md-2-4">
                 <div style="font-size:1.5rem;font-weight:700;color:var(--black);">7/24</div>
                 <div style="font-size:.82rem;color:#555;">Müşteri Desteği</div>
+
+                <div style="border:1px solid #e0e0e0;border-radius:10px;padding:24px;">
+                    <h4 style="font-size:1rem;font-weight:700;margin-bottom:12px;">Maliyet Hesapla</h4>
+                    <p style="font-size:.88rem;color:var(--gray-600);margin-bottom:.75rem;">Taşıma maliyetinizi anında hesaplayın.</p>
+                    <a href="/nakliyat-maliyet-hesaplayici" style="display:block;background:var(--black);color:#fff;text-align:center;padding:10px;border-radius:6px;font-weight:600;text-decoration:none;font-size:.88rem;">🧮 Hesaplayıcıyı Aç →</a>
+                </div>
+
+                <div style="border:1px solid #e0e0e0;border-radius:10px;padding:24px;">
+                    <h4 style="font-size:1rem;font-weight:700;margin-bottom:12px;">Müşteri Yorumları</h4>
+                    <p style="font-size:.88rem;color:var(--gray-600);margin-bottom:.75rem;">Gerçek müşterilerimizin deneyimlerini okuyun.</p>
+                    <a href="/yorumlar" style="display:block;background:var(--black);color:#fff;text-align:center;padding:10px;border-radius:6px;font-weight:600;text-decoration:none;font-size:.88rem;">⭐ Yorumları Gör →</a>
+                </div>
+
             </div>
         </div>
     </div>
@@ -105,52 +118,46 @@
     <div class="row g-5">
         <div class="col-lg-8">
 
-            <h2 style="font-size:1.6rem;font-weight:700;margin-bottom:20px;">Polatlı'dan İstanbul'a Nakliyat</h2>
-            <p>Polatlı, Ankara'nın batısında yer alan ve tarihi Gordion antik kentine ev sahipliği yapan köklü bir ilçedir. İstanbul-Ankara karayoluna yakın konumuyla nakliyat süresini kısaltan Polatlı'dan İstanbul'a taşınmak isteyen vatandaşlara kapsamlı hizmet sunmaktayız. İlçe merkezi, çevre köyler ve kırsal mahallelerden taşıma yapılmaktadır.</p>
-            <p>Polatlı'nın düz ve geniş tarım arazileri üzerindeki yapısı, büyük araçların rahat hareket etmesine imkân tanır. Kırsal mahalle ve bağ evlerinden taşımalarda ise dar yollara uygun araçlar devreye girmektedir. Uzun mesafe taşımada tüm eşyalarınız nakliyat sigortasıyla güvence altındadır.</p>
-
+            <h2 style="margin-bottom:1rem;">Polatlı'dan İstanbul'a Nakliyat</h2>
+            <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                <strong>Polatlı</strong>, Ankara'nın güneybatısında merkeze yaklaşık 100 km uzaklıkta yer alan köklü bir ilçedir. 1921 yılında Kurtuluş Savaşı'nın kaderini belirleyen Sakarya Meydan Muharebesi'ne ev sahipliği yapan ilçe, bugün Polatlı Merkez, Sakarya Mahallesi, Temelli ve Cumhuriyet mahalleleriyle büyüyen bir kentsel dokuya sahiptir. <strong>Polatlı'dan İstanbul'a nakliyat</strong> güzergahında Ankara-Eskişehir yolu üzerinden Osmangazi Köprüsü'ne ulaşan karayolu hem hızlı hem konforlu bir sefere imkân tanır.
+            </p>
+            <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                Polatlı'nın düz tarım arazisi üzerindeki geniş dokusu büyük nakliye araçlarının rahat hareket etmesine olanak sağlar. Temelli ve çevre köylerdeki bağ evlerinden taşımalarda stabilize yollara uygun araçlar devreye girer. Yüksek hızlı tren hattı üzerinde bulunan ilçeden İstanbul'a ekonomik parsiyel yük hizmeti de aktif olarak sunulmaktadır.
+            </p>
+            <p style="margin-bottom:2rem;line-height:1.9;color:var(--gray-700);">
+                <strong>Polatlı – İstanbul</strong> güzergahında tüm eşyalar nakliyat sigortası kapsamındadır. Tahıl ticaretinin yoğun olduğu hasat dönemlerinde ağır araç trafiğini göz önünde bulundurarak erken yükleme saati planlaması yapılır. Ücretsiz keşif için ekibimizi arayın.
+            </p>
 
             <figure style="margin:1.75rem 0 2rem;">
-                <img src="~/img/galeri/galeri19.jpeg" loading="lazy"
+                <img src="~/img/galeri/galeri19.webp" loading="lazy"
                      style="width:100%;border-radius:var(--radius-lg);object-fit:cover;max-height:380px;"
                      onerror="this.style.display='none'">
             </figure>
-            <h3 style="font-size:1.25rem;font-weight:700;margin:36px 0 16px;">Hizmetlerimiz</h3>
-            <div class="row g-3">
-                @foreach (var s in new[] {
-                    new { I="🏠", T="Evden Eve Nakliyat", A="Polatlı'daki evinizden İstanbul'a kapıdan kapıya taşıma hizmeti." },
-                    new { I="📦", T="Parsiyel Yük", A="Az eşya taşımalarında ekonomik parsiyel yük seçeneği sunulmaktadır." },
-                    new { I="🔧", T="Söküm-Montaj", A="Tüm mobilya ve beyaz eşyalarda söküm ve montaj hizmeti dahildir." },
-                    new { I="🚜", T="Kırsal Bölge Taşıma", A="Polatlı'ya bağlı köy ve bağ evlerinden özel araçlarla taşıma yapılır." },
-                    new { I="🛡️", T="Sigortalı Taşıma", A="Nakliyat sigortasıyla tüm eşyalarınız güvence altındadır." },
-                    new { I="🏢", T="Ofis Taşıma", A="Polatlı'daki iş yerlerinden İstanbul'a düzenli ofis taşıma hizmeti." }
-                })
-                {
-                    <div class="col-md-6">
-                        <div class="service-card" style="border:1px solid #e0e0e0;border-radius:8px;padding:20px;height:100%;">
-                            <div class="service-icon" style="font-size:2rem;margin-bottom:10px;">@s.I</div>
-                            <h4 style="font-size:1rem;font-weight:700;margin-bottom:8px;">@s.T</h4>
-                            <p style="font-size:.9rem;color:#555;margin:0;">@s.A</p>
-                        </div>
-                    </div>
-                }
+
+            <h2 style="margin-bottom:1.25rem;">Polatlı'da Sunduğumuz Nakliyat Hizmetleri</h2>
+            <div class="row" style="row-gap:1.25rem;margin-bottom:2.5rem;">
+                <div class="col-md-6"><div class="service-card" style="height:100%;padding:1.5rem;"><div class="service-icon" aria-hidden="true" style="width:40px;height:40px;font-size:1.2rem;">🏠</div><h3 style="font-size:1rem;margin-bottom:.6rem;">Evden Eve Nakliyat</h3><p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;">Polatlı Merkez, Sakarya Mahallesi ve Temelli'den İstanbul'a tam kapıdan kapıya taşıma.</p><a href="/evden-eve-nakliyat" style="font-size:.85rem;font-weight:600;margin-top:.75rem;display:inline-block;">Detaylı Bilgi →</a></div></div>
+                <div class="col-md-6"><div class="service-card" style="height:100%;padding:1.5rem;"><div class="service-icon" aria-hidden="true" style="width:40px;height:40px;font-size:1.2rem;">📦</div><h3 style="font-size:1rem;margin-bottom:.6rem;">Parsiyel / Parça Eşya Taşıma</h3><p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;">Polatlı'dan İstanbul'a az eşyayla taşınanlar için ekonomik parsiyel yük çözümü.</p><a href="/parca-esya-tasima" style="font-size:.85rem;font-weight:600;margin-top:.75rem;display:inline-block;">Detaylı Bilgi →</a></div></div>
+                <div class="col-md-6"><div class="service-card" style="height:100%;padding:1.5rem;"><div class="service-icon" aria-hidden="true" style="width:40px;height:40px;font-size:1.2rem;">🏢</div><h3 style="font-size:1rem;margin-bottom:.6rem;">Ofis Taşıma</h3><p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;">Polatlı'daki iş yerinizi minimum iş kaybıyla İstanbul'a taşıyoruz.</p><a href="/ofis-tasima" style="font-size:.85rem;font-weight:600;margin-top:.75rem;display:inline-block;">Detaylı Bilgi →</a></div></div>
+                <div class="col-md-6"><div class="service-card" style="height:100%;padding:1.5rem;"><div class="service-icon" aria-hidden="true" style="width:40px;height:40px;font-size:1.2rem;">🎁</div><h3 style="font-size:1rem;margin-bottom:.6rem;">Ambalaj &amp; Paketleme</h3><p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;">Balonlu naylon, streç film ve köpük koruyucularla profesyonel ambalaj hizmeti.</p><a href="/ambalaj-hizmeti" style="font-size:.85rem;font-weight:600;margin-top:.75rem;display:inline-block;">Detaylı Bilgi →</a></div></div>
             </div>
 
-            <h3 style="font-size:1.25rem;font-weight:700;margin:36px 0 16px;">Taşıma Süreci</h3>
-            <div style="counter-reset:steps;">
-                @foreach (var step in new[] {
-                    "Ücretsiz keşif için randevu alınır, eşya listesi çıkarılır.",
-                    "Taşıma günü ve fiyat netleştirilir, sözleşme imzalanır.",
-                    "Profesyonel ekip eşyaları paketler ve araca yükler.",
-                    "İstanbul'a hareket edilir, güzergah boyunca takip sağlanır.",
-                    "İstanbul'daki yeni adresinizde eşyalar boşaltılır ve yerleştirilir."
-                })
-                {
-                    <div style="display:flex;gap:16px;margin-bottom:16px;align-items:flex-start;">
-                        <div style="background:var(--black);color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">@(Array.IndexOf(new[]{"Ücretsiz keşif için randevu alınır, eşya listesi çıkarılır.","Taşıma günü ve fiyat netleştirilir, sözleşme imzalanır.","Profesyonel ekip eşyaları paketler ve araca yükler.","İstanbul'a hareket edilir, güzergah boyunca takip sağlanır.","İstanbul'daki yeni adresinizde eşyalar boşaltılır ve yerleştirilir."},step)+1)</div>
-                        <p style="margin:0;padding-top:4px;">@step</p>
-                    </div>
-                }
+            <h2 style="margin-bottom:1rem;">Polatlı Nakliyatında Bilmeniz Gerekenler</h2>
+            <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                Polatlı'nın Ankara-Eskişehir-İstanbul yoluna yakın konumu taşıma süresini kısaltmaktadır. Düz tarım arazisi üzerindeki geniş yapı stoğu büyük araç erişimine uygundur; kırsal köy ve bağ evlerinde ise stabilize yollara uygun araç planlaması yapılır.
+            </p>
+            <p style="margin-bottom:2.5rem;line-height:1.9;color:var(--gray-700);">
+                Hasat dönemlerinde (Temmuz–Ağustos) ilçedeki ağır araç yoğunluğunu göz önünde bulundurarak yükleme saatini sabahın erken saatlerine almak taşıma süresini optimize eder. Parsiyel yük hizmeti az eşyayla taşınanlar için ekonomik çözüm sunar.
+            </p>
+
+            <h2 style="margin-bottom:1.5rem;">Polatlı Nakliyat Sürecimiz</h2>
+            <div style="margin-bottom:2.5rem;">
+                <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">1</div><div><h3 style="font-size:1rem;margin-bottom:.4rem;">Ücretsiz Keşif</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">Eksperimiz Polatlı adresinize gelir. Bina tipi, kat, asansör ve eşya miktarını değerlendirir.</p></div></div>
+                <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">2</div><div><h3 style="font-size:1rem;margin-bottom:.4rem;">Sabit Fiyat Teklifi</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">Tüm kalemleri kapsayan yazılı teklif verilir. Verilen fiyat değişmez; sürpriz fatura çıkmaz.</p></div></div>
+                <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">3</div><div><h3 style="font-size:1rem;margin-bottom:.4rem;">Profesyonel Ambalajlama</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">Taşıma günü erken saatte Polatlı'ya geliyoruz. Mobilyalar battaniye ve streç filmle, kırılganlar balonlu naylonla paketlenir.</p></div></div>
+                <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">4</div><div><h3 style="font-size:1rem;margin-bottom:.4rem;">Sigortalı Nakliye</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">Eşyalarınız kapalı kasalı araçlara yüklenerek Ankara-Eskişehir güzergahından İstanbul'a hareket edilir. Yolculuk 9–12 saatte tamamlanır.</p></div></div>
+                <div style="display:flex;gap:1.25rem;align-items:flex-start;"><div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">5</div><div><h3 style="font-size:1rem;margin-bottom:.4rem;">Yerleştirme ve Montaj</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">İstanbul'daki yeni adresinizde eşyalar boşaltılır, mobilyalar monte edilir. İşlem tamamlanana kadar yanınızdayız.</p></div></div>
             </div>
 
             <h3 style="font-size:1.25rem;font-weight:700;margin:36px 0 16px;">Fiyat Tablosu</h3>
@@ -180,9 +187,6 @@
                     <span style="background:var(--gray-100);padding:6px 14px;border-radius:20px;font-size:.88rem;">@m</span>
                 }
             </div>
-
-            <h3 style="font-size:1.25rem;font-weight:700;margin:36px 0 16px;">Bilmeniz Gerekenler</h3>
-            <p>Polatlı'nın İstanbul karayoluna yakın konumu, taşıma süresini diğer Ankara ilçelerine kıyasla kısaltmaktadır. Kırsal mahalle ve bağ evlerinden taşımalarda stabilize yollara uygun araçlar kullanılmaktadır. Parsiyel yük hizmetimizle az eşyayla İstanbul'a taşınmak isteyenler için ekonomik seçenek mevcuttur. Tüm taşımalarda sigorta güvencesi standarttır.</p>
 
             <h3 style="font-size:1.25rem;font-weight:700;margin:36px 0 16px;">Neden Bizi Seçmelisiniz?</h3>
             <div class="row g-3">

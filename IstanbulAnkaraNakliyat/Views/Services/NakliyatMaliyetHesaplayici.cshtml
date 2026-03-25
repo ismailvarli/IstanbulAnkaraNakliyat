@@ -1,0 +1,305 @@
+@{
+    Layout = "_Layout";
+}
+
+@section Scripts {
+<script type="application/ld+json">
+{
+    "@@context": "https://schema.org",
+    "@@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.istanbulankaranakliyat.tr/" },
+        { "@@type": "ListItem", "position": 2, "name": "Nakliyat Ücretleri", "item": "https://www.istanbulankaranakliyat.tr/nakliyat-ucreti" },
+        { "@@type": "ListItem", "position": 3, "name": "Maliyet Hesaplayıcı", "item": "https://www.istanbulankaranakliyat.tr/nakliyat-maliyet-hesaplayici" }
+    ]
+}
+</script>
+<script type="application/ld+json">
+{
+    "@@context": "https://schema.org",
+    "@@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@@type": "Question",
+            "name": "İstanbul Ankara nakliyat maliyeti ne kadar?",
+            "acceptedAnswer": { "@@type": "Answer", "text": "2026 yılı itibarıyla 1+1 daire için 8.000–14.000 ₺, 2+1 daire için 12.000–20.000 ₺, 3+1 daire için 16.000–28.000 ₺ arasında değişmektedir. Kesin fiyat için ücretsiz keşif yapılmaktadır." }
+        },
+        {
+            "@@type": "Question",
+            "name": "Asansörsüz kat fiyatı nasıl etkiler?",
+            "acceptedAnswer": { "@@type": "Answer", "text": "Her asansörsüz kat, merdiven taşıma iş gücü nedeniyle toplam nakliyat maliyetini yaklaşık 500–1.500 ₺ artırabilir. 4. kat ve üzeri asansörsüz binalarda harici asansör (mobil vinç) gerekebilir." }
+        },
+        {
+            "@@type": "Question",
+            "name": "Parsiyel yük nakliyat fiyatı nasıl hesaplanır?",
+            "acceptedAnswer": { "@@type": "Answer", "text": "Parsiyel yükte yalnızca kapladığınız hacim (m³) için ücret ödersiniz. Genellikle 300–800 ₺/m³ arasında değişir. Az eşyada çok daha ekonomik olabilir." }
+        }
+    ]
+}
+</script>
+
+<script>
+(function () {
+    // Taban fiyatlar (₺) - 2026
+    var base = {
+        "1+1": { min: 8000,  max: 14000 },
+        "2+1": { min: 12000, max: 20000 },
+        "3+1": { min: 16000, max: 28000 },
+        "4+1": { min: 22000, max: 38000 },
+        "villa": { min: 30000, max: 55000 }
+    };
+
+    function calculate() {
+        var daire     = document.getElementById("daire").value;
+        var kat       = parseInt(document.getElementById("kat").value) || 1;
+        var asansor   = document.getElementById("asansor").value === "evet";
+        var sokim     = document.getElementById("sokim").checked;
+        var ambalaj   = document.getElementById("ambalaj").checked;
+        var parcaEsya = document.getElementById("parcaEsya").checked;
+
+        if (!daire) {
+            document.getElementById("sonuc").style.display = "none";
+            return;
+        }
+
+        var b = base[daire];
+        var minF = b.min, maxF = b.max;
+
+        // Kat faktörü (asansörsüz)
+        if (!asansor && kat > 1) {
+            var katEk = (kat - 1) * 800;
+            minF += katEk;
+            maxF += katEk + 400;
+        }
+
+        // Söküm-montaj
+        if (sokim) {
+            minF += 1500;
+            maxF += 2500;
+        }
+
+        // Profesyonel ambalaj
+        if (ambalaj) {
+            minF += 1000;
+            maxF += 1800;
+        }
+
+        // Parça eşya indirimi
+        if (parcaEsya) {
+            minF = Math.round(minF * 0.55);
+            maxF = Math.round(maxF * 0.60);
+        }
+
+        document.getElementById("sonucMin").textContent = minF.toLocaleString("tr-TR") + " ₺";
+        document.getElementById("sonucMax").textContent = maxF.toLocaleString("tr-TR") + " ₺";
+
+        var aciklamalar = [];
+        if (!asansor && kat > 1) aciklamalar.push("Asansörsüz " + kat + ". kat ek maliyeti hesaba katıldı.");
+        if (sokim) aciklamalar.push("Söküm-montaj hizmeti dahil.");
+        if (ambalaj) aciklamalar.push("Profesyonel ambalaj hizmeti dahil.");
+        if (parcaEsya) aciklamalar.push("Parsiyel yük fiyatı gösterilmektedir (tam araç değil).");
+        document.getElementById("sonucAciklama").innerHTML = aciklamalar.map(function(a){ return "• " + a; }).join("<br>");
+
+        document.getElementById("sonuc").style.display = "block";
+    }
+
+    window.addEventListener("DOMContentLoaded", function () {
+        ["daire","kat","asansor"].forEach(function(id){
+            document.getElementById(id).addEventListener("change", calculate);
+        });
+        ["sokim","ambalaj","parcaEsya"].forEach(function(id){
+            document.getElementById(id).addEventListener("change", calculate);
+        });
+    });
+})();
+</script>
+}
+
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb-list">
+            <li><a href="/">Ana Sayfa</a></li><li>›</li>
+            <li><a href="/nakliyat-ucreti">Nakliyat Ücretleri</a></li><li>›</li>
+            <li aria-current="page">Maliyet Hesaplayıcı</li>
+        </ol>
+    </div>
+</nav>
+
+<div class="page-header">
+    <div class="container">
+        <h1>Nakliyat Maliyet Hesaplayıcı</h1>
+        <p>İstanbul–Ankara arası taşıma maliyetinizi anında hesaplayın — daire tipi, kat ve hizmet seçeneklerinizi girin</p>
+    </div>
+</div>
+
+<section style="padding:64px 0;">
+    <div class="container">
+        <div class="row g-5">
+
+            <!-- Hesaplayıcı -->
+            <div class="col-lg-7">
+
+                <div style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:2rem;">
+                    <h2 style="font-size:1.2rem;font-weight:700;margin-bottom:1.5rem;">Bilgilerinizi Girin</h2>
+
+                    <div style="margin-bottom:1.25rem;">
+                        <label style="font-size:.9rem;font-weight:600;display:block;margin-bottom:.5rem;">Daire / Konut Tipi</label>
+                        <select id="daire" style="width:100%;padding:10px 14px;border:1px solid #d0d0d0;border-radius:6px;font-size:.92rem;background:#fff;">
+                            <option value="">— Seçiniz —</option>
+                            <option value="1+1">1+1 Daire</option>
+                            <option value="2+1">2+1 Daire</option>
+                            <option value="3+1">3+1 Daire</option>
+                            <option value="4+1">4+1 Daire</option>
+                            <option value="villa">Villa / 5+1 ve üzeri</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom:1.25rem;">
+                        <label style="font-size:.9rem;font-weight:600;display:block;margin-bottom:.5rem;">Hangi Katta Oturuyorsunuz?</label>
+                        <input id="kat" type="number" min="1" max="30" value="1" style="width:100%;padding:10px 14px;border:1px solid #d0d0d0;border-radius:6px;font-size:.92rem;">
+                    </div>
+
+                    <div style="margin-bottom:1.25rem;">
+                        <label style="font-size:.9rem;font-weight:600;display:block;margin-bottom:.5rem;">Binada Asansör Var mı?</label>
+                        <select id="asansor" style="width:100%;padding:10px 14px;border:1px solid #d0d0d0;border-radius:6px;font-size:.92rem;background:#fff;">
+                            <option value="evet">Evet, asansör var</option>
+                            <option value="hayir">Hayır, asansör yok</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom:1.5rem;">
+                        <label style="font-size:.9rem;font-weight:600;display:block;margin-bottom:.75rem;">Ek Hizmetler (isteğe bağlı)</label>
+                        <div style="display:flex;flex-direction:column;gap:.6rem;">
+                            <label style="display:flex;align-items:center;gap:.6rem;font-size:.9rem;cursor:pointer;">
+                                <input type="checkbox" id="sokim" style="width:16px;height:16px;">
+                                Söküm-Montaj Hizmeti
+                                <span style="font-size:.8rem;color:#888;">(+1.500–2.500 ₺)</span>
+                            </label>
+                            <label style="display:flex;align-items:center;gap:.6rem;font-size:.9rem;cursor:pointer;">
+                                <input type="checkbox" id="ambalaj" style="width:16px;height:16px;">
+                                Profesyonel Ambalajlama
+                                <span style="font-size:.8rem;color:#888;">(+1.000–1.800 ₺)</span>
+                            </label>
+                            <label style="display:flex;align-items:center;gap:.6rem;font-size:.9rem;cursor:pointer;">
+                                <input type="checkbox" id="parcaEsya" style="width:16px;height:16px;">
+                                Parsiyel Yük (az eşya)
+                                <span style="font-size:.8rem;color:#888;">(~%45 indirimli)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- SONUÇ -->
+                    <div id="sonuc" style="display:none;background:var(--gray-100);border-radius:10px;padding:1.5rem;margin-top:.5rem;">
+                        <div style="font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#888;margin-bottom:.75rem;">Tahmini Maliyet</div>
+                        <div style="display:flex;align-items:baseline;gap:.75rem;margin-bottom:.5rem;flex-wrap:wrap;">
+                            <span id="sonucMin" style="font-size:2rem;font-weight:800;color:var(--black);"></span>
+                            <span style="color:#888;">–</span>
+                            <span id="sonucMax" style="font-size:2rem;font-weight:800;color:var(--black);"></span>
+                        </div>
+                        <div id="sonucAciklama" style="font-size:.82rem;color:#666;line-height:1.7;margin-bottom:1rem;"></div>
+                        <p style="font-size:.8rem;color:#999;margin-bottom:1rem;">* Bu hesaplama tahminidir. Kesin fiyat ücretsiz keşif sonrası belirlenir. KDV dahildir.</p>
+                        <a href="tel:+905325436837" style="display:inline-block;background:var(--black);color:#fff;padding:11px 24px;border-radius:6px;font-weight:700;text-decoration:none;font-size:.9rem;">📞 Kesin Teklif Al: 0532 543 68 37</a>
+                        <a href="https://wa.me/905325436837" target="_blank" style="display:inline-block;background:#25D366;color:#fff;padding:11px 24px;border-radius:6px;font-weight:700;text-decoration:none;font-size:.9rem;margin-left:.5rem;">WhatsApp</a>
+                    </div>
+
+                </div>
+
+                <!-- Fiyat Faktörleri -->
+                <h2 style="margin-top:2.5rem;margin-bottom:1.25rem;font-size:1.2rem;">Nakliyat Fiyatını Etkileyen Faktörler</h2>
+                <div class="row g-3 mb-4">
+                    @foreach (var f in new[] {
+                        new { I="📐", T="Eşya Hacmi (m³)", A="Taşınan eşyanın kapladığı hacim, araç büyüklüğünü ve ekip sayısını belirler. Daha fazla hacim = daha yüksek maliyet." },
+                        new { I="🏢", T="Kat & Asansör", A="Her asansörsüz kat ek işgücü gerektirir. 5. kat ve üzeri asansörsüz binalarda harici vinç gerekebilir." },
+                        new { I="📦", T="Ambalaj Tercihi", A="Kırılgan eşyaların profesyonel ambalajlanması ek maliyete yol açar, ancak hasara karşı koruma sağlar." },
+                        new { I="🛠️", T="Söküm-Montaj", A="Mobilyaların söküp monte edilmesi ek zaman ve işgücü gerektirir; fiyata yansır." },
+                        new { I="📅", T="Taşıma Tarihi", A="Yoğun sezonlarda (Temmuz-Ağustos, ay başı-sonu) fiyatlar %10–20 artabilir. Hafta içi sabah saatleri daha ekonomiktir." },
+                        new { I="🛣️", T="Mesafe & Güzergah", A="İstanbul–Ankara güzergahı ~450 km'dir. Yükleme/boşaltma adresleri güzergahı etkileyebilir." }
+                    })
+                    {
+                        <div class="col-md-6">
+                            <div style="border:1px solid #e0e0e0;border-radius:8px;padding:1.25rem;height:100%;">
+                                <div style="font-size:1.5rem;margin-bottom:.6rem;">@f.I</div>
+                                <h3 style="font-size:.95rem;font-weight:700;margin-bottom:.5rem;">@f.T</h3>
+                                <p style="font-size:.85rem;color:#555;margin:0;line-height:1.6;">@f.A</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <!-- Referans Fiyat Tablosu -->
+                <h2 style="margin-bottom:1rem;font-size:1.2rem;">2026 Referans Fiyat Tablosu</h2>
+                <div class="price-table" style="margin-bottom:2.5rem;">
+                    <div class="price-row price-row--header"><span>Konut Tipi</span><span>Hacim</span><span>Fiyat Aralığı</span></div>
+                    <div class="price-row"><span>1+1 Daire</span><span>15–25 m³</span><span>8.000 – 14.000 ₺</span></div>
+                    <div class="price-row"><span>2+1 Daire</span><span>25–40 m³</span><span>12.000 – 20.000 ₺</span></div>
+                    <div class="price-row"><span>3+1 Daire</span><span>40–60 m³</span><span>16.000 – 28.000 ₺</span></div>
+                    <div class="price-row"><span>4+1 / Villa</span><span>60–100+ m³</span><span>Keşif Sonrası</span></div>
+                    <div class="price-row"><span>Parsiyel (m³)</span><span>1–15 m³</span><span>300 – 800 ₺/m³</span></div>
+                    <div class="price-row"><span>Ofis Taşıma</span><span>Değişken</span><span>Keşif Sonrası</span></div>
+                </div>
+                <p style="font-size:.82rem;color:#888;margin-bottom:2.5rem;">* Fiyatlara KDV dahildir. Asansörsüz kat, özel ekipman gerektiren eşya ve hafta sonu operasyonları için ek ücret uygulanabilir.</p>
+
+                <!-- SSS -->
+                <h2 style="margin-bottom:1.25rem;font-size:1.2rem;">Sık Sorulan Sorular</h2>
+                <div style="display:flex;flex-direction:column;gap:.75rem;">
+                    @foreach (var faq in new[] {
+                        new { Q="İstanbul Ankara nakliyat maliyeti ne kadar?", A="2026 yılı itibarıyla 1+1 daire için 8.000–14.000 ₺, 2+1 için 12.000–20.000 ₺, 3+1 için 16.000–28.000 ₺ arasında değişmektedir. Kesin fiyat için ücretsiz keşif yapılmaktadır." },
+                        new { Q="Asansörsüz kat fiyatı nasıl etkiler?", A="Her asansörsüz kat yaklaşık 800–1.200 ₺ ek maliyete yol açar. 4. kat ve üzeri asansörsüz binalarda harici lift gerekebilir." },
+                        new { Q="Parsiyel yük ne kadar daha ucuz?", A="Parsiyel (parça eşya) nakliyat, tam araç kirasına kıyasla %40–55 daha ekonomik olabilir. Hacminize göre m³ bazında fiyatlandırılır." },
+                        new { Q="Fiyata ne dahil?", A="Standart hizmetimize söküm-montaj, ambalaj malzemesi ve nakliyat sigortası dahildir. Keşif sonrası sunulan yazılı teklifte tüm kalemler belirtilir." }
+                    })
+                    {
+                        <div style="border:1px solid #e0e0e0;border-radius:8px;overflow:hidden;">
+                            <div style="padding:14px 18px;font-weight:600;background:var(--gray-100);font-size:.92rem;">@faq.Q</div>
+                            <div style="padding:14px 18px;border-top:1px solid #e0e0e0;font-size:.9rem;color:var(--gray-700);">@faq.A</div>
+                        </div>
+                    }
+                </div>
+
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-5">
+                <div style="position:sticky;top:24px;display:flex;flex-direction:column;gap:1.5rem;">
+
+                    <div style="background:var(--black);color:#fff;border-radius:10px;padding:1.75rem;">
+                        <h3 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">Ücretsiz Keşif Talep Edin</h3>
+                        <p style="font-size:.88rem;opacity:.85;margin-bottom:1.25rem;">Hesaplayıcı tahmini fiyat verir. Kesin teklif için uzmanımız adresinize gelir, eşyaları değerlendirip sabit fiyat sunar.</p>
+                        <a href="tel:+905325436837" style="display:block;background:#fff;color:var(--black);text-align:center;padding:12px;border-radius:6px;font-weight:700;text-decoration:none;margin-bottom:.75rem;">📞 0532 543 68 37</a>
+                        <a href="https://wa.me/905325436837" target="_blank" style="display:block;background:#25D366;color:#fff;text-align:center;padding:12px;border-radius:6px;font-weight:700;text-decoration:none;">WhatsApp ile Yaz</a>
+                    </div>
+
+                    <div style="border:1px solid #e0e0e0;border-radius:10px;padding:1.5rem;">
+                        <h4 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">💡 Maliyet Düşürme İpuçları</h4>
+                        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.75rem;font-size:.88rem;color:var(--gray-700);">
+                            <li>✅ Ay ortasında taşının — ay başı/sonu yüksek sezondur</li>
+                            <li>✅ Mümkünse hafta içi erken sabah seçin</li>
+                            <li>✅ Kullanmadığınız eşyaları önceden atın/satın</li>
+                            <li>✅ Az eşyanız varsa parsiyel yük tercih edin</li>
+                            <li>✅ Ambalajı kendiniz yaparsanız maliyet düşer</li>
+                            <li>✅ Söküm-montajı yapabileceklerinizi kendiniz yapın</li>
+                        </ul>
+                    </div>
+
+                    <div style="border:1px solid #e0e0e0;border-radius:10px;padding:1.5rem;">
+                        <h4 style="font-size:1rem;font-weight:700;margin-bottom:.75rem;">Hizmetlerimiz</h4>
+                        <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.88rem;">
+                            <a href="/evden-eve-nakliyat" style="color:var(--black);text-decoration:none;">🏠 Evden Eve Nakliyat →</a>
+                            <a href="/ofis-tasima" style="color:var(--black);text-decoration:none;">🏢 Ofis Taşıma →</a>
+                            <a href="/parca-esya-tasima" style="color:var(--black);text-decoration:none;">📦 Parça Eşya Taşıma →</a>
+                            <a href="/nakliyat-ucreti" style="color:var(--black);text-decoration:none;">💰 Detaylı Fiyat Listesi →</a>
+                        </div>
+                    </div>
+
+                    <div style="border:1px solid #e0e0e0;border-radius:10px;padding:1.5rem;">
+                        <h4 style="font-size:1rem;font-weight:700;margin-bottom:.75rem;">Müşteri Yorumları</h4>
+                        <p style="font-size:.88rem;color:var(--gray-600);margin-bottom:.75rem;">Diğer müşterilerimizin taşınma deneyimlerini okuyun.</p>
+                        <a href="/yorumlar" style="display:block;background:var(--black);color:#fff;text-align:center;padding:10px;border-radius:6px;font-weight:600;text-decoration:none;font-size:.88rem;">Yorumları Gör (4.9 ★) →</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

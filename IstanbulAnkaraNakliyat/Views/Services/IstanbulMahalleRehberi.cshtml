@@ -1,0 +1,345 @@
+@{
+    Layout = "_Layout";
+}
+
+@section Scripts {
+<script type="application/ld+json">
+{
+    "@@context": "https://schema.org",
+    "@@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.istanbulankaranakliyat.tr/" },
+        { "@@type": "ListItem", "position": 2, "name": "İstanbul Nakliyat", "item": "https://www.istanbulankaranakliyat.tr/istanbul-nakliyat" },
+        { "@@type": "ListItem", "position": 3, "name": "İstanbul Mahalle Rehberi", "item": "https://www.istanbulankaranakliyat.tr/istanbul-mahalle-rehberi" }
+    ]
+}
+</script>
+<script type="application/ld+json">
+{
+    "@@context": "https://schema.org",
+    "@@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@@type": "Question",
+            "name": "Ankara'dan İstanbul'a taşınırken hangi ilçeyi seçmeliyim?",
+            "acceptedAnswer": { "@@type": "Answer", "text": "Seçim önceliklerinize bağlıdır. Kültürel yaşam ve merkezi konum için Kadıköy veya Beşiktaş, uygun fiyat ve modern konut için Beylikdüzü veya Esenyurt, deniz manzarası için Maltepe veya Sarıyer değerlendirilebilir." }
+        },
+        {
+            "@@type": "Question",
+            "name": "İstanbul'un en uygun fiyatlı ilçesi hangisi?",
+            "acceptedAnswer": { "@@type": "Answer", "text": "Esenyurt, Sultangazi ve Arnavutköy İstanbul'un en uygun kiralık fiyatlarını sunar. Beylikdüzü ise yeni binalar ve uygun fiyat dengesiyle genç aileler için popüler bir seçenektir." }
+        },
+        {
+            "@@type": "Question",
+            "name": "İstanbul'da toplu taşıma en güçlü ilçe hangisi?",
+            "acceptedAnswer": { "@@type": "Answer", "text": "Kadıköy, Beşiktaş ve Şişli metro, metrobüs, vapur ve otobüs hatlarıyla İstanbul'un en güçlü toplu taşıma ağına sahip ilçeleridir. Ataşehir ise M4 metro hattıyla iyi bağlantı sunar." }
+        },
+        {
+            "@@type": "Question",
+            "name": "Beylikdüzü'nde yaşamak nasıl?",
+            "acceptedAnswer": { "@@type": "Answer", "text": "Beylikdüzü, yeni ve büyük site projeleri, uygun kira fiyatları ve geniş alışveriş imkânlarıyla genç aileler için cazip bir ilçedir. Merkeze uzaklık ve metrobüs yoğunluğu dezavantajları arasındadır; ancak sahil şeridine yakınlığı artı yönüdür." }
+        }
+    ]
+}
+</script>
+}
+
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb-list">
+            <li><a href="/">Ana Sayfa</a></li><li>›</li>
+            <li><a href="/istanbul-nakliyat">İstanbul Nakliyat</a></li><li>›</li>
+            <li aria-current="page">İstanbul Mahalle Rehberi</li>
+        </ol>
+    </div>
+</nav>
+
+<div class="page-header">
+    <div class="container">
+        <h1>İstanbul Mahalle Rehberi 2026</h1>
+        <p>Ankara'dan İstanbul'a taşınmadan önce bilinmesi gerekenler — ilçe karşılaştırması, kira, ulaşım ve yaşam kalitesi</p>
+        <div style="display:flex;gap:.75rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <a href="tel:+905325436837" class="btn btn-primary" style="background:#fff;color:#0a0a0a;border-color:#fff;">
+                📞 İstanbul Taşıma Teklifi: 0532 543 68 37
+            </a>
+            <a href="https://wa.me/905325436837" target="_blank" rel="noopener noreferrer" class="btn btn-wa">WhatsApp ile Yaz</a>
+        </div>
+    </div>
+</div>
+
+<section style="padding:64px 0;">
+    <div class="container">
+        <div class="row g-5">
+
+            <!-- Ana İçerik -->
+            <div class="col-lg-8">
+
+                <h2 style="margin-bottom:1rem;">İstanbul'a Taşınmadan Önce İlçe Seçimi</h2>
+                <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                    Ankara'dan İstanbul'a taşınmak, 450 km'lik fiziksel mesafenin çok ötesinde bir değişimi ifade eder. 15 milyonu aşkın nüfusu, 39 ilçesi ve her biri birbirinden farklı yaşam dinamikleriyle İstanbul, nereye yerleşeceğiniz sorusunu son derece kritik bir hale getirir. Çalışma yerinize, bütçenize ve yaşam tarzınıza uygun ilçeyi önceden araştırmak; hem taşınma sonrası hayal kırıklığını hem de gereksiz ek taşıma maliyetlerini önler.
+                </p>
+                <p style="margin-bottom:2.5rem;line-height:1.9;color:var(--gray-700);">
+                    Bu rehberde sekiz önemli İstanbul ilçesini kira fiyatları, ulaşım kolaylığı, sosyal olanaklar ve yaşam tarzı açısından karşılaştırıyoruz. İlçenize karar verdikten sonra Ankara'daki evinizden İstanbul'daki yeni adresinize <a href="/evden-eve-nakliyat" style="color:var(--black);">güvenli nakliyat</a> için bizi arayabilirsiniz.
+                </p>
+
+                <!-- İlçe Kartları -->
+                @{
+                    var ilceler = new[]
+                    {
+                        new {
+                            Ad = "Kadıköy",
+                            Slug = "kadikoy",
+                            Ozellik = "Kültürel Merkez",
+                            Renk = "#1a1a1a",
+                            Aciklama = "İstanbul'un Anadolu yakasının kalbi olan Kadıköy; sanat galerileri, butik kafeler, pazar yerleri ve canlı gece hayatıyla kültürel açıdan en zengin ilçelerden biridir. Moda, Bağdat Caddesi ve Moda Çarşısı, genç profesyoneller ve sanat camiasının yoğun tercih ettiği mahallelerdir.",
+                            KiraMin = "15.000",
+                            KiraMax = "35.000+",
+                            Ulasim = "Metro (M4), metrobüs, vapur, otobüs",
+                            Hedef = "Genç profesyoneller, sanatçılar, akademisyenler",
+                            Artı = "Canlı kültür hayatı, güçlü ulaşım, vapur bağlantısı",
+                            Eksi = "Yüksek kira, park sorunu, gürültü"
+                        },
+                        new {
+                            Ad = "Beşiktaş",
+                            Slug = "besiktas",
+                            Ozellik = "Prestijli & Boğaz",
+                            Renk = "#2b2d42",
+                            Aciklama = "Avrupa yakasının en prestijli yaşam alanlarından olan Beşiktaş; Boğaz manzarası, üniversiteler (Boğaziçi, Yıldız Teknik) ve lüks konut projeleriyle öne çıkar. Levent, Etiler ve Bebek gibi mahalleleri üst gelir grubuna hitap ederken Beşiktaş merkez daha erişilebilir fiyatlar sunar.",
+                            KiraMin = "18.000",
+                            KiraMax = "50.000+",
+                            Ulasim = "Metro (M2), otobüs, vapur",
+                            Hedef = "Üst gelir, finans sektörü, akademisyenler",
+                            Artı = "Boğaz manzarası, prestij, üniversite çevresi",
+                            Eksi = "Çok yüksek kira, trafik, sınırlı park"
+                        },
+                        new {
+                            Ad = "Ataşehir",
+                            Slug = "atasehir",
+                            Ozellik = "Modern Finans Merkezi",
+                            Renk = "#1d3557",
+                            Aciklama = "İstanbul Finans Merkezi'nin konuşlandığı Ataşehir, modern plazalar, geniş bulvarlar ve yeni konut projeleriyle İstanbul'un hızla gelişen Anadolu yakası ilçesidir. Finans sektörü çalışanları, yöneticiler ve şirketler için stratejik bir konuma sahiptir.",
+                            KiraMin = "14.000",
+                            KiraMax = "30.000+",
+                            Ulasim = "Metro (M4), metrobüs, otobüs",
+                            Hedef = "Finans sektörü, yöneticiler, kurumsal çalışanlar",
+                            Artı = "Modern altyapı, iş merkezlerine yakınlık, M4 metro",
+                            Eksi = "Yüksek kira, yoğun trafik, ruhsuz şehir dokusu"
+                        },
+                        new {
+                            Ad = "Beylikdüzü",
+                            Slug = "beylikduzu",
+                            Ozellik = "Uygun & Sahil",
+                            Renk = "#2d6a4f",
+                            Aciklama = "Büyük site projelerinin ve sahil şeridinin ön plana çıktığı Beylikdüzü, uygun kira fiyatları ve modern yaşam imkânlarıyla genç ailelerin gözdesidir. Cumhuriyet ve Büyükşehir mahalleleri özellikle tercih edilir. Metrobüs hattı ile Avcılar üzerinden şehir merkezine bağlantı sağlanır.",
+                            KiraMin = "8.000",
+                            KiraMax = "18.000",
+                            Ulasim = "Metrobüs, otobüs; metro yok",
+                            Hedef = "Genç aileler, çiftler, bütçe odaklı taşınanlar",
+                            Artı = "Uygun kira, yeni binalar, sahil, geniş siteler",
+                            Eksi = "Merkeze uzaklık, metrobüs kalabalığı, trafik"
+                        },
+                        new {
+                            Ad = "Üsküdar",
+                            Slug = "uskudar",
+                            Ozellik = "Tarihi & Sakin",
+                            Renk = "#6b4226",
+                            Aciklama = "İstanbul'un en köklü Anadolu yakası ilçelerinden Üsküdar; Boğaz kıyısı, tarihi camiler ve köklü mahalle dokusunun yanı sıra Bağlarbaşı ve Çengelköy gibi sakin, yeşil konut alanlarını barındırır. Aile yaşamı ve huzurlu ortam arayanlar için idealdir.",
+                            KiraMin = "10.000",
+                            KiraMax = "25.000",
+                            Ulasim = "Metro (M5), vapur, otobüs",
+                            Hedef = "Aileler, emekliler, huzur arayanlar",
+                            Artı = "Sakin ortam, Boğaz manzarası, tarihi doku",
+                            Eksi = "Gece hayatı yok, bazı mahallelerde yokuş"
+                        },
+                        new {
+                            Ad = "Maltepe",
+                            Slug = "maltepe",
+                            Ozellik = "Deniz & Sakin",
+                            Renk = "#457b9d",
+                            Aciklama = "Anadolu yakasının plaj şeridiyle bilinen Maltepe, aileler için sakin bir yaşam sunar. Bağlarbaşı, Girne ve Maltepe Sahili ayrı yaşam tarzlarına hitap eder. Kira fiyatları Kadıköy'e kıyasla daha makul, toplu taşıma alt yapısı güçlüdür.",
+                            KiraMin = "10.000",
+                            KiraMax = "22.000",
+                            Ulasim = "Marmaray, otobüs, deniz otobüsü",
+                            Hedef = "Aileler, deniz severleri, orta gelir",
+                            Artı = "Sahil, sakin ortam, uygun kira, Marmaray",
+                            Eksi = "Gece hayatı sınırlı, merkeze uzaklık"
+                        },
+                        new {
+                            Ad = "Sarıyer",
+                            Slug = "sariyer",
+                            Ozellik = "Boğaz & Yeşil",
+                            Renk = "#1b4332",
+                            Aciklama = "Boğaz'ın Avrupa yakasında, Belgrad Ormanı'na komşu Sarıyer; Tarabya, Büyükdere ve Maslak gibi farklı profillerden oluşur. Maslak iş merkezi çalışanları için stratejik konum sunarken Tarabya ve Kireçburnu sakin ve doğayla iç içe bir yaşam sağlar.",
+                            KiraMin = "12.000",
+                            KiraMax = "40.000+",
+                            Ulasim = "Metro (M2 Maslak), otobüs, dolmuş",
+                            Hedef = "Doğaseverler, Maslak çalışanları, üst gelir",
+                            Artı = "Doğa, Boğaz, Maslak yakınlığı, sakinlik",
+                            Eksi = "Yüksek kira, ulaşım bazı mahallelerde zor"
+                        },
+                        new {
+                            Ad = "Esenyurt",
+                            Slug = "esenyurt",
+                            Ozellik = "Büyük & Uygun",
+                            Renk = "#780000",
+                            Aciklama = "İstanbul'un en kalabalık ilçesi olan Esenyurt, çok katlı toplu konut blokları ve uygun kira fiyatlarıyla ekonomik bir seçenek sunar. TEM otoyoluna yakınlığı İstanbul-Ankara yolculuklarında avantaj sağlar. Talatpaşa, Pınar ve Saadetdere mahallelerinde yoğun konut dokusu mevcuttur.",
+                            KiraMin = "6.000",
+                            KiraMax = "12.000",
+                            Ulasim = "Metrobüs (Beylikdüzü D-100), otobüs; metro yok",
+                            Hedef = "Düşük-orta gelir, işçi sınıfı, ekonomik taşınanlar",
+                            Artı = "En uygun kira, TEM erişimi, çok seçenek",
+                            Eksi = "Kalabalık, trafik, bazı mahallelerde eski altyapı"
+                        }
+                    };
+                }
+
+                @foreach (var ilce in ilceler)
+                {
+                    <div style="border:1px solid #e0e0e0;border-radius:12px;overflow:hidden;margin-bottom:2rem;">
+                        <div style="background:@ilce.Renk;color:#fff;padding:1.25rem 1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;">
+                            <div>
+                                <h2 style="font-size:1.2rem;font-weight:800;margin:0;color:#fff;">@ilce.Ad</h2>
+                                <span style="font-size:.8rem;opacity:.85;">@ilce.Ozellik</span>
+                            </div>
+                            <div style="background:rgba(255,255,255,.15);padding:.4rem 1rem;border-radius:20px;font-size:.82rem;font-weight:600;">
+                                @ilce.KiraMin – @ilce.KiraMax ₺/ay
+                            </div>
+                        </div>
+                        <div style="padding:1.5rem;">
+                            <p style="line-height:1.8;color:var(--gray-700);margin-bottom:1.25rem;font-size:.95rem;">@ilce.Aciklama</p>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div style="background:#f8f9fa;border-radius:8px;padding:1rem;">
+                                        <div style="font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#888;margin-bottom:.5rem;">Ulaşım</div>
+                                        <div style="font-size:.88rem;color:var(--gray-700);">@ilce.Ulasim</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div style="background:#f8f9fa;border-radius:8px;padding:1rem;">
+                                        <div style="font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#888;margin-bottom:.5rem;">Kim İçin Uygun?</div>
+                                        <div style="font-size:.88rem;color:var(--gray-700);">@ilce.Hedef</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div style="background:#f0fff4;border-radius:8px;padding:1rem;">
+                                        <div style="font-size:.8rem;font-weight:700;color:#2d6a4f;margin-bottom:.5rem;">✅ Avantajlar</div>
+                                        <div style="font-size:.88rem;color:var(--gray-700);">@ilce.Artı</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div style="background:#fff8f0;border-radius:8px;padding:1rem;">
+                                        <div style="font-size:.8rem;font-weight:700;color:#c05621;margin-bottom:.5rem;">⚠️ Dezavantajlar</div>
+                                        <div style="font-size:.88rem;color:var(--gray-700);">@ilce.Eksi</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top:1rem;">
+                                <a href="/@ilce.Slug-ankara-nakliyat" style="font-size:.85rem;font-weight:600;color:var(--black);text-decoration:none;">
+                                    @ilce.Ad – Ankara Nakliyat Detayları →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <!-- Karşılaştırma Tablosu -->
+                <h2 style="margin-bottom:1rem;margin-top:1rem;">Hızlı Karşılaştırma Tablosu</h2>
+                <div style="overflow-x:auto;margin-bottom:2.5rem;">
+                    <table style="width:100%;border-collapse:collapse;font-size:.88rem;">
+                        <thead>
+                            <tr style="background:var(--black);color:#fff;">
+                                <th style="padding:10px 14px;text-align:left;">İlçe</th>
+                                <th style="padding:10px 14px;text-align:center;">Kira (₺/ay)</th>
+                                <th style="padding:10px 14px;text-align:center;">Metro</th>
+                                <th style="padding:10px 14px;text-align:center;">Yakaya</th>
+                                <th style="padding:10px 14px;text-align:center;">Hedef Kitle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom:1px solid #e0e0e0;"><td style="padding:10px 14px;font-weight:600;">Kadıköy</td><td style="padding:10px 14px;text-align:center;">15.000–35.000+</td><td style="padding:10px 14px;text-align:center;">✅</td><td style="padding:10px 14px;text-align:center;">Anadolu</td><td style="padding:10px 14px;text-align:center;">Genç profesyoneller</td></tr>
+                            <tr style="border-bottom:1px solid #e0e0e0;background:#fafafa;"><td style="padding:10px 14px;font-weight:600;">Beşiktaş</td><td style="padding:10px 14px;text-align:center;">18.000–50.000+</td><td style="padding:10px 14px;text-align:center;">✅</td><td style="padding:10px 14px;text-align:center;">Avrupa</td><td style="padding:10px 14px;text-align:center;">Üst gelir</td></tr>
+                            <tr style="border-bottom:1px solid #e0e0e0;"><td style="padding:10px 14px;font-weight:600;">Ataşehir</td><td style="padding:10px 14px;text-align:center;">14.000–30.000+</td><td style="padding:10px 14px;text-align:center;">✅</td><td style="padding:10px 14px;text-align:center;">Anadolu</td><td style="padding:10px 14px;text-align:center;">Finans sektörü</td></tr>
+                            <tr style="border-bottom:1px solid #e0e0e0;background:#fafafa;"><td style="padding:10px 14px;font-weight:600;">Beylikdüzü</td><td style="padding:10px 14px;text-align:center;">8.000–18.000</td><td style="padding:10px 14px;text-align:center;">❌</td><td style="padding:10px 14px;text-align:center;">Avrupa</td><td style="padding:10px 14px;text-align:center;">Genç aileler</td></tr>
+                            <tr style="border-bottom:1px solid #e0e0e0;"><td style="padding:10px 14px;font-weight:600;">Üsküdar</td><td style="padding:10px 14px;text-align:center;">10.000–25.000</td><td style="padding:10px 14px;text-align:center;">✅</td><td style="padding:10px 14px;text-align:center;">Anadolu</td><td style="padding:10px 14px;text-align:center;">Aileler</td></tr>
+                            <tr style="border-bottom:1px solid #e0e0e0;background:#fafafa;"><td style="padding:10px 14px;font-weight:600;">Maltepe</td><td style="padding:10px 14px;text-align:center;">10.000–22.000</td><td style="padding:10px 14px;text-align:center;">❌</td><td style="padding:10px 14px;text-align:center;">Anadolu</td><td style="padding:10px 14px;text-align:center;">Aileler, deniz severleri</td></tr>
+                            <tr style="border-bottom:1px solid #e0e0e0;"><td style="padding:10px 14px;font-weight:600;">Sarıyer</td><td style="padding:10px 14px;text-align:center;">12.000–40.000+</td><td style="padding:10px 14px;text-align:center;">✅</td><td style="padding:10px 14px;text-align:center;">Avrupa</td><td style="padding:10px 14px;text-align:center;">Doğaseverler</td></tr>
+                            <tr><td style="padding:10px 14px;font-weight:600;">Esenyurt</td><td style="padding:10px 14px;text-align:center;">6.000–12.000</td><td style="padding:10px 14px;text-align:center;">❌</td><td style="padding:10px 14px;text-align:center;">Avrupa</td><td style="padding:10px 14px;text-align:center;">Ekonomik taşınanlar</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="font-size:.82rem;color:#888;margin-bottom:2.5rem;">* Kira fiyatları 2026 yılı yaklaşık değerlerdir. Mahalle ve bina özelliğine göre farklılık gösterebilir.</p>
+
+                <!-- SSS -->
+                <h2 style="margin-bottom:1.25rem;">Sık Sorulan Sorular</h2>
+                <div style="display:flex;flex-direction:column;gap:.75rem;margin-bottom:2.5rem;">
+                    @foreach (var faq in new[] {
+                        new { Q="Ankara'dan İstanbul'a taşınırken hangi ilçeyi seçmeliyim?", A="Önceliğinize göre değişir. Canlı kültür hayatı için Kadıköy, prestij ve Boğaz için Beşiktaş, uygun fiyat için Beylikdüzü, iş merkezine yakınlık için Ataşehir tercih edilebilir." },
+                        new { Q="İstanbul'un en uygun fiyatlı ilçesi hangisi?", A="Esenyurt, Sultangazi ve Arnavutköy en uygun kira fiyatlarını sunar. Beylikdüzü ise yeni binalarda makul fiyatlar ve modern yaşam imkânı sağlar." },
+                        new { Q="İstanbul'da toplu taşıma hangi ilçede en güçlü?", A="Kadıköy (M4 + vapur + metrobüs), Beşiktaş (M2) ve Ataşehir (M4) en güçlü toplu taşıma ağlarına sahiptir. Üsküdar'da M5 ve vapur hatları kullanılabilir." },
+                        new { Q="Ankara'dan İstanbul'a taşınmak Ankara'ya taşınmaktan daha mı pahalı?", A="Genellikle evet. İstanbul'da yaşam maliyeti Ankara'ya kıyasla %40-60 daha yüksektir. Kira başta olmak üzere market, ulaşım ve eğlence giderleri İstanbul'da belirgin biçimde fazladır." }
+                    })
+                    {
+                        <div style="border:1px solid #e0e0e0;border-radius:8px;overflow:hidden;">
+                            <div style="padding:14px 18px;font-weight:600;background:var(--gray-100);">@faq.Q</div>
+                            <div style="padding:14px 18px;border-top:1px solid #e0e0e0;font-size:.92rem;color:var(--gray-700);">@faq.A</div>
+                        </div>
+                    }
+                </div>
+
+                <!-- CTA -->
+                <div style="background:var(--black);color:#fff;border-radius:12px;padding:2rem;text-align:center;">
+                    <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:.75rem;">İstanbul'a Taşınmaya Hazır Mısınız?</h3>
+                    <p style="opacity:.85;margin-bottom:1.25rem;font-size:.92rem;">Ankara'dan İstanbul'a sigortalı ve güvenli nakliyat için hemen teklif alın.</p>
+                    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+                        <a href="tel:+905325436837" style="background:#fff;color:var(--black);padding:12px 28px;border-radius:6px;font-weight:700;text-decoration:none;">📞 0532 543 68 37</a>
+                        <a href="https://wa.me/905325436837" target="_blank" style="background:#25D366;color:#fff;padding:12px 28px;border-radius:6px;font-weight:700;text-decoration:none;">WhatsApp</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div style="position:sticky;top:24px;display:flex;flex-direction:column;gap:1.5rem;">
+
+                    <div style="background:var(--black);color:#fff;border-radius:10px;padding:1.75rem;">
+                        <h3 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">Ankara → İstanbul Taşıma</h3>
+                        <p style="font-size:.88rem;opacity:.85;margin-bottom:1.25rem;">Seçtiğiniz İstanbul ilçesine kapıdan kapıya nakliyat için hemen arayın.</p>
+                        <a href="tel:+905325436837" style="display:block;background:#fff;color:var(--black);text-align:center;padding:12px;border-radius:6px;font-weight:700;text-decoration:none;margin-bottom:.75rem;">📞 0532 543 68 37</a>
+                        <a href="https://wa.me/905325436837" target="_blank" style="display:block;background:#25D366;color:#fff;text-align:center;padding:12px;border-radius:6px;font-weight:700;text-decoration:none;">WhatsApp ile Yaz</a>
+                    </div>
+
+                    <div style="border:1px solid #e0e0e0;border-radius:10px;padding:1.5rem;">
+                        <h4 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">Maliyet Hesapla</h4>
+                        <p style="font-size:.88rem;color:var(--gray-600);margin-bottom:.75rem;">Taşıma maliyetinizi anında hesaplayın.</p>
+                        <a href="/nakliyat-maliyet-hesaplayici" style="display:block;background:var(--black);color:#fff;text-align:center;padding:11px;border-radius:6px;font-weight:600;text-decoration:none;font-size:.9rem;">🧮 Hesaplayıcıyı Aç →</a>
+                    </div>
+
+                    <div style="border:1px solid #e0e0e0;border-radius:10px;padding:1.5rem;">
+                        <h4 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">İstanbul İlçe Sayfaları</h4>
+                        <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.88rem;">
+                            <a href="/kadikoy-ankara-nakliyat" style="color:var(--black);text-decoration:none;padding:6px 0;border-bottom:1px solid #f0f0f0;">Kadıköy →</a>
+                            <a href="/besiktas-ankara-nakliyat" style="color:var(--black);text-decoration:none;padding:6px 0;border-bottom:1px solid #f0f0f0;">Beşiktaş →</a>
+                            <a href="/atasehir-ankara-nakliyat" style="color:var(--black);text-decoration:none;padding:6px 0;border-bottom:1px solid #f0f0f0;">Ataşehir →</a>
+                            <a href="/beylikduzu-ankara-nakliyat" style="color:var(--black);text-decoration:none;padding:6px 0;border-bottom:1px solid #f0f0f0;">Beylikdüzü →</a>
+                            <a href="/uskudar-ankara-nakliyat" style="color:var(--black);text-decoration:none;padding:6px 0;border-bottom:1px solid #f0f0f0;">Üsküdar →</a>
+                            <a href="/maltepe-ankara-nakliyat" style="color:var(--black);text-decoration:none;padding:6px 0;border-bottom:1px solid #f0f0f0;">Maltepe →</a>
+                            <a href="/sariyer-ankara-nakliyat" style="color:var(--black);text-decoration:none;padding:6px 0;">Sarıyer →</a>
+                        </div>
+                    </div>
+
+                    <div style="border:1px solid #e0e0e0;border-radius:10px;padding:1.5rem;">
+                        <h4 style="font-size:1rem;font-weight:700;margin-bottom:.75rem;">Faydalı Rehberler</h4>
+                        <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.88rem;">
+                            <a href="/ankara-mahalle-rehberi" style="color:var(--black);text-decoration:none;">Ankara Mahalle Rehberi →</a>
+                            <a href="/blog/evden-eve-nakliyat-oncesi-hazirlik" style="color:var(--black);text-decoration:none;">Taşınma Hazırlık Listesi →</a>
+                            <a href="/blog/nakliyat-fiyati-nasil-hesaplanir" style="color:var(--black);text-decoration:none;">Nakliyat Fiyatı Nasıl Hesaplanır →</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

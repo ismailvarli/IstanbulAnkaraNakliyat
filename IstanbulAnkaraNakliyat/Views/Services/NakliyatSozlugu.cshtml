@@ -1,0 +1,261 @@
+@{
+    Layout = "_Layout";
+}
+
+@section Scripts {
+<script type="application/ld+json">
+{
+    "@@context": "https://schema.org",
+    "@@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.istanbulankaranakliyat.tr/" },
+        { "@@type": "ListItem", "position": 2, "name": "Hizmetler", "item": "https://www.istanbulankaranakliyat.tr/hizmetler" },
+        { "@@type": "ListItem", "position": 3, "name": "Nakliyat Sözlüğü", "item": "https://www.istanbulankaranakliyat.tr/nakliyat-sozlugu" }
+    ]
+}
+</script>
+<script type="application/ld+json">
+{
+    "@@context": "https://schema.org",
+    "@@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@@type": "Question",
+            "name": "Parsiyel nakliyat ne demektir?",
+            "acceptedAnswer": { "@@type": "Answer", "text": "Parsiyel nakliyat, aynı güzergahta birden fazla müşteriye ait yüklerin tek araçta birleştirildiği taşıma yöntemidir. Az eşyayla uzun mesafe taşınanlar için tam araç kiralama yerine yalnızca kullandıkları hacim kadar ödeme yapmaları sağlanır." }
+        },
+        {
+            "@@type": "Question",
+            "name": "Nakliyat sigortası neyi kapsar?",
+            "acceptedAnswer": { "@@type": "Answer", "text": "Nakliyat sigortası, taşıma sırasında oluşabilecek kırılma, çizilme, ezilme veya kayıpları güvence altına alır. Sözleşmede belirtilen eşyalar sigorta kapsamında değerlendirilir; hasar durumunda ekspertiz sonucu tazminat ödenir." }
+        },
+        {
+            "@@type": "Question",
+            "name": "Sabit fiyat teklifi nedir?",
+            "acceptedAnswer": { "@@type": "Answer", "text": "Sabit fiyat teklifi, taşıma öncesi eksper ziyareti sonrasında eşya miktarı ve güzergah göz önünde bulundurularak belirlenen ve değişmeyeceği yazılı olarak taahhüt edilen fiyattır. Taşıma günü sürpriz ek ücret çıkmaz." }
+        },
+        {
+            "@@type": "Question",
+            "name": "Asansörlü taşıma ne anlama gelir?",
+            "acceptedAnswer": { "@@type": "Answer", "text": "Asansörlü taşıma, yüksek katlı binalarda büyük veya ağır mobilyaların bina asansörü yerine dışarıdan monte edilen mekanik platformla (nakliyat asansörü) taşınmasıdır. Dar merdivenli apartmanlarda hasar riskini ve iş gücünü önemli ölçüde azaltır." }
+        }
+    ]
+}
+</script>
+}
+
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb-list">
+            <li><a href="/">Ana Sayfa</a></li><li>›</li>
+            <li><a href="/hizmetler">Hizmetler</a></li><li>›</li>
+            <li aria-current="page">Nakliyat Sözlüğü</li>
+        </ol>
+    </div>
+</nav>
+
+<div class="page-header">
+    <div class="container">
+        <h1>Nakliyat Sözlüğü</h1>
+        <p>Taşıma sektörünün tüm terimlerini sade Türkçe ile açıklıyoruz — parsiyel, asansörlü taşıma, söküm-montaj ve daha fazlası</p>
+    </div>
+</div>
+
+<section style="padding:64px 0;">
+    <div class="container">
+        <div class="row g-5">
+
+            <!-- Ana İçerik -->
+            <div class="col-lg-8">
+
+                <p style="margin-bottom:2rem;line-height:1.9;color:var(--gray-700);">
+                    Nakliyat teklifi alırken karşılaştığınız terimleri anlamak, hem doğru hizmeti seçmenizi hem de fiyatı doğru değerlendirmenizi sağlar. Aşağıda nakliyat sürecinde en sık kullanılan terimleri açıkladık.
+                </p>
+
+                @{
+                    var terimler = new[]
+                    {
+                        new {
+                            Harf = "A",
+                            Terimler = new[]
+                            {
+                                new { Ad = "Asansörlü Taşıma", Aciklama = "Yüksek katlı binalarda veya dar merdivenlerin söz konusu olduğu taşımalarda dışarıdan monte edilen mekanik platformla (nakliyat asansörü) eşyanın taşınmasıdır. Karyola, kanepe ve büyük gardırop gibi mobilyalar hasar görmeden taşınır. Bina asansörüne sığmayan veya merdivenden çıkarılamayan eşyalar için zorunludur." },
+                                new { Ad = "Ambalajlama", Aciklama = "Eşyaların taşıma sırasında hasar görmesini önlemek için balonlu naylon, streç film, köpük plaka ve özel kutu materyalleriyle sarılıp paketlenmesidir. Profesyonel ambalajlama; cam, porselen, elektronik ve antika gibi kırılgan eşyalar için kritik önem taşır." }
+                            }
+                        },
+                        new {
+                            Harf = "B",
+                            Terimler = new[]
+                            {
+                                new { Ad = "Battaniye Koruma", Aciklama = "Mobilyaların yüzeyini çizilme ve darbelere karşı korumak amacıyla kalın battaniye veya koruyucu örtülerle sarılmasıdır. Özellikle masif ahşap, lakeli yüzey ve cam detaylı mobilyalarda uygulanır." }
+                            }
+                        },
+                        new {
+                            Harf = "D",
+                            Terimler = new[]
+                            {
+                                new { Ad = "Depolama Hizmeti", Aciklama = "Taşıma öncesi veya sonrasında eşyaların güvenli, kapalı ve klimalı depolarda geçici olarak muhafaza edilmesidir. Yeni eve taşınma tarihi ile eski evi boşaltma tarihi örtüşmediğinde veya uzun süreli seyahatlerde tercih edilir. Sigorta kapsamı devam eder." },
+                                new { Ad = "Düz Araç", Aciklama = "Üstü açık, yan tarafları çevrili kamyon tipidir. Kapalı kasa araçlara kıyasla daha az koruma sağlar; kısa mesafe veya hava koşullarının uygun olduğu taşımalarda kullanılabilir." }
+                            }
+                        },
+                        new {
+                            Harf = "E",
+                            Terimler = new[]
+                            {
+                                new { Ad = "Eksper", Aciklama = "Nakliyat öncesi taşınacak eşyaları yerinde inceleyen, hacim ve ağırlık tespiti yapan uzman kişidir. Eksper ziyareti sonrası sabit fiyat teklifi oluşturulur. Ücretsiz yapılır; keşif ile eşanlamlı kullanılır." },
+                                new { Ad = "Eşya Sigortası", Aciklama = "Bkz. Nakliyat Sigortası." }
+                            }
+                        },
+                        new {
+                            Harf = "K",
+                            Terimler = new[]
+                            {
+                                new { Ad = "Kapalı Kasa Araç", Aciklama = "Yük bölümü tamamen kapalı ve hava geçirmez kasalı kamyon tipidir. Eşyaları yağmur, toz ve güneş ışığından korur; şehirlerarası ve uzun mesafe taşımalarda standart olarak kullanılır. İstanbul–Ankara güzergahında tercih edilen araç tipidir." },
+                                new { Ad = "Kapıdan Kapıya Nakliyat", Aciklama = "Müşterinin mevcut adresinden yeni adresine kadar tüm süreci kapsayan hizmet modelidir. Söküm, ambalajlama, yükleme, nakliye, boşaltma ve montaj aşamalarının tamamını içerir. Müşterinin ayrıca herhangi bir işlem yapması gerekmez." }
+                            }
+                        },
+                        new {
+                            Harf = "M",
+                            Terimler = new[]
+                            {
+                                new { Ad = "Montaj / Söküm", Aciklama = "Gardırop, yatak, karyola, ofis masası ve modüler dolap gibi mobilyaların taşıma öncesi parçalara ayrılması (söküm) ve yeni adreste yeniden kurulması (montaj) işlemidir. Kapıdan kapıya nakliyat paketine dahildir." }
+                            }
+                        },
+                        new {
+                            Harf = "N",
+                            Terimler = new[]
+                            {
+                                new { Ad = "Nakliyat Sigortası", Aciklama = "Taşıma sırasında eşyalarda oluşabilecek kırılma, çizilme, ıslanma veya kayıp risklerine karşı sözleşmeye dayalı güvencedir. Sigortalı taşımada hasar belgeleyen fotoğraf ve ekspertiz raporu ile tazminat hakkı doğar. Tüm kapıdan kapıya hizmetlerimizde nakliyat sigortası standarttır." },
+                                new { Ad = "Nakliyat Sözleşmesi", Aciklama = "Nakliyat firması ile müşteri arasında imzalanan, taşınacak eşyaları, tarihi, rotayı, sabit fiyatı ve sigorta kapsamını belirten yasal belgedir. İmzalı sözleşme olmadan hizmet verilmemelidir; güvenilir firmaların temel standardıdır." }
+                            }
+                        },
+                        new {
+                            Harf = "P",
+                            Terimler = new[]
+                            {
+                                new { Ad = "Parsiyel Nakliyat", Aciklama = "Birden fazla müşteriye ait yüklerin aynı araçta, aynı güzergahta birleştirildiği taşıma yöntemidir. Az eşyayla taşınan bireyler için tam araç kiralamaya kıyasla %40–60 daha ekonomik olabilir. Yük miktarına göre fiyatlandırılır; teslimat süresi tam araça göre uzayabilir." },
+                                new { Ad = "Paketleme", Aciklama = "Bkz. Ambalajlama." }
+                            }
+                        },
+                        new {
+                            Harf = "S",
+                            Terimler = new[]
+                            {
+                                new { Ad = "Sabit Fiyat Teklifi", Aciklama = "Eksper ziyareti sonrasında eşya hacmi, güzergah ve hizmet kapsamı göz önünde bulundurularak oluşturulan ve değişmeyeceği yazılı olarak taahhüt edilen fiyattır. Taşıma günü ek ücret talep edilmez. Şeffaf fiyatlandırmanın temel göstergesidir." },
+                                new { Ad = "Sehirlerarası Nakliyat", Aciklama = "Farklı şehirler arasında gerçekleştirilen nakliyat hizmetidir. Genellikle kapalı kasa araç, nakliyat sigortası ve kapıdan kapıya hizmet içerir. İstanbul–Ankara güzergahı (~450 km) Türkiye'nin en yoğun şehirlerarası taşıma rotasıdır." },
+                                new { Ad = "Streç Film", Aciklama = "Mobilya yüzeylerini ve ambalajlanmış eşyaları dışarıdan sararak nem, toz ve çizilmeye karşı koruyan esnek plastik filmdir. Özellikle köşeli mobilya ve kutu gibi paketlerin dağılmaması için kullanılır." }
+                            }
+                        },
+                        new {
+                            Harf = "T",
+                            Terimler = new[]
+                            {
+                                new { Ad = "Tam Araç (Full Truckload)", Aciklama = "Tüm araç kapasitesinin tek bir müşteriye tahsis edildiği taşıma modelidir. Eşya miktarı fazla olan veya hız önceliği olan taşımalarda tercih edilir. Parsiyele kıyasla daha hızlı teslimat sağlar." },
+                                new { Ad = "Taşıma Sigortası", Aciklama = "Bkz. Nakliyat Sigortası." }
+                            }
+                        },
+                        new {
+                            Harf = "Ü",
+                            Terimler = new[]
+                            {
+                                new { Ad = "Ücretsiz Keşif", Aciklama = "Nakliyat firmasının eksperini müşterinin adresine göndererek eşya miktarını, bina koşullarını (kat, asansör, park durumu) yerinde değerlendirdiği ve ardından sabit fiyat teklifi hazırladığı ön ziyarettir. Müşteriden herhangi bir ücret alınmaz." }
+                            }
+                        },
+                        new {
+                            Harf = "Y",
+                            Terimler = new[]
+                            {
+                                new { Ad = "Yük Manifestosu", Aciklama = "Taşınan eşyaların detaylı listesini içeren belgedir. Mobilya, beyaz eşya ve kutu içeriklerini ayrı ayrı kaydeder. Hem sigorta tazminatı süreçlerinde hem de teslimat kontrolünde referans alınır." }
+                            }
+                        }
+                    };
+                }
+
+                <!-- Alfabetik Gezinme -->
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:2.5rem;padding:1rem;background:var(--gray-100);border-radius:8px;">
+                    @foreach (var grup in terimler)
+                    {
+                        <a href="#harf-@grup.Harf" style="background:var(--black);color:#fff;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:6px;font-weight:700;font-size:.88rem;text-decoration:none;">@grup.Harf</a>
+                    }
+                </div>
+
+                <!-- Terimler -->
+                @foreach (var grup in terimler)
+                {
+                    <div id="harf-@grup.Harf" style="margin-bottom:2.5rem;">
+                        <div style="background:var(--black);color:#fff;display:inline-block;width:42px;height:42px;border-radius:8px;text-align:center;line-height:42px;font-weight:800;font-size:1.1rem;margin-bottom:1rem;">@grup.Harf</div>
+                        @foreach (var terim in grup.Terimler)
+                        {
+                            <div style="border-left:3px solid var(--black);padding:1rem 1.25rem;margin-bottom:1rem;background:#fff;border-radius:0 8px 8px 0;box-shadow:0 1px 4px rgba(0,0,0,.06);">
+                                <h2 style="font-size:1rem;font-weight:700;margin-bottom:.5rem;">@terim.Ad</h2>
+                                <p style="font-size:.92rem;color:var(--gray-700);line-height:1.8;margin:0;">@terim.Aciklama</p>
+                            </div>
+                        }
+                    </div>
+                }
+
+                <!-- İç linkleme -->
+                <div style="background:var(--gray-100);border-radius:12px;padding:1.75rem;margin-bottom:2.5rem;">
+                    <h3 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">İlgili Hizmetler</h3>
+                    <div style="display:flex;flex-direction:column;gap:.6rem;font-size:.9rem;">
+                        <a href="/parca-esya-tasima" style="color:var(--black);text-decoration:none;font-weight:500;">Parsiyel / Parça Eşya Taşıma →</a>
+                        <a href="/evden-eve-nakliyat" style="color:var(--black);text-decoration:none;font-weight:500;">Evden Eve Nakliyat →</a>
+                        <a href="/nakliyat-ucreti" style="color:var(--black);text-decoration:none;font-weight:500;">Nakliyat Fiyatları 2026 →</a>
+                        <a href="/nakliyat-maliyet-hesaplayici" style="color:var(--black);text-decoration:none;font-weight:500;">Maliyet Hesaplayıcı →</a>
+                        <a href="/blog/nakliyat-sigortasi-nedir" style="color:var(--black);text-decoration:none;font-weight:500;">Nakliyat Sigortası Nedir? (Blog) →</a>
+                        <a href="/blog/nakliyat-sozlesmesi-ve-haklar" style="color:var(--black);text-decoration:none;font-weight:500;">Nakliyat Sözleşmesi ve Haklarınız (Blog) →</a>
+                    </div>
+                </div>
+
+                <!-- SSS -->
+                <h2 style="margin-bottom:1.25rem;">Sık Sorulan Sorular</h2>
+                <div class="faq-item"><button class="faq-question" aria-expanded="false">Parsiyel nakliyat ne demektir?<span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-answer"><p>Parsiyel nakliyat, aynı güzergahta birden fazla müşteriye ait yüklerin tek araçta birleştirildiği taşıma yöntemidir. Az eşyayla uzun mesafe taşınanlar için tam araç kiralama yerine yalnızca kullandıkları hacim kadar ödeme yapmaları sağlanır.</p></div></div>
+                <div class="faq-item"><button class="faq-question" aria-expanded="false">Nakliyat sigortası neyi kapsar?<span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-answer"><p>Nakliyat sigortası, taşıma sırasında oluşabilecek kırılma, çizilme, ezilme veya kayıpları güvence altına alır. Sözleşmede belirtilen eşyalar sigorta kapsamında değerlendirilir; hasar durumunda ekspertiz sonucu tazminat ödenir.</p></div></div>
+                <div class="faq-item"><button class="faq-question" aria-expanded="false">Sabit fiyat teklifi nedir?<span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-answer"><p>Eksper ziyareti sonrasında eşya hacmi ve güzergah göz önünde bulundurularak belirlenen, değişmeyeceği yazılı olarak taahhüt edilen fiyattır. Taşıma günü sürpriz ek ücret çıkmaz.</p></div></div>
+                <div class="faq-item"><button class="faq-question" aria-expanded="false">Asansörlü taşıma ne anlama gelir?<span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-answer"><p>Yüksek katlı binalarda büyük veya ağır mobilyaların bina asansörü yerine dışarıdan monte edilen mekanik platformla taşınmasıdır. Dar merdivenli apartmanlarda hasar riskini ve iş gücünü önemli ölçüde azaltır.</p></div></div>
+
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div style="position:sticky;top:24px;display:flex;flex-direction:column;gap:1.5rem;">
+
+                    <div style="background:var(--black);color:#fff;border-radius:10px;padding:1.75rem;">
+                        <h3 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">Hızlı Teklif Al</h3>
+                        <p style="font-size:.88rem;opacity:.85;margin-bottom:1.25rem;">İstanbul ↔ Ankara nakliyat için ücretsiz keşif ve sabit fiyat teklifi.</p>
+                        <a href="tel:+905325436837" style="display:block;background:#fff;color:var(--black);text-align:center;padding:12px;border-radius:6px;font-weight:700;text-decoration:none;margin-bottom:.75rem;">📞 0532 543 68 37</a>
+                        <a href="https://wa.me/905325436837" target="_blank" style="display:block;background:#25D366;color:#fff;text-align:center;padding:12px;border-radius:6px;font-weight:700;text-decoration:none;">WhatsApp ile Yaz</a>
+                    </div>
+
+                    <div style="border:1px solid #e0e0e0;border-radius:10px;padding:1.5rem;">
+                        <h4 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">Maliyet Hesapla</h4>
+                        <p style="font-size:.88rem;color:var(--gray-600);margin-bottom:.75rem;">Taşıma maliyetinizi anında hesaplayın.</p>
+                        <a href="/nakliyat-maliyet-hesaplayici" style="display:block;background:var(--black);color:#fff;text-align:center;padding:11px;border-radius:6px;font-weight:600;text-decoration:none;font-size:.9rem;">🧮 Hesaplayıcıyı Aç →</a>
+                    </div>
+
+                    <div style="border:1px solid #e0e0e0;border-radius:10px;padding:1.5rem;">
+                        <h4 style="font-size:1rem;font-weight:700;margin-bottom:.75rem;">Popüler Hizmetler</h4>
+                        <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.88rem;">
+                            <a href="/evden-eve-nakliyat" style="color:var(--black);text-decoration:none;padding:6px 0;border-bottom:1px solid #f0f0f0;">Evden Eve Nakliyat →</a>
+                            <a href="/parca-esya-tasima" style="color:var(--black);text-decoration:none;padding:6px 0;border-bottom:1px solid #f0f0f0;">Parça Eşya Taşıma →</a>
+                            <a href="/ofis-tasima" style="color:var(--black);text-decoration:none;padding:6px 0;border-bottom:1px solid #f0f0f0;">Ofis Taşıma →</a>
+                            <a href="/esya-depolama" style="color:var(--black);text-decoration:none;padding:6px 0;border-bottom:1px solid #f0f0f0;">Eşya Depolama →</a>
+                            <a href="/nakliyat-ucreti" style="color:var(--black);text-decoration:none;padding:6px 0;">Nakliyat Fiyatları →</a>
+                        </div>
+                    </div>
+
+                    <div style="border:1px solid #e0e0e0;border-radius:10px;padding:1.5rem;">
+                        <h4 style="font-size:1rem;font-weight:700;margin-bottom:.75rem;">İlgili Blog Yazıları</h4>
+                        <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.88rem;">
+                            <a href="/blog/nakliyat-sigortasi-nedir" style="color:var(--black);text-decoration:none;">Nakliyat Sigortası Nedir? →</a>
+                            <a href="/blog/nakliyat-sozlesmesi-ve-haklar" style="color:var(--black);text-decoration:none;">Sözleşme ve Haklarınız →</a>
+                            <a href="/blog/esya-paketleme-teknikleri" style="color:var(--black);text-decoration:none;">Eşya Paketleme Teknikleri →</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

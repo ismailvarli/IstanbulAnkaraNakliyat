@@ -11,6 +11,16 @@ public class ReviewController : Controller
     public ReviewController(IWebHostEnvironment env)
         => _path = Path.Combine(env.ContentRootPath, "App_Data", "reviews.json");
 
+    [HttpGet("/yorumlar")]
+    public IActionResult Yorumlar()
+    {
+        ViewData["Title"]       = "Müşteri Yorumları | İstanbul Ankara Nakliyat";
+        ViewData["Description"] = "İstanbul Ankara Nakliyat müşteri yorumları ve değerlendirmeleri. Gerçek müşterilerimizin deneyimleri, taşıma hikayeleri ve puanları.";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/yorumlar";
+        var reviews = Load(_path);
+        return View(reviews);
+    }
+
     [HttpPost("/yorum/gonder")]
     public IActionResult Gonder(string ad, string yorum, int puan)
     {

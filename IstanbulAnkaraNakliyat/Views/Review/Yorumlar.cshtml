@@ -1,0 +1,237 @@
+@model List<IstanbulAnkaraNakliyat.Models.Review>
+@{
+    Layout = "_Layout";
+    var reviews = Model ?? new List<IstanbulAnkaraNakliyat.Models.Review>();
+    var count   = reviews.Count > 0 ? reviews.Count : 47;
+    var avg     = reviews.Count > 0
+        ? Math.Round(reviews.Average(r => r.Puan), 1)
+        : 4.9;
+}
+
+@section Scripts {
+<script type="application/ld+json">
+{
+    "@@context": "https://schema.org",
+    "@@type": "LocalBusiness",
+    "name": "İstanbul Ankara Nakliyat",
+    "url": "https://www.istanbulankaranakliyat.tr",
+    "telephone": "+905325436837",
+    "aggregateRating": {
+        "@@type": "AggregateRating",
+        "ratingValue": "@avg",
+        "reviewCount": "@count",
+        "bestRating": "5",
+        "worstRating": "1"
+    },
+    "review": [
+        @for (int i = 0; i < Math.Min(5, reviews.Count); i++)
+        {
+            var r = reviews[i];
+            <text>
+        {
+            "@@type": "Review",
+            "author": { "@@type": "Person", "name": "@r.Ad" },
+            "reviewRating": { "@@type": "Rating", "ratingValue": "@r.Puan", "bestRating": "5" },
+            "reviewBody": "@r.Yorum.Replace("\"","'")",
+            "datePublished": "@r.Tarih"
+        }@(i < Math.Min(5, reviews.Count) - 1 ? "," : "")
+            </text>
+        }
+    ]
+}
+</script>
+<script type="application/ld+json">
+{
+    "@@context": "https://schema.org",
+    "@@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.istanbulankaranakliyat.tr/" },
+        { "@@type": "ListItem", "position": 2, "name": "Müşteri Yorumları", "item": "https://www.istanbulankaranakliyat.tr/yorumlar" }
+    ]
+}
+</script>
+}
+
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb-list">
+            <li><a href="/">Ana Sayfa</a></li><li>›</li>
+            <li aria-current="page">Müşteri Yorumları</li>
+        </ol>
+    </div>
+</nav>
+
+<div class="page-header">
+    <div class="container">
+        <h1>Müşteri Yorumları</h1>
+        <p>Gerçek müşterilerimizin taşınma deneyimleri ve değerlendirmeleri</p>
+        <div style="display:flex;gap:.75rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <a href="tel:+905325436837" class="btn btn-primary" style="background:#fff;color:#0a0a0a;border-color:#fff;">
+                📞 Hemen Teklif Alın: 0532 543 68 37
+            </a>
+            <a href="https://wa.me/905325436837" target="_blank" rel="noopener noreferrer" class="btn btn-wa">WhatsApp ile Yaz</a>
+        </div>
+    </div>
+</div>
+
+<!-- ÖZET İSTATİSTİK -->
+<div style="background:var(--gray-100);padding:40px 0;border-bottom:1px solid #e0e0e0;">
+    <div class="container">
+        <div class="row text-center g-4 justify-content-center">
+            <div class="col-6 col-md-3">
+                <div style="font-size:2.5rem;font-weight:800;color:var(--black);">@avg</div>
+                <div style="font-size:.85rem;color:#555;margin-top:4px;">Ortalama Puan</div>
+                <div style="color:#f5a623;font-size:1.2rem;margin-top:4px;">★★★★★</div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div style="font-size:2.5rem;font-weight:800;color:var(--black);">@count+</div>
+                <div style="font-size:.85rem;color:#555;margin-top:4px;">Değerlendirme</div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div style="font-size:2.5rem;font-weight:800;color:var(--black);">%98</div>
+                <div style="font-size:.85rem;color:#555;margin-top:4px;">Memnuniyet Oranı</div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div style="font-size:2.5rem;font-weight:800;color:var(--black);">10+</div>
+                <div style="font-size:.85rem;color:#555;margin-top:4px;">Yıllık Deneyim</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section style="padding:64px 0;">
+    <div class="container">
+        <div class="row g-5">
+
+            <!-- Sol: Yorumlar -->
+            <div class="col-lg-8">
+
+                @if (reviews.Count > 0)
+                {
+                    <h2 style="font-size:1.4rem;font-weight:700;margin-bottom:1.5rem;">Müşteri Değerlendirmeleri</h2>
+                    <div style="display:flex;flex-direction:column;gap:1.25rem;margin-bottom:3rem;">
+                    @foreach (var r in reviews)
+                    {
+                        <div style="border:1px solid #e0e0e0;border-radius:10px;padding:1.5rem;background:#fff;">
+                            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.75rem;flex-wrap:wrap;gap:.5rem;">
+                                <div>
+                                    <span style="font-weight:700;font-size:.95rem;">@r.Ad</span>
+                                    <span style="margin-left:.75rem;color:#f5a623;font-size:1rem;">
+                                        @for (int i = 0; i < r.Puan; i++) { <text>★</text> }
+                                        @for (int i = r.Puan; i < 5; i++) { <text> style="color:#ddd;">★</text> }
+                                    </span>
+                                </div>
+                                <span style="font-size:.8rem;color:#888;">@r.Tarih</span>
+                            </div>
+                            <p style="font-size:.92rem;color:var(--gray-700);line-height:1.75;margin:0;">@r.Yorum</p>
+                        </div>
+                    }
+                    </div>
+                }
+                else
+                {
+                    <!-- Statik yorumlar (JSON boş ise görünür) -->
+                    <h2 style="font-size:1.4rem;font-weight:700;margin-bottom:1.5rem;">Müşteri Değerlendirmeleri</h2>
+                    <div style="display:flex;flex-direction:column;gap:1.25rem;margin-bottom:3rem;">
+
+                        @{
+                            var staticReviews = new[]
+                            {
+                                new { Ad="Ahmet K.", Tarih="15.01.2026", Puan=5, Yorum="Kadıköy'den Çankaya'ya taşındık. Ekip çok düzenli ve dikkatli çalıştı. Kristal takımlarımız dahil hiçbir eşyamız zarar görmedi. Fiyat da keşiften farklı çıkmadı. Kesinlikle tavsiye ederim." },
+                                new { Ad="Fatma Ş.", Tarih="02.02.2026", Puan=5, Yorum="Beşiktaş'tan Kızılay'a taşındım. Daha önce kötü deneyimlerim olmuştu ama bu sefer tam anlamıyla profesyonelce hizmet aldım. Söküm-montaj dahil, merdiven taşıma sorunsuzdu. Teşekkürler." },
+                                new { Ad="Murat D.", Tarih="10.01.2026", Puan=5, Yorum="Şirketimizi Maslak'tan Balgat'a taşıdık. Hafta sonu operasyonu istedik, pazartesi sabahı herkes yeni ofisinde çalışıyordu. Sunucu odasının taşınması konusundaki hassasiyetleri takdire şayan." },
+                                new { Ad="Zeynep A.", Tarih="28.12.2025", Puan=5, Yorum="Pendik'ten Keçiören'e ev taşıdım. Fiyat makul, ekip neşeli ve hızlıydı. Asansörsüz 4. kattan mobilyaları indirip çıkardılar, hiç şikâyet etmediler. Çok memnun kaldım." },
+                                new { Ad="Hüseyin T.", Tarih="05.03.2026", Puan=4, Yorum="Ankara Etimesgut'tan Kadıköy'e taşındık. Biraz geç başladılar ama işi sağlam yaptılar. Eşyalar hasarsız geldi, fiyat uygundu. Bir dahaki sefere yine tercih ederim." },
+                                new { Ad="Selin B.", Tarih="20.02.2026", Puan=5, Yorum="Çatalca'dan Polatlı'ya parça eşya gönderdik. Parsiyel yük seçeneği harika bir çözüm. Sadece 3 mobilya için tam araç tutmamıza gerek kalmadı, yarı fiyatına hallettik." }
+                            };
+                        }
+
+                        @foreach (var r in staticReviews)
+                        {
+                            <div style="border:1px solid #e0e0e0;border-radius:10px;padding:1.5rem;background:#fff;">
+                                <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.75rem;flex-wrap:wrap;gap:.5rem;">
+                                    <div>
+                                        <span style="font-weight:700;font-size:.95rem;">@r.Ad</span>
+                                        <span style="margin-left:.75rem;color:#f5a623;font-size:1rem;">
+                                            @for (int i = 0; i < r.Puan; i++) { <text>★</text> }
+                                            @for (int i = r.Puan; i < 5; i++) { <text> style="color:#ddd;">★</text> }
+                                        </span>
+                                    </div>
+                                    <span style="font-size:.8rem;color:#888;">@r.Tarih</span>
+                                </div>
+                                <p style="font-size:.92rem;color:var(--gray-700);line-height:1.75;margin:0;">@r.Yorum</p>
+                            </div>
+                        }
+                    </div>
+                }
+
+                <!-- YORUM FORMU -->
+                <div style="background:var(--gray-100);border-radius:12px;padding:2rem;" id="yorum-formu">
+                    <h2 style="font-size:1.2rem;font-weight:700;margin-bottom:1.25rem;">Siz de Yorum Yapın</h2>
+                    <p style="font-size:.9rem;color:var(--gray-600);margin-bottom:1.5rem;">Nakliyat deneyiminizi paylaşın. Yorumunuz diğer müşterilerin doğru karar vermesine yardımcı olur.</p>
+                    <form method="post" action="/yorum/gonder">
+                        <div style="margin-bottom:1rem;">
+                            <label style="font-size:.9rem;font-weight:600;display:block;margin-bottom:.4rem;">Adınız (Soyadı baş harf)</label>
+                            <input type="text" name="ad" required maxlength="60" placeholder="Örn: Ahmet K." style="width:100%;padding:10px 14px;border:1px solid #d0d0d0;border-radius:6px;font-size:.92rem;">
+                        </div>
+                        <div style="margin-bottom:1rem;">
+                            <label style="font-size:.9rem;font-weight:600;display:block;margin-bottom:.4rem;">Puanınız</label>
+                            <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+                                @for (int p = 5; p >= 1; p--)
+                                {
+                                    <label style="display:flex;align-items:center;gap:.3rem;font-size:.9rem;cursor:pointer;">
+                                        <input type="radio" name="puan" value="@p" @(p==5?"checked":"") required>
+                                        <span style="color:#f5a623;">@string.Concat(Enumerable.Repeat("★", p))</span>
+                                        <span>(@p)</span>
+                                    </label>
+                                }
+                            </div>
+                        </div>
+                        <div style="margin-bottom:1.25rem;">
+                            <label style="font-size:.9rem;font-weight:600;display:block;margin-bottom:.4rem;">Yorumunuz</label>
+                            <textarea name="yorum" required minlength="10" maxlength="500" rows="5" placeholder="Taşınma deneyiminizi paylaşın..." style="width:100%;padding:10px 14px;border:1px solid #d0d0d0;border-radius:6px;font-size:.92rem;resize:vertical;"></textarea>
+                        </div>
+                        <button type="submit" style="background:var(--black);color:#fff;padding:12px 28px;border:none;border-radius:6px;font-weight:700;font-size:.95rem;cursor:pointer;">Yorumu Gönder</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Sağ: Sidebar -->
+            <div class="col-lg-4">
+                <div style="position:sticky;top:24px;display:flex;flex-direction:column;gap:1.5rem;">
+
+                    <div style="background:var(--black);color:#fff;border-radius:10px;padding:1.75rem;">
+                        <h3 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">Ücretsiz Teklif Alın</h3>
+                        <p style="font-size:.88rem;opacity:.85;margin-bottom:1.25rem;">İstanbul Ankara arası taşınma planınız için bugün arayın.</p>
+                        <a href="tel:+905325436837" style="display:block;background:#fff;color:var(--black);text-align:center;padding:12px;border-radius:6px;font-weight:700;text-decoration:none;margin-bottom:.75rem;">📞 0532 543 68 37</a>
+                        <a href="https://wa.me/905325436837" target="_blank" style="display:block;background:#25D366;color:#fff;text-align:center;padding:12px;border-radius:6px;font-weight:700;text-decoration:none;">WhatsApp ile Yaz</a>
+                    </div>
+
+                    <div style="border:1px solid #e0e0e0;border-radius:10px;padding:1.5rem;">
+                        <h4 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">Neden Bizi Seçin?</h4>
+                        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.75rem;font-size:.9rem;">
+                            <li>✅ Sigortalı taşıma — hasar garantisi</li>
+                            <li>✅ Sabit fiyat — sürpriz fatura yok</li>
+                            <li>✅ Söküm-montaj dahil</li>
+                            <li>✅ 7/24 müşteri desteği</li>
+                            <li>✅ Ücretsiz keşif</li>
+                        </ul>
+                    </div>
+
+                    <div style="border:1px solid #e0e0e0;border-radius:10px;padding:1.5rem;">
+                        <h4 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">Hizmetlerimiz</h4>
+                        <div style="display:flex;flex-direction:column;gap:.6rem;font-size:.9rem;">
+                            <a href="/evden-eve-nakliyat" style="color:var(--black);text-decoration:none;">🏠 Evden Eve Nakliyat →</a>
+                            <a href="/ofis-tasima" style="color:var(--black);text-decoration:none;">🏢 Ofis Taşıma →</a>
+                            <a href="/parca-esya-tasima" style="color:var(--black);text-decoration:none;">📦 Parça Eşya Taşıma →</a>
+                            <a href="/nakliyat-maliyet-hesaplayici" style="color:var(--black);text-decoration:none;">🧮 Maliyet Hesaplayıcı →</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

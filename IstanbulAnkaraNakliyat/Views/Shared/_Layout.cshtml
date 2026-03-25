@@ -105,14 +105,19 @@
                         <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
                     </a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="/istanbul-ankara-nakliyat">İstanbul'dan Ankara'ya Nakliyat</a></li>
-                        <li><a href="/ankara-istanbul-nakliyat">Ankara'dan İstanbul'a Nakliyat</a></li>
-                        
-                       
+                        <li><a href="/hizmetler">Tüm Hizmetler</a></li>
+                        <li><a href="/evden-eve-nakliyat">Evden Eve Nakliyat</a></li>
+                        <li><a href="/ofis-tasima">Ofis Taşıma</a></li>
+                        <li><a href="/parca-esya-tasima">Parça Eşya Taşıma</a></li>
+                        <li><a href="/ceyiz-tasima">Çeyiz Taşıma</a></li>
+                        <li><a href="/esya-depolama">Eşya Depolama</a></li>
+                        <li><a href="/nakliyat-ucreti">Nakliyat Fiyatları</a></li>
+                        <li><a href="/nakliyat-maliyet-hesaplayici">🧮 Maliyet Hesaplayıcı</a></li>
                     </ul>
                 </li>
                 <li><a href="/galeri">Galeri</a></li>
                 <li><a href="/blog">Blog</a></li>
+                <li><a href="/yorumlar">Yorumlar</a></li>
                 <li><a href="/nakliyat-ucreti">Fiyatlar</a></li>
                 <li><a href="/iletisim">İletişim</a></li>
             </ul>
@@ -156,6 +161,8 @@
                     </ul>
                 </li>
                 <li><a href="/nakliyat-ucreti">Fiyatlar</a></li>
+                <li><a href="/nakliyat-maliyet-hesaplayici">Hesaplayıcı</a></li>
+                <li><a href="/yorumlar">Yorumlar</a></li>
                 <li><a href="/galeri">Galeri</a></li>
                 <li><a href="/blog">Blog</a></li>
                 <li><a href="/iletisim">İletişim</a></li>
@@ -285,6 +292,15 @@
                 </div>
 
             </div>
+            <div class="row" style="padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.1);margin-top:1.5rem;">
+                <div class="col-12">
+                    <h3 class="footer-heading" style="margin-bottom:.5rem;">Diğer Nakliyat Sitemiz</h3>
+                    <ul class="footer-links" role="list" style="display:flex;gap:1.5rem;flex-wrap:wrap;">
+                        <li><a href="https://www.hadimkoyankaranakliyat.com" target="_blank" rel="noopener">Hadımköy Ankara Nakliyat</a></li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="footer-bottom">
                 <p>&copy; @DateTime.Now.Year İstanbul Ankara Nakliyat &mdash; Tüm Hakları Saklıdır.</p>
                 <ul role="list">
@@ -312,6 +328,127 @@
 
     <script src="~/js/bundle.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
+    <!-- ══ TEKLİF MODAL ════════════════════════════════════════ -->
+    <div id="teklifModal" class="teklif-modal" role="dialog" aria-modal="true" aria-labelledby="teklifModalBaslik" hidden>
+        <div class="teklif-modal-overlay" onclick="closeTeklifModal()"></div>
+        <div class="teklif-modal-box">
+            <button class="teklif-modal-close" onclick="closeTeklifModal()" aria-label="Kapat">&times;</button>
+            <h2 id="teklifModalBaslik" class="teklif-modal-title">Ücretsiz Teklif Al</h2>
+            <p class="teklif-modal-sub">Bilgilerinizi bırakın, sizi arayalım.</p>
+
+            <div id="teklifSuccess" hidden style="text-align:center;padding:2rem 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--green,#16a34a)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <p style="margin-top:1rem;font-weight:600;font-size:1.05rem;">Talebiniz alındı!</p>
+                <p style="color:var(--gray-500);font-size:.9rem;margin-top:.5rem;">En kısa sürede sizi arayacağız.</p>
+                <button onclick="closeTeklifModal()" class="btn btn-primary" style="margin-top:1.5rem;">Tamam</button>
+            </div>
+
+            <form id="teklifForm" novalidate>
+                <div class="teklif-form-row">
+                    <div class="teklif-form-group">
+                        <label for="tf-ad">Ad Soyad <span aria-hidden="true">*</span></label>
+                        <input type="text" id="tf-ad" name="ad" placeholder="Adınız Soyadınız" required autocomplete="name">
+                    </div>
+                    <div class="teklif-form-group">
+                        <label for="tf-tel">Telefon <span aria-hidden="true">*</span></label>
+                        <input type="tel" id="tf-tel" name="telefon" placeholder="05XX XXX XX XX" required autocomplete="tel">
+                    </div>
+                </div>
+                <div class="teklif-form-row">
+                    <div class="teklif-form-group">
+                        <label for="tf-yon">Taşıma Yönü</label>
+                        <select id="tf-yon" name="yon">
+                            <option value="">Seçiniz</option>
+                            <option value="istanbul-ankara">İstanbul → Ankara</option>
+                            <option value="ankara-istanbul">Ankara → İstanbul</option>
+                        </select>
+                    </div>
+                    <div class="teklif-form-group">
+                        <label for="tf-daire">Daire / Taşıma Tipi</label>
+                        <select id="tf-daire" name="daireTipi">
+                            <option value="">Seçiniz</option>
+                            <option value="1+1">1+1 Daire</option>
+                            <option value="2+1">2+1 Daire</option>
+                            <option value="3+1">3+1 Daire</option>
+                            <option value="4+1">4+1 ve Üzeri</option>
+                            <option value="ofis">Ofis Taşıma</option>
+                            <option value="parca">Parça Eşya</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="teklif-form-row">
+                    <div class="teklif-form-group">
+                        <label for="tf-tarih">Tahmini Taşıma Tarihi</label>
+                        <input type="date" id="tf-tarih" name="tarih">
+                    </div>
+                    <div class="teklif-form-group">
+                        <label for="tf-not">Not (opsiyonel)</label>
+                        <input type="text" id="tf-not" name="not" placeholder="Kısaca belirtmek istedikleriniz">
+                    </div>
+                </div>
+                <div id="teklifHata" class="teklif-error" hidden></div>
+                <button type="submit" class="btn btn-primary teklif-submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    Teklif Talep Et
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+    function openTeklifModal() {
+        const m = document.getElementById('teklifModal');
+        m.hidden = false;
+        document.body.style.overflow = 'hidden';
+        m.querySelector('input,select').focus();
+    }
+    function closeTeklifModal() {
+        const m = document.getElementById('teklifModal');
+        m.hidden = true;
+        document.body.style.overflow = '';
+        document.getElementById('teklifSuccess').hidden = true;
+        document.getElementById('teklifForm').hidden = false;
+        document.getElementById('teklifForm').reset();
+        document.getElementById('teklifHata').hidden = true;
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeTeklifModal(); });
+
+    document.getElementById('teklifForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('button[type=submit]');
+        const errEl = document.getElementById('teklifHata');
+        btn.disabled = true;
+        btn.textContent = 'Gönderiliyor...';
+        errEl.hidden = true;
+
+        const data = new FormData(this);
+        try {
+            const res = await fetch('/teklif/gonder', { method: 'POST', body: data });
+            const json = await res.json();
+            if (json.ok) {
+                this.hidden = true;
+                document.getElementById('teklifSuccess').hidden = false;
+            } else {
+                errEl.textContent = json.mesaj || 'Bir hata oluştu, lütfen tekrar deneyin.';
+                errEl.hidden = false;
+            }
+        } catch {
+            errEl.textContent = 'Bağlantı hatası. Lütfen telefon ile ulaşın: 0532 543 68 37';
+            errEl.hidden = false;
+        }
+        btn.disabled = false;
+        btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> Teklif Talep Et';
+    });
+
+    // Wire up all "Ücretsiz Teklif Al" buttons that go to tel:
+    document.querySelectorAll('a[href="tel:+905325436837"].btn-primary, a[href="tel:+905325436837"][class*="btn"]').forEach(el => {
+        el.addEventListener('click', function(e) {
+            e.preventDefault();
+            openTeklifModal();
+        });
+    });
+    </script>
 
 </body>
 </html>

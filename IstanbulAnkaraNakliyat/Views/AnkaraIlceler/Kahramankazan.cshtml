@@ -96,6 +96,19 @@
             <div class="col-6 col-md-2-4">
                 <div style="font-size:1.5rem;font-weight:700;color:var(--black);">7/24</div>
                 <div style="font-size:.82rem;color:#555;">Müşteri Desteği</div>
+
+                <div style="border:1px solid #e0e0e0;border-radius:10px;padding:24px;">
+                    <h4 style="font-size:1rem;font-weight:700;margin-bottom:12px;">Maliyet Hesapla</h4>
+                    <p style="font-size:.88rem;color:var(--gray-600);margin-bottom:.75rem;">Taşıma maliyetinizi anında hesaplayın.</p>
+                    <a href="/nakliyat-maliyet-hesaplayici" style="display:block;background:var(--black);color:#fff;text-align:center;padding:10px;border-radius:6px;font-weight:600;text-decoration:none;font-size:.88rem;">🧮 Hesaplayıcıyı Aç →</a>
+                </div>
+
+                <div style="border:1px solid #e0e0e0;border-radius:10px;padding:24px;">
+                    <h4 style="font-size:1rem;font-weight:700;margin-bottom:12px;">Müşteri Yorumları</h4>
+                    <p style="font-size:.88rem;color:var(--gray-600);margin-bottom:.75rem;">Gerçek müşterilerimizin deneyimlerini okuyun.</p>
+                    <a href="/yorumlar" style="display:block;background:var(--black);color:#fff;text-align:center;padding:10px;border-radius:6px;font-weight:600;text-decoration:none;font-size:.88rem;">⭐ Yorumları Gör →</a>
+                </div>
+
             </div>
         </div>
     </div>
@@ -105,52 +118,46 @@
     <div class="row g-5">
         <div class="col-lg-8">
 
-            <h2 style="font-size:1.6rem;font-weight:700;margin-bottom:20px;">Kahramankazan'dan İstanbul'a Nakliyat</h2>
-            <p>Kahramankazan, Ankara'nın kuzeybatısında yer alan ve Organize Sanayi Bölgesi (OSB) ile modern konut sitelerinin iç içe geliştiği dinamik bir ilçedir. TEM Otoyolu'na yakın konumu, İstanbul güzergahına hızlı çıkış imkânı sağlamaktadır. OSB'deki fabrika ve iş yerlerinden kurumsal taşıma ile ilçenin konut bölgelerinden bireysel ev taşıma hizmeti sunmaktayız.</p>
-            <p>Kahramankazan'ın modern site yapısı, geniş araç erişimine uygun altyapısıyla yükleme süreçlerini kolaylaştırmaktadır. Sanayi bölgesindeki ofis ve üretim tesislerinden İstanbul'a taşıma için özel planlama ve büyük tonajlı araçlar kullanılmaktadır. Tüm taşımalarda nakliyat sigortası standarttır.</p>
-
+            <h2 style="margin-bottom:1rem;">Kahramankazan'dan İstanbul'a Nakliyat</h2>
+            <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                <strong>Kahramankazan</strong>, Ankara'ya yaklaşık 40 km uzaklıkta kuzeyde yer alan, Kazan OSB (Organize Sanayi Bölgesi) ile hızla büyüyen konut sitelerinin bir arada bulunduğu dinamik bir ilçedir. Fatih, Bahçelievler ve Yenikent mahallelerindeki modern apartman stoğuyla birlikte Güzelhisar'ın yeni gelişme alanları, ilçeye her yıl pek çok yeni aile çekmektedir. <strong>Kahramankazan'dan İstanbul'a nakliyat</strong> planlamasında TEM otoyoluna olan yakınlık güzergah avantajı sağlar.
+            </p>
+            <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                Kazan OSB'deki kurumsal taşımalarda iş sürekliliğini korumak için hafta sonu ya da gece yükleme planlaması tercih edilir; büyük tonajlı araçlarla fabrika ve ofis mobilyaları aynı seferde İstanbul'a ulaştırılır. Konut sitelerindeki bireysel taşımalarda güvenlik protokolüne uygun araç giriş izni önceden alınır; yükleme platformları ve geniş garaj girişleri standart operasyonu kolaylaştırır.
+            </p>
+            <p style="margin-bottom:2rem;line-height:1.9;color:var(--gray-700);">
+                <strong>Kahramankazan – İstanbul</strong> güzergahında tüm eşyalar nakliyat sigortası kapsamındadır. TEM'e direkt bağlantı sayesinde Ankara dışına çıkış hızlıdır; İstanbul'a ortalama yolculuk süresi 9–12 saatte tamamlanır. Ücretsiz keşif için ekibimizi arayın.
+            </p>
 
             <figure style="margin:1.75rem 0 2rem;">
-                <img src="~/img/galeri/galeri13.jpeg" loading="lazy"
+                <img src="~/img/galeri/galeri13.webp" loading="lazy"
                      style="width:100%;border-radius:var(--radius-lg);object-fit:cover;max-height:380px;"
                      onerror="this.style.display='none'">
             </figure>
-            <h3 style="font-size:1.25rem;font-weight:700;margin:36px 0 16px;">Hizmetlerimiz</h3>
-            <div class="row g-3">
-                @foreach (var s in new[] {
-                    new { I="🏭", T="OSB / Sanayi Taşıma", A="Kahramankazan OSB'deki fabrika ve iş yerlerinden İstanbul'a kurumsal taşıma." },
-                    new { I="🏢", T="Ofis Taşıma", A="Kurumsal ofis ve işyerlerinden İstanbul'a planlı ve hızlı taşıma hizmeti." },
-                    new { I="🏠", T="Evden Eve Nakliyat", A="Kahramankazan konut sitelerinden İstanbul'a kapıdan kapıya taşıma." },
-                    new { I="🔧", T="Söküm-Montaj", A="Tüm mobilya ve beyaz eşyalarda söküm ve montaj hizmeti dahildir." },
-                    new { I="📦", T="Parsiyel Yük", A="Az eşya taşımalarında ekonomik parsiyel yük seçeneği sunulmaktadır." },
-                    new { I="🛡️", T="Sigortalı Taşıma", A="Nakliyat sigortasıyla tüm eşyalarınız güvence altındadır." }
-                })
-                {
-                    <div class="col-md-6">
-                        <div class="service-card" style="border:1px solid #e0e0e0;border-radius:8px;padding:20px;height:100%;">
-                            <div class="service-icon" style="font-size:2rem;margin-bottom:10px;">@s.I</div>
-                            <h4 style="font-size:1rem;font-weight:700;margin-bottom:8px;">@s.T</h4>
-                            <p style="font-size:.9rem;color:#555;margin:0;">@s.A</p>
-                        </div>
-                    </div>
-                }
+
+            <h2 style="margin-bottom:1.25rem;">Kahramankazan'da Sunduğumuz Nakliyat Hizmetleri</h2>
+            <div class="row" style="row-gap:1.25rem;margin-bottom:2.5rem;">
+                <div class="col-md-6"><div class="service-card" style="height:100%;padding:1.5rem;"><div class="service-icon" aria-hidden="true" style="width:40px;height:40px;font-size:1.2rem;">🏠</div><h3 style="font-size:1rem;margin-bottom:.6rem;">Evden Eve Nakliyat</h3><p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;">Fatih, Bahçelievler ve Yenikent mahallelerinden İstanbul'a tam kapıdan kapıya taşıma.</p><a href="/evden-eve-nakliyat" style="font-size:.85rem;font-weight:600;margin-top:.75rem;display:inline-block;">Detaylı Bilgi →</a></div></div>
+                <div class="col-md-6"><div class="service-card" style="height:100%;padding:1.5rem;"><div class="service-icon" aria-hidden="true" style="width:40px;height:40px;font-size:1.2rem;">📦</div><h3 style="font-size:1rem;margin-bottom:.6rem;">Parsiyel / Parça Eşya Taşıma</h3><p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;">Kahramankazan'dan İstanbul'a az eşyayla taşınanlar için ekonomik parsiyel yük çözümü.</p><a href="/parca-esya-tasima" style="font-size:.85rem;font-weight:600;margin-top:.75rem;display:inline-block;">Detaylı Bilgi →</a></div></div>
+                <div class="col-md-6"><div class="service-card" style="height:100%;padding:1.5rem;"><div class="service-icon" aria-hidden="true" style="width:40px;height:40px;font-size:1.2rem;">🏢</div><h3 style="font-size:1rem;margin-bottom:.6rem;">Ofis &amp; Kurumsal Taşıma</h3><p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;">Kahramankazan OSB'deki iş yerinizi ve fabrikanızı minimum iş kaybıyla İstanbul'a taşıyoruz.</p><a href="/ofis-tasima" style="font-size:.85rem;font-weight:600;margin-top:.75rem;display:inline-block;">Detaylı Bilgi →</a></div></div>
+                <div class="col-md-6"><div class="service-card" style="height:100%;padding:1.5rem;"><div class="service-icon" aria-hidden="true" style="width:40px;height:40px;font-size:1.2rem;">🎁</div><h3 style="font-size:1rem;margin-bottom:.6rem;">Ambalaj &amp; Paketleme</h3><p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;">Balonlu naylon, streç film ve köpük koruyucularla profesyonel ambalaj hizmeti.</p><a href="/ambalaj-hizmeti" style="font-size:.85rem;font-weight:600;margin-top:.75rem;display:inline-block;">Detaylı Bilgi →</a></div></div>
             </div>
 
-            <h3 style="font-size:1.25rem;font-weight:700;margin:36px 0 16px;">Taşıma Süreci</h3>
-            <div style="counter-reset:steps;">
-                @foreach (var step in new[] {
-                    "Ücretsiz keşif için randevu alınır; konut veya OSB adresi değerlendirilir.",
-                    "Taşıma günü ve fiyat netleştirilir, sözleşme imzalanır.",
-                    "Profesyonel ekip eşyaları paketler ve araca yükler.",
-                    "İstanbul'a hareket edilir, güzergah boyunca takip sağlanır.",
-                    "İstanbul'daki yeni adresinizde eşyalar boşaltılır ve yerleştirilir."
-                })
-                {
-                    <div style="display:flex;gap:16px;margin-bottom:16px;align-items:flex-start;">
-                        <div style="background:var(--black);color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">@(Array.IndexOf(new[]{"Ücretsiz keşif için randevu alınır; konut veya OSB adresi değerlendirilir.","Taşıma günü ve fiyat netleştirilir, sözleşme imzalanır.","Profesyonel ekip eşyaları paketler ve araca yükler.","İstanbul'a hareket edilir, güzergah boyunca takip sağlanır.","İstanbul'daki yeni adresinizde eşyalar boşaltılır ve yerleştirilir."},step)+1)</div>
-                        <p style="margin:0;padding-top:4px;">@step</p>
-                    </div>
-                }
+            <h2 style="margin-bottom:1rem;">Kahramankazan Nakliyatında Bilmeniz Gerekenler</h2>
+            <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                Kahramankazan OSB'deki kurumsal taşımalar için detaylı ön planlama yapılması, iş sürekliliğini koruması açısından kritik öneme sahiptir. Hafta sonu yükleme tercihiyle üretim aksatılmadan fabrika mobilya ve ekipmanları İstanbul'a aktarılabilir.
+            </p>
+            <p style="margin-bottom:2.5rem;line-height:1.9;color:var(--gray-700);">
+                Konut sitelerinde araç giriş izni önceden alınmakta; yeni gelişme alanlarındaki geniş yollar büyük kamyon erişimine uygundur. Bireysel taşımalarda parsiyel yük seçeneği de aktif olarak sunulmakta; az eşyayla taşınanlar için ekonomik çözüm sağlanmaktadır.
+            </p>
+
+            <h2 style="margin-bottom:1.5rem;">Kahramankazan Nakliyat Sürecimiz</h2>
+            <div style="margin-bottom:2.5rem;">
+                <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">1</div><div><h3 style="font-size:1rem;margin-bottom:.4rem;">Ücretsiz Keşif</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">Eksperimiz Kahramankazan adresinize gelir. Konut tipi, kat, asansör ve eşya miktarını değerlendirir; OSB taşımalarında tesis ziyareti yapılır.</p></div></div>
+                <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">2</div><div><h3 style="font-size:1rem;margin-bottom:.4rem;">Sabit Fiyat Teklifi</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">Tüm kalemleri kapsayan yazılı teklif verilir. Verilen fiyat değişmez; sürpriz fatura çıkmaz.</p></div></div>
+                <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">3</div><div><h3 style="font-size:1rem;margin-bottom:.4rem;">Profesyonel Ambalajlama</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">Taşıma günü erken saatte Kahramankazan'a geliyoruz. Mobilyalar battaniye ve streç filmle, kırılganlar balonlu naylonla paketlenir.</p></div></div>
+                <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">4</div><div><h3 style="font-size:1rem;margin-bottom:.4rem;">Sigortalı Nakliye</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">Eşyalarınız kapalı kasalı araçlara yüklenerek TEM üzerinden İstanbul'a hareket edilir. Yolculuk 9–12 saatte tamamlanır.</p></div></div>
+                <div style="display:flex;gap:1.25rem;align-items:flex-start;"><div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">5</div><div><h3 style="font-size:1rem;margin-bottom:.4rem;">Yerleştirme ve Montaj</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">İstanbul'daki yeni adresinizde eşyalar boşaltılır, mobilyalar monte edilir. İşlem tamamlanana kadar yanınızdayız.</p></div></div>
             </div>
 
             <h3 style="font-size:1.25rem;font-weight:700;margin:36px 0 16px;">Fiyat Tablosu</h3>
@@ -180,9 +187,6 @@
                     <span style="background:var(--gray-100);padding:6px 14px;border-radius:20px;font-size:.88rem;">@m</span>
                 }
             </div>
-
-            <h3 style="font-size:1.25rem;font-weight:700;margin:36px 0 16px;">Bilmeniz Gerekenler</h3>
-            <p>Kahramankazan OSB'deki kurumsal taşımalar için önceden detaylı planlama yapılması, iş sürekliliğinin korunması açısından önemlidir. TEM bağlantısına yakın ilçe konumu, İstanbul'a ulaşım süresini kısaltmaktadır. Konut sitelerindeki taşımalarda güvenlik protokolü için araç giriş izni önceden alınabilmektedir. Tüm bireysel ve kurumsal taşımalarda nakliyat sigortası dahildir.</p>
 
             <h3 style="font-size:1.25rem;font-weight:700;margin:36px 0 16px;">Neden Bizi Seçmelisiniz?</h3>
             <div class="row g-3">

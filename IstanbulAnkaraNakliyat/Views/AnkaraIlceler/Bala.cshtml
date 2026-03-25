@@ -96,6 +96,19 @@
             <div class="col-6 col-md-2-4">
                 <div style="font-size:1.5rem;font-weight:700;color:var(--black);">7/24</div>
                 <div style="font-size:.82rem;color:#555;">Müşteri Desteği</div>
+
+                <div style="border:1px solid #e0e0e0;border-radius:10px;padding:24px;">
+                    <h4 style="font-size:1rem;font-weight:700;margin-bottom:12px;">Maliyet Hesapla</h4>
+                    <p style="font-size:.88rem;color:var(--gray-600);margin-bottom:.75rem;">Taşıma maliyetinizi anında hesaplayın.</p>
+                    <a href="/nakliyat-maliyet-hesaplayici" style="display:block;background:var(--black);color:#fff;text-align:center;padding:10px;border-radius:6px;font-weight:600;text-decoration:none;font-size:.88rem;">🧮 Hesaplayıcıyı Aç →</a>
+                </div>
+
+                <div style="border:1px solid #e0e0e0;border-radius:10px;padding:24px;">
+                    <h4 style="font-size:1rem;font-weight:700;margin-bottom:12px;">Müşteri Yorumları</h4>
+                    <p style="font-size:.88rem;color:var(--gray-600);margin-bottom:.75rem;">Gerçek müşterilerimizin deneyimlerini okuyun.</p>
+                    <a href="/yorumlar" style="display:block;background:var(--black);color:#fff;text-align:center;padding:10px;border-radius:6px;font-weight:600;text-decoration:none;font-size:.88rem;">⭐ Yorumları Gör →</a>
+                </div>
+
             </div>
         </div>
     </div>
@@ -105,52 +118,45 @@
     <div class="row g-5">
         <div class="col-lg-8">
 
-            <h2 style="font-size:1.6rem;font-weight:700;margin-bottom:20px;">Bala'dan İstanbul'a Nakliyat</h2>
-            <p>Bala, Ankara'nın güneyinde yer alan ve geniş bozkır arazileriyle karakterize olan tarım ilçesidir. İlçede tarım arazileri, çiftlik evleri ve kırsal mahalleler bulunmaktadır. Bu yapıya uygun araç ve ekipmanla Bala'nın tüm mahalle ve köylerinden İstanbul'a taşıma hizmeti vermekteyiz.</p>
-            <p>Bala'nın güney Ankara konumu, güzergahın biraz daha uzun olmasına yol açmaktadır. Ancak deneyimli ekibimiz bu mesafeyi güvenli şekilde yönetmektedir. Kırsal mahalle ve çiftlik evlerinden taşımalarda stabilize yollara uygun araç tercih edilmektedir. Parsiyel yük seçeneği az eşyalı taşımalarda maliyet avantajı sunar.</p>
-
+            <h2 style="margin-bottom:1rem;">Bala'dan İstanbul'a Nakliyat</h2>
+            <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                <strong>Bala</strong>, Ankara'nın güneydoğusunda, merkeze yaklaşık 90 km uzaklıkta yer alan geniş buğday tarlalarıyla kaplı tarım ilçesidir. Bala Merkez'deki küçük apartman bloklarının yanı sıra Çayraz, Taşpınar ve Köprübaşı köylerindeki tek veya iki katlı müstakil evler, taşıma planlamasında çeşitlilik gerektirir. <strong>Bala'dan İstanbul'a nakliyat</strong> güzergahı, Ankara üzerinden TEM'e bağlanarak tamamlanmaktadır.
+            </p>
+            <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                İlçenin güney Ankara konumu güzergahı biraz uzatmaktadır; Bala Merkez'den İstanbul'a yaklaşık 530 km mesafe, yükleme ve boşaltma dahil 11–14 saat sürmektedir. Taşpınar ve Karacaören köylerindeki stabilize yollarda büyük araç geçişi güçleşebilir; bu mahallelerde küçük araçla yükleme yapılıp ana yolda aktarım uygulanır. Erken yükleme saati planlanması güzergahın uzunluğunu rahatlatır.
+            </p>
+            <p style="margin-bottom:2rem;line-height:1.9;color:var(--gray-700);">
+                Bala'nın tarımsal yapısı nedeniyle çoğu taşınma az eşyayla gerçekleşmektedir; bu durumlar için <strong>parsiyel yük</strong> hizmeti en pratik ve ekonomik çözümü sunar. Bala Barajı çevresindeki köy evlerinden de hizmet vermekteyiz. Tüm eşyalar taşıma boyunca nakliyat sigortası kapsamında olup keşif ücretsizdir.
+            </p>
 
             <figure style="margin:1.75rem 0 2rem;">
-                <img src="~/img/galeri/galeri2.jpeg" loading="lazy"
+                <img src="~/img/galeri/galeri2.webp" loading="lazy"
                      style="width:100%;border-radius:var(--radius-lg);object-fit:cover;max-height:380px;"
                      onerror="this.style.display='none'">
             </figure>
-            <h3 style="font-size:1.25rem;font-weight:700;margin:36px 0 16px;">Hizmetlerimiz</h3>
-            <div class="row g-3">
-                @foreach (var s in new[] {
-                    new { I="🏠", T="Evden Eve Nakliyat", A="Bala'daki evinizden İstanbul'a kapıdan kapıya taşıma hizmeti." },
-                    new { I="🚜", T="Çiftlik Taşıma", A="Çiftlik evi ve kırsal mülklerden İstanbul'a eksiksiz taşıma hizmeti." },
-                    new { I="📦", T="Parsiyel Yük", A="Az eşya taşımalarında diğer yüklerle birleştirilerek ekonomik taşıma." },
-                    new { I="🔧", T="Söküm-Montaj", A="Tüm mobilya ve beyaz eşyalarda söküm ve montaj hizmeti dahildir." },
-                    new { I="🛡️", T="Sigortalı Taşıma", A="Nakliyat sigortasıyla tüm eşyalarınız güvence altındadır." },
-                    new { I="🏢", T="Ofis Taşıma", A="Bala'daki iş yerlerinden İstanbul'a düzenli ofis taşıma hizmeti." }
-                })
-                {
-                    <div class="col-md-6">
-                        <div class="service-card" style="border:1px solid #e0e0e0;border-radius:8px;padding:20px;height:100%;">
-                            <div class="service-icon" style="font-size:2rem;margin-bottom:10px;">@s.I</div>
-                            <h4 style="font-size:1rem;font-weight:700;margin-bottom:8px;">@s.T</h4>
-                            <p style="font-size:.9rem;color:#555;margin:0;">@s.A</p>
-                        </div>
-                    </div>
-                }
+            <h2 style="margin-bottom:1.25rem;">Bala'da Sunduğumuz Nakliyat Hizmetleri</h2>
+            <div class="row" style="row-gap:1.25rem;margin-bottom:2.5rem;">
+                <div class="col-md-6"><div class="service-card" style="height:100%;padding:1.5rem;"><div class="service-icon" aria-hidden="true" style="width:40px;height:40px;font-size:1.2rem;">🏠</div><h3 style="font-size:1rem;margin-bottom:.6rem;">Evden Eve Nakliyat</h3><p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;">Bala Merkez, Çayraz, Taşpınar ve Köprübaşı köylerinden İstanbul'a tam kapıdan kapıya taşıma.</p><a href="/evden-eve-nakliyat" style="font-size:.85rem;font-weight:600;margin-top:.75rem;display:inline-block;">Detaylı Bilgi →</a></div></div>
+                <div class="col-md-6"><div class="service-card" style="height:100%;padding:1.5rem;"><div class="service-icon" aria-hidden="true" style="width:40px;height:40px;font-size:1.2rem;">📦</div><h3 style="font-size:1rem;margin-bottom:.6rem;">Parsiyel / Parça Eşya Taşıma</h3><p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;">Bala'dan İstanbul'a az eşyayla taşınanlar için ekonomik parsiyel yük çözümü.</p><a href="/parca-esya-tasima" style="font-size:.85rem;font-weight:600;margin-top:.75rem;display:inline-block;">Detaylı Bilgi →</a></div></div>
+                <div class="col-md-6"><div class="service-card" style="height:100%;padding:1.5rem;"><div class="service-icon" aria-hidden="true" style="width:40px;height:40px;font-size:1.2rem;">🏢</div><h3 style="font-size:1rem;margin-bottom:.6rem;">Ofis Taşıma</h3><p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;">Bala'daki iş yerinizi minimum iş kaybıyla İstanbul'a taşıyoruz.</p><a href="/ofis-tasima" style="font-size:.85rem;font-weight:600;margin-top:.75rem;display:inline-block;">Detaylı Bilgi →</a></div></div>
+                <div class="col-md-6"><div class="service-card" style="height:100%;padding:1.5rem;"><div class="service-icon" aria-hidden="true" style="width:40px;height:40px;font-size:1.2rem;">🎁</div><h3 style="font-size:1rem;margin-bottom:.6rem;">Ambalaj &amp; Paketleme</h3><p style="font-size:.9rem;color:var(--gray-600);line-height:1.7;">Balonlu naylon, streç film ve köpük koruyucularla profesyonel ambalaj hizmeti.</p><a href="/ambalaj-hizmeti" style="font-size:.85rem;font-weight:600;margin-top:.75rem;display:inline-block;">Detaylı Bilgi →</a></div></div>
             </div>
 
-            <h3 style="font-size:1.25rem;font-weight:700;margin:36px 0 16px;">Taşıma Süreci</h3>
-            <div style="counter-reset:steps;">
-                @foreach (var step in new[] {
-                    "Ücretsiz keşif için randevu alınır, eşya listesi çıkarılır.",
-                    "Taşıma günü ve fiyat netleştirilir, sözleşme imzalanır.",
-                    "Profesyonel ekip eşyaları paketler ve araca yükler.",
-                    "İstanbul'a hareket edilir, güzergah boyunca takip sağlanır.",
-                    "İstanbul'daki yeni adresinizde eşyalar boşaltılır ve yerleştirilir."
-                })
-                {
-                    <div style="display:flex;gap:16px;margin-bottom:16px;align-items:flex-start;">
-                        <div style="background:var(--black);color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">@(Array.IndexOf(new[]{"Ücretsiz keşif için randevu alınır, eşya listesi çıkarılır.","Taşıma günü ve fiyat netleştirilir, sözleşme imzalanır.","Profesyonel ekip eşyaları paketler ve araca yükler.","İstanbul'a hareket edilir, güzergah boyunca takip sağlanır.","İstanbul'daki yeni adresinizde eşyalar boşaltılır ve yerleştirilir."},step)+1)</div>
-                        <p style="margin:0;padding-top:4px;">@step</p>
-                    </div>
-                }
+            <h2 style="margin-bottom:1rem;">Bala Nakliyatında Bilmeniz Gerekenler</h2>
+            <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                Bala'nın güney Ankara konumu taşıma güzergahını uzatmaktadır; erken yükleme saati planlanması önerilir. Çiftlik evi ve kırsal mülklerde stabilize yollar için uygun araç kullanılmaktadır.
+            </p>
+            <p style="margin-bottom:2.5rem;line-height:1.9;color:var(--gray-700);">
+                Az eşyayla İstanbul'a geçmek için parsiyel yük seçeneği hem ekonomik hem de pratik bir çözüm sunmaktadır. Tüm taşımalarda sigorta dahildir.
+            </p>
+
+            <h2 style="margin-bottom:1.5rem;">Bala Nakliyat Sürecimiz</h2>
+            <div style="margin-bottom:2.5rem;">
+                <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">1</div><div><h3 style="font-size:1rem;margin-bottom:.4rem;">Ücretsiz Keşif</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">Eksperimiz Bala adresinize gelir. Bina tipi, kat, yol koşulları ve eşya miktarını değerlendirir.</p></div></div>
+                <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">2</div><div><h3 style="font-size:1rem;margin-bottom:.4rem;">Sabit Fiyat Teklifi</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">Tüm kalemleri kapsayan yazılı teklif verilir. Verilen fiyat değişmez; sürpriz fatura çıkmaz.</p></div></div>
+                <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">3</div><div><h3 style="font-size:1rem;margin-bottom:.4rem;">Profesyonel Ambalajlama</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">Taşıma günü erken saatte Bala'ya geliyoruz. Mobilyalar battaniye ve streç filmle, kırılganlar balonlu naylonla paketlenir.</p></div></div>
+                <div style="display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start;"><div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">4</div><div><h3 style="font-size:1rem;margin-bottom:.4rem;">Sigortalı Nakliye</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">Eşyalarınız kapalı kasalı araçlara yüklenerek TEM üzerinden İstanbul'a hareket edilir. ~530 km yolculuk 11–14 saatte tamamlanır.</p></div></div>
+                <div style="display:flex;gap:1.25rem;align-items:flex-start;"><div style="flex-shrink:0;width:40px;height:40px;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;">5</div><div><h3 style="font-size:1rem;margin-bottom:.4rem;">Yerleştirme ve Montaj</h3><p style="font-size:.92rem;color:var(--gray-600);line-height:1.75;margin:0;">İstanbul'daki yeni adresinizde eşyalar boşaltılır, mobilyalar monte edilir. İşlem tamamlanana kadar yanınızdayız.</p></div></div>
             </div>
 
             <h3 style="font-size:1.25rem;font-weight:700;margin:36px 0 16px;">Fiyat Tablosu</h3>
