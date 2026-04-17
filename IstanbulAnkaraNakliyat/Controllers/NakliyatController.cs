@@ -362,6 +362,78 @@ public class NakliyatController : Controller
         return View();
     }
 
+    [HttpGet("ankara-istanbul-evden-eve-nakliyat")]
+    public IActionResult AnkaraIstanbulEvdenEve()
+    {
+        ViewData["Title"]       = "Ankara İstanbul Evden Eve Nakliyat | Kapıdan Kapıya 2026";
+        ViewData["Description"] = "Ankara'dan İstanbul'a evden eve nakliyat. Ambalaj, söküm-montaj, sigorta dahil kapıdan kapıya ev taşıma. 2+1 daire 12.000 ₺'den: 0532 543 68 37";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/ankara-istanbul-evden-eve-nakliyat";
+        return View();
+    }
+
+    [HttpGet("ankara-istanbul-kamyonet-nakliyat")]
+    public IActionResult AnkaraIstanbulKamyonet()
+    {
+        ViewData["Title"]       = "Ankara İstanbul Kamyonet Nakliyat | 1+1 & Küçük Yükler 2026";
+        ViewData["Description"] = "Ankara'dan İstanbul'a kamyonet ile nakliyat. 1+1 daire, stüdyo ve öğrenci eşyası için ekonomik, hızlı taşıma. 4.500 ₺'den başlar: 0532 543 68 37";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/ankara-istanbul-kamyonet-nakliyat";
+        return View();
+    }
+
+    [HttpGet("istanbul-ankara-kamyonet-nakliyat")]
+    public IActionResult IstanbulAnkaraKamyonet()
+    {
+        ViewData["Title"]       = "İstanbul Ankara Kamyonet Nakliyat | 1+1 & Küçük Yükler 2026";
+        ViewData["Description"] = "İstanbul'dan Ankara'ya kamyonet ile nakliyat. 1+1 daire, stüdyo ve öğrenci eşyası için ekonomik, hızlı taşıma. 4.500 ₺'den başlayan fiyatlar: 0532 543 68 37";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/istanbul-ankara-kamyonet-nakliyat";
+        return View();
+    }
+
+    [HttpGet("istanbul-ankara-evden-eve-nakliyat")]
+    public IActionResult IstanbulAnkaraEvdenEve()
+    {
+        ViewData["Title"]       = "İstanbul Ankara Evden Eve Nakliyat | Kapıdan Kapıya 2026";
+        ViewData["Description"] = "İstanbul'dan Ankara'ya evden eve nakliyat. Ambalaj, söküm-montaj, sigorta dahil kapıdan kapıya ev taşıma. 2+1 daire 12.000 ₺'den: 0532 543 68 37";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/istanbul-ankara-evden-eve-nakliyat";
+        return View();
+    }
+
+    [HttpGet("istanbul-ankara-nakliyat-fiyatlari")]
+    public IActionResult IstanbulAnkaraFiyatlari()
+    {
+        ViewData["Title"]       = "İstanbul Ankara Nakliyat Fiyatları 2026 | Güncel Taşıma Ücretleri";
+        ViewData["Description"] = "İstanbul'dan Ankara'ya nakliyat fiyatları 2026. 1+1'den villaya, parsiyelden tam araca tüm fiyatlar. Gizli ücret yok, net teklif: 0532 543 68 37";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/istanbul-ankara-nakliyat-fiyatlari";
+        return View();
+    }
+
+    [HttpGet("istanbul-ankara-ucuz-nakliyat")]
+    public IActionResult IstanbulAnkaraUcuz()
+    {
+        ViewData["Title"]       = "İstanbul Ankara Ucuz Nakliyat | Ekonomik Taşıma Seçenekleri 2026";
+        ViewData["Description"] = "İstanbul'dan Ankara'ya uygun fiyatlı nakliyat. Parsiyel, kamyonet, sezon dışı ve paket indirimleri. Sigortalı, güvenilir ekonomik taşıma: 0532 543 68 37";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/istanbul-ankara-ucuz-nakliyat";
+        return View();
+    }
+
+    [HttpGet("istanbul-ankara-parca-esya-tasima")]
+    public IActionResult IstanbulAnkaraParcaEsya()
+    {
+        ViewData["Title"]       = "İstanbul Ankara Parça Eşya Taşıma | Parsiyel Nakliyat 2026";
+        ViewData["Description"] = "İstanbul'dan Ankara'ya parça eşya ve parsiyel taşıma. Tek koliden mobilyaya, koltuktan beyaz eşyaya sigortalı taşıma. 1.500 ₺'den başlar: 0532 543 68 37";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/istanbul-ankara-parca-esya-tasima";
+        return View();
+    }
+
+    [HttpGet("istanbul-ankara-ofis-tasimaciligi")]
+    public IActionResult IstanbulAnkaraOfisTasimaciligi()
+    {
+        ViewData["Title"]       = "İstanbul Ankara Ofis Taşımacılığı | Kurumsal Nakliyat 2026";
+        ViewData["Description"] = "İstanbul'dan Ankara'ya kurumsal ofis taşıma. IT ekipmanı, sunucu, arşiv, kasa dahil. Gece ve hafta sonu seçeneği. İş sürekliliği öncelikli: 0532 543 68 37";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/istanbul-ankara-ofis-tasimaciligi";
+        return View();
+    }
+
     // ── Tüm ilçe listesi (sitemap için) ─────────────────────────
     public static IReadOnlyList<string> IstanbulSlugs => _istanbul.Keys.ToList();
     public static IReadOnlyList<string> AnkaraSlugs   => _ankara.Keys.ToList();

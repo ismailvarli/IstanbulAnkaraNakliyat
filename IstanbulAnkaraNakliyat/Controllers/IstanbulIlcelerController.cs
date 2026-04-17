@@ -191,12 +191,30 @@ public class IstanbulIlcelerController : Controller
         return View();
     }
 
+    [HttpGet("ikitelli-ankara-nakliyat")]
+    public IActionResult Ikitelli()
+    {
+        ViewData["Title"]       = "İkitelli Ankara Nakliyat | OSB Sanayi Bölgesinden Profesyonel Taşıma";
+        ViewData["Description"] = "İkitelli'den Ankara'ya nakliyat. İkitelli OSB, Kazım Karabekir, Ziya Gökalp ve Kanarya mahallelerinden sigortalı, TEM bağlantılı hızlı ev ve ofis taşıma. 0532 543 68 37";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/ikitelli-ankara-nakliyat";
+        return View();
+    }
+
     [HttpGet("arnavutkoy-ankara-nakliyat")]
     public IActionResult Arnavutkoy()
     {
         ViewData["Title"]       = "Arnavutköy Ankara Nakliyat | Havalimanı Yakınından Hızlı Taşıma";
         ViewData["Description"] = "Arnavutköy'den Ankara'ya nakliyat. Haraçcı, Bolluca, Hadımköy ve Taşoluk mahallelerinden sigortalı, havalimanı güzergahlı ev taşıma. 0532 543 68 37";
         ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/arnavutkoy-ankara-nakliyat";
+        return View();
+    }
+
+    [HttpGet("hadimkoy-ankara-nakliyat")]
+    public IActionResult Hadimkoy()
+    {
+        ViewData["Title"]       = "Hadımköy Ankara Nakliyat | OSB ve Sanayi Bölgesinden Güvenli Taşıma";
+        ViewData["Description"] = "Hadımköy'den Ankara'ya nakliyat. Hadımköy OSB, Taşoluk ve Bolluca mahallelerinden sigortalı, havalimanı güzergahlı profesyonel ev ve ofis taşıma. 0532 543 68 37";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/hadimkoy-ankara-nakliyat";
         return View();
     }
 

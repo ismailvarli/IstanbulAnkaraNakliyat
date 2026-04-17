@@ -1,6 +1,6 @@
 @{
-    ViewData["Title"]       = "İstanbul Ankara Şehirlerarası Nakliyat | 2026 Fiyatları";
-    ViewData["Description"] = "İstanbul'dan Ankara'ya şehirlerarası nakliyat. Tam araç ve parsiyel seçenekleri, sigortalı taşıma, 450 km güzergahta deneyimli hizmet: 0532 543 68 37";
+    ViewData["Title"]       = "İstanbul Ankara Şehirlerarası Nakliyat | C Tipi Belgeli, Sigortalı 2026";
+    ViewData["Description"] = "İstanbul'dan Ankara'ya yasal, C tipi belgeli şehirlerarası nakliyat. Tam araç veya parsiyel seçeneğiyle 450 km güvenli taşıma, aynı gün teslimat: 0532 543 68 37";
     ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/istanbul-ankara-sehirlerarasi-nakliyat";
 }
 @section Scripts {
@@ -10,7 +10,8 @@
     "@@type": "BreadcrumbList",
     "itemListElement": [
         { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.istanbulankaranakliyat.tr/" },
-        { "@@type": "ListItem", "position": 2, "name": "İstanbul Ankara Şehirlerarası Nakliyat", "item": "https://www.istanbulankaranakliyat.tr/istanbul-ankara-sehirlerarasi-nakliyat" }
+        { "@@type": "ListItem", "position": 2, "name": "İstanbul Ankara Nakliyat", "item": "https://www.istanbulankaranakliyat.tr/istanbul-ankara-nakliyat" },
+        { "@@type": "ListItem", "position": 3, "name": "Şehirlerarası Nakliyat", "item": "https://www.istanbulankaranakliyat.tr/istanbul-ankara-sehirlerarasi-nakliyat" }
     ]
 }
 </script>
@@ -19,10 +20,10 @@
     "@@context": "https://schema.org",
     "@@type": "Service",
     "name": "İstanbul Ankara Şehirlerarası Nakliyat",
-    "provider": { "@@type": "LocalBusiness", "name": "İstanbul Ankara Nakliyat", "telephone": "+905325436837" },
+    "provider": { "@@type": "LocalBusiness", "name": "İstanbul Ankara Nakliyat", "telephone": "+905325436837", "url": "https://www.istanbulankaranakliyat.tr" },
     "areaServed": [{ "@@type": "City", "name": "İstanbul" }, { "@@type": "City", "name": "Ankara" }],
-    "description": "İstanbul'dan Ankara'ya tam araç ve parsiyel şehirlerarası taşımacılık hizmeti.",
-    "offers": { "@@type": "Offer", "priceCurrency": "TRY", "price": "8000", "priceSpecification": { "@@type": "PriceSpecification", "minPrice": "1500", "maxPrice": "30000" } }
+    "description": "C tipi Karayolu Taşıma Yetki Belgesi ile tam araç ve parsiyel şehirlerarası nakliyat hizmeti.",
+    "offers": { "@@type": "AggregateOffer", "priceCurrency": "TRY", "lowPrice": "1500", "highPrice": "35000", "offerCount": "5" }
 }
 </script>
 <script type="application/ld+json">
@@ -30,10 +31,11 @@
     "@@context": "https://schema.org",
     "@@type": "FAQPage",
     "mainEntity": [
-        { "@@type": "Question", "name": "Tam araç ile parsiyel arasındaki fark nedir?", "acceptedAnswer": { "@@type": "Answer", "text": "Tam araç taşımada eşyalarınız yalnız taşınır ve aynı gün teslim edilir. Parsiyel taşımada birden fazla müşteri yükü aynı araçta gider, bu nedenle daha ekonomik fakat teslimat biraz daha uzun sürebilir." } },
-        { "@@type": "Question", "name": "İstanbul Ankara şehirlerarası nakliyat fiyatı ne kadar?", "acceptedAnswer": { "@@type": "Answer", "text": "1+1 daire için 8.000–14.000 ₺, 2+1 için 12.000–20.000 ₺, 3+1 için 16.000–28.000 ₺. Parsiyel taşıma 1.500 ₺'den başlar." } },
-        { "@@type": "Question", "name": "Şehirlerarası nakliyat için hangi belgeler gerekir?", "acceptedAnswer": { "@@type": "Answer", "text": "Yasal şehirlerarası taşımacılık için firmamızın Karayolu Taşıma Yetki Belgesi (C tipi) mevcuttur. Müşteriden herhangi bir belge talep edilmez." } },
-        { "@@type": "Question", "name": "Taşıma süresince eşyalarımı takip edebilir miyim?", "acceptedAnswer": { "@@type": "Answer", "text": "Evet. GPS takipli araçlarımız sayesinde müşterilerimiz talep etmeleri halinde araçlarının konumunu öğrenebilir. Ayrıca sürücümüz yolculuk boyunca bilgilendirme yapar." } }
+        { "@@type": "Question", "name": "Şehirlerarası nakliyat için C tipi belge şart mı?", "acceptedAnswer": { "@@type": "Answer", "text": "Evet. Karayolu Taşıma Kanunu'na göre şehirlerarası ücretli eşya taşımacılığı yapabilmek için C tipi Karayolu Taşıma Yetki Belgesi zorunludur. Belgesi olmayan firmalarla yapılan taşımada eşya hasarınız yasal güvence kapsamı dışında kalır." } },
+        { "@@type": "Question", "name": "Tam araç ile parsiyel arasındaki fark nedir?", "acceptedAnswer": { "@@type": "Answer", "text": "Tam araç taşımada eşyalarınız tek araçta yalnız taşınır ve aynı gün teslim edilir. Parsiyelde aynı güzergaha giden başka müşteri yükleri de aynı araca yüklenir; fiyat düşer ama teslimat 1–3 iş günü sürebilir." } },
+        { "@@type": "Question", "name": "İstanbul Ankara şehirlerarası nakliyat fiyatı ne kadar?", "acceptedAnswer": { "@@type": "Answer", "text": "2026 fiyatlarıyla: parsiyel 1.500 ₺'den başlar, 1+1 tam araç 8.000–14.000 ₺, 2+1 12.000–20.000 ₺, 3+1 16.000–28.000 ₺, villa/4+1 keşif sonrası belirlenir." } },
+        { "@@type": "Question", "name": "İstanbul'dan Ankara'ya yol kaç saat sürer?", "acceptedAnswer": { "@@type": "Answer", "text": "TEM Otoyolu üzerinden araç yol süresi 4,5–5,5 saattir. Yükleme ve boşaltma dahil toplam operasyon 8–12 saat. Gece hareketi seçeneğinde İstanbul trafiği atlanır, araç sabah erken Ankara'ya girer." } },
+        { "@@type": "Question", "name": "Eşyaları yolda takip edebilir miyim?", "acceptedAnswer": { "@@type": "Answer", "text": "Evet. GPS takipli araçlarımız sayesinde eşyalarınızın TEM'de nerede olduğunu istediğiniz an öğrenebilirsiniz. Sürücümüz hareket ve varış bilgisi için ayrıca sizi arar." } }
     ]
 }
 </script>
@@ -54,7 +56,7 @@
 <div class="page-header">
     <div class="container">
         <h1>İstanbul Ankara Şehirlerarası Nakliyat</h1>
-        <p>450 km güzergahta tam araç ve parsiyel seçenekleriyle sigortalı taşımacılık</p>
+        <p>C Tipi Yetki Belgeli · Tam Araç & Parsiyel · Aynı Gün Ankara Teslimatı</p>
     </div>
 </div>
 
@@ -65,112 +67,136 @@
             <div class="col-lg-8">
                 <article>
 
-                    <h2>Şehirlerarası Nakliyat Nedir ve Neden Farklıdır?</h2>
+                    <h2>Şehirlerarası Nakliyat Neden Farklıdır?</h2>
                     <p>
-                        Şehirlerarası nakliyat, iki şehir arasında gerçekleştirilen ve yasal düzenlemelere tabi olan taşımacılık hizmetidir.
-                        İstanbul ile Ankara arasındaki <strong>450 km'lik mesafe</strong> hem araç hem de sürücü gerekliliklerini artırmaktadır.
-                        Yük güvenliği, yol koşulları, mola planlaması ve teslimat koordinasyonu şehir içi taşımadan çok daha kapsamlı yönetim gerektirir.
+                        İstanbul içinde bir semtten diğerine taşınmak ile İstanbul'dan Ankara'ya taşınmak tamamen farklı bir operasyondur.
+                        Şehirlerarası nakliyat, Karayolu Taşıma Kanunu kapsamında düzenlenen ve belge zorunluluğu olan bir faaliyet alanıdır.
+                        Bu mesafede eşyalar ortalama <strong>450 km</strong> boyunca yolda kalır; ambalajlama standardı, araç güvenliği,
+                        sürücü mola planlaması ve sigorta kapsamı şehir içi taşımadan çok daha kapsamlı yönetilmelidir.
                     </p>
                     <p>
-                        Firmamız, <strong>Karayolu Taşıma Yetki Belgesi</strong> (C tipi) ile yasal güvence altında şehirlerarası nakliyat hizmeti sunmaktadır.
-                        10 yılı aşkın bu güzergah deneyimiyle yüzlerce aile ve kurumun İstanbul-Ankara taşımasını başarıyla gerçekleştirdik.
+                        Firmamız, <strong>C Tipi Karayolu Taşıma Yetki Belgesi</strong> ile yasal güvence altında faaliyet göstermektedir.
+                        Belgesi olmayan firmalarla taşıma yaptığınızda eşya hasarınızda yasal yaptırım uygulama imkânınız son derece kısıtlıdır.
+                        Biz hem yasal hem de operasyonel olarak şehirlerarası taşımacılığa hazır bir firmayız.
                     </p>
+
+                    <div style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;margin:1.75rem 0;display:flex;gap:1rem;align-items:flex-start;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;margin-top:.15rem;"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                        <div>
+                            <strong>C Tipi Yetki Belgesi Neden Önemli?</strong>
+                            <p style="margin:.4rem 0 0;font-size:.93rem;color:var(--gray-700);">
+                                Şehirlerarası eşya taşımacılığı yapabilmek için Ulaştırma Bakanlığı'ndan alınan bu belge zorunludur.
+                                Belgeli firmalar düzenli araç muayenesi, sürücü eğitimi ve sigorta zorunluluklarına tabidir.
+                                Belgesiz firma kullanırken eşyanız zarar görürse yasal tazminat yolunuz kapalı olabilir.
+                            </p>
+                        </div>
+                    </div>
 
                     <figure style="margin:1.75rem 0 2rem;">
                         <img src="~/img/hakkimizda/arac.jpg" alt="İstanbul Ankara Şehirlerarası Nakliyat Aracı" loading="lazy" style="width:100%;border-radius:var(--radius-lg);object-fit:cover;max-height:380px;">
                     </figure>
 
-                    <h2>Tam Araç mı, Parsiyel mi?</h2>
+                    <h2>Tam Araç mı, Parsiyel mi? Doğru Seçim Rehberi</h2>
 
-                    <h3>Tam Araç Taşıma</h3>
-                    <p>
-                        Eşyalarınız tek bir araca yüklenerek doğrudan Ankara adresinize teslim edilir.
-                        Başka müşteri yüküyle karışma riski yoktur, aynı gün teslimat garanti edilir.
-                        2+1 ve üzeri daireler, ofis taşımaları ve acil taşınmalar için ideal seçenektir.
-                        İstanbul sabah saatlerinde yüklenen eşyalarınız akşam Ankara'da hazır olur.
-                    </p>
-
-                    <h3>Parsiyel (Parça Eşya) Taşıma</h3>
-                    <p>
-                        Az miktarda eşyanız varsa — birkaç koli, tek bir koltuk veya beyaz eşya gibi — parsiyel taşıma en ekonomik çözümdür.
-                        Eşyalarınız aynı güzergaha giden diğer müşteri yükleriyle birleştirilir ve uygun fiyata taşınır.
-                        Teslimat 1–3 iş günü içinde gerçekleşir. 1+1 küçük daireler için de bu seçenek değerlendirilebilir.
-                    </p>
-
-                    <h2>İstanbul Ankara Güzergahı: Teknik Bilgiler</h2>
                     <div class="why-list">
                         <div class="why-item">
-                            <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+                            <div class="why-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg>
+                            </div>
                             <div>
-                                <h4>Mesafe ve Güzergah</h4>
-                                <p>İstanbul-Ankara mesafesi TEM Otoyolu üzerinden yaklaşık 450 km'dir. Alternatif D-100 güzergahı da kullanılabilir.</p>
+                                <h4>Tam Araç — Aynı Gün Teslimat Garantisi</h4>
+                                <p>Eşyalarınız başka hiçbir müşterinin yükü olmadan tek araçta taşınır. İstanbul'dan yüklenen eşyalar doğrudan Ankara adresinize gider — ara depo yok, yük aktarması yok. 2+1 ve üzeri daireler, ofis taşımaları, acil taşınmalar ve hassas eşyalar için standart seçenek.</p>
                             </div>
                         </div>
                         <div class="why-item">
-                            <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg></div>
-                            <div>
-                                <h4>Toplam Süre</h4>
-                                <p>Yükleme + yolculuk + boşaltma dahil toplam 8–12 saat. Araç yol süresi 4,5–5,5 saat (trafik durumuna göre değişir).</p>
+                            <div class="why-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v3.01c0 .72.43 1.34 1 1.72V20c0 1.1 1.1 2 2 2h14c.9 0 2-.9 2-2V8.72c.57-.38 1-.99 1-1.71V4c0-1.1-1-2-2-2z"/></svg>
                             </div>
-                        </div>
-                        <div class="why-item">
-                            <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
                             <div>
-                                <h4>Sigorta Güvencesi</h4>
-                                <p>Tüm şehirlerarası taşımalarımızda eşyalar nakliyat sigortası kapsamındadır. Olası hasar tam olarak karşılanır.</p>
-                            </div>
-                        </div>
-                        <div class="why-item">
-                            <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 11.48 19.44 8.3a.63.63 0 0 0-.22-.85L17.44 6.38a1 1 0 0 0-1.39.24l-.4.59A9 9 0 0 0 12 6a9 9 0 0 0-3.64.21l-.4-.59a1 1 0 0 0-1.39-.24L4.78 6.45a.63.63 0 0 0-.22.85l1.84 3.18A9 9 0 0 0 3 15h18a9 9 0 0 0-3.4-3.52z"/></svg></div>
-                            <div>
-                                <h4>GPS Takipli Araçlar</h4>
-                                <p>Tüm araçlarımız GPS sistemiyle donatılmıştır. Eşyalarınız 450 km boyunca anlık takip edilebilir.</p>
+                                <h4>Parsiyel — En Ekonomik Seçenek</h4>
+                                <p>Eşya hacminiz küçükse — birkaç koli, tek beyaz eşya, 1+1 küçük daire — araç başka müşteri yükleriyle dolar ve maliyet bölünür. Teslimat 1–3 iş günü içinde gerçekleşir. Bütçe önceliği için ideal; acil teslimat gerektirmeyen taşımalar için en akıllı tercih.</p>
                             </div>
                         </div>
                     </div>
 
-                    <h2>Şehirlerarası Taşıma Hazırlık Süreci</h2>
+                    <div class="price-table" style="margin:1.5rem 0 2rem;">
+                        <div class="price-row price-row--header"><span>Durum</span><span>Öneri</span></div>
+                        <div class="price-row"><span>Stüdyo / oda eşyası</span><span>Parsiyel veya Kamyonet</span></div>
+                        <div class="price-row"><span>1+1 daire (az eşya)</span><span>Parsiyel veya Kamyonet</span></div>
+                        <div class="price-row"><span>1+1 daire (tam eşyalı)</span><span>Tam Araç (5T Kamyon)</span></div>
+                        <div class="price-row"><span>2+1 daire</span><span>Tam Araç (10T Kamyon)</span></div>
+                        <div class="price-row"><span>3+1 ve üzeri</span><span>Tam Araç (Büyük Kamyon)</span></div>
+                        <div class="price-row"><span>Ofis / kurumsal</span><span>Tam Araç (Keşif sonrası)</span></div>
+                    </div>
 
-                    <h3>Ücretsiz Keşif ve Rezervasyon</h3>
+                    <h2>450 km Güzergahta Operasyon Nasıl Yönetilir?</h2>
+
+                    <h3>Güzergah: TEM mi, D-100 mü?</h3>
                     <p>
-                        İlk adım bizimle iletişime geçmektir. Eşya miktarınıza göre tam araç mı yoksa parsiyel mi daha uygun olduğunu
-                        birlikte değerlendiririz. Keşif yerinde veya fotoğraf/video üzerinden yapılabilir. Keşif tamamen ücretsizdir.
+                        İstanbul–Ankara arasında iki ana kara güzergahı mevcuttur.
+                        <strong>TEM Otoyolu</strong> (E-80) daha düz ve hızlı; standart yük araçları için birincil tercih.
+                        <strong>D-100 Karayolu</strong> alternatif güzergah; bölgesel aktarma veya rota optimizasyonu gereken
+                        parsiyel taşımalarda zaman zaman kullanılır.
+                        Araçlarımız ağırlıklı olarak TEM üzerinden hareket eder; yol süresi 4,5–5,5 saattir.
                     </p>
 
-                    <h3>Ambalajlama Günü</h3>
+                    <h3>Sürücü Mola ve Yük Güvenliği</h3>
                     <p>
-                        Taşıma günü sabahı ekibimiz İstanbul adresinizde hazır olur. 450 km yolculuk için özel ambalajlama standartları
-                        uygulanır: kırılgan eşyalar çift katlı balonlu naylon, mobilyalar battaniye ve streç film ile korunur.
-                        Her koli etiketlenerek Ankara'daki boşaltmada doğru odaya yerleştirilmesi sağlanır.
+                        450 km'de sürücülerimiz zorunlu dinlenme molası yapar — bu hem yasal bir gereklilik hem de güvenlik standardıdır.
+                        Mola noktalarında yük durumu kontrol edilir: bağlama kayışları sıkılığı, ambalaj bütünlüğü, araç içi yerleşim gözlemlenir.
+                        Eşyalarınız İstanbul'dan çıktığı durumda Ankara'ya ulaşır.
                     </p>
 
-                    <h3>Yolculuk ve Teslimat</h3>
+                    <h3>Gece Taşıma Seçeneği</h3>
                     <p>
-                        Araç TEM Otoyolu üzerinden hareket eder. Sürücü gerekli mola noktalarında dinlenir;
-                        yük güvenliği ara kontrol noktalarında denetlenir. Ankara adresine varışta boşaltma,
-                        söküm gerektiren mobilyaların montajı ve müşteri teslimat imzası ile süreç tamamlanır.
+                        İstanbul trafiği özellikle hafta içi sabah ve akşam zirve saatlerinde ciddi gecikme yaratır.
+                        Gece 22:00–23:00 başlangıçlı taşımalarda trafik sıfırlanır; araç sabah 04:00–05:00'te Ankara'ya girer.
+                        Boşaltma ekibi sabah 07:00–08:00'de hazır olur ve siz işe gidebilirsiniz.
+                        Bu opsiyon özellikle iş değişikliğiyle taşınan müşterilerin tercihi.
                     </p>
 
-                    <figure style="margin:1.75rem 0 2rem;">
-                        <img src="~/img/galeri/galeri5.webp" alt="İstanbul Ankara Şehirlerarası Taşıma" loading="lazy" style="width:100%;border-radius:var(--radius-lg);object-fit:cover;max-height:360px;">
-                    </figure>
-
-                    <h2>Fiyatlar 2026</h2>
+                    <h2>Şehirlerarası Nakliyat Fiyatları 2026</h2>
                     <div class="price-table">
-                        <div class="price-row price-row--header"><span>Taşıma Türü</span><span>Kapsam</span><span>Tahmini Fiyat</span></div>
-                        <div class="price-row"><span>Tam Araç — 1+1</span><span>15–25 m³</span><span>8.000 – 14.000 ₺</span></div>
-                        <div class="price-row"><span>Tam Araç — 2+1</span><span>25–40 m³</span><span>12.000 – 20.000 ₺</span></div>
-                        <div class="price-row"><span>Tam Araç — 3+1</span><span>40–60 m³</span><span>16.000 – 28.000 ₺</span></div>
-                        <div class="price-row"><span>Tam Araç — Villa/4+1</span><span>60–100 m³</span><span>Keşif sonrası</span></div>
-                        <div class="price-row"><span>Parsiyel Taşıma</span><span>1 koli – 10 m³</span><span>1.500 – 7.000 ₺</span></div>
+                        <div class="price-row price-row--header"><span>Taşıma Türü</span><span>Araç</span><span>Fiyat Aralığı</span></div>
+                        <div class="price-row"><span>Parsiyel (az yük)</span><span>Paylaşımlı araç</span><span>1.500 – 6.000 ₺</span></div>
+                        <div class="price-row"><span>Tam Araç — 1+1</span><span>Kamyon 5T</span><span>8.000 – 14.000 ₺</span></div>
+                        <div class="price-row"><span>Tam Araç — 2+1</span><span>Kamyon 10T</span><span>12.000 – 20.000 ₺</span></div>
+                        <div class="price-row"><span>Tam Araç — 3+1</span><span>Büyük Kamyon</span><span>16.000 – 28.000 ₺</span></div>
+                        <div class="price-row"><span>Villa / 4+1+</span><span>TIR</span><span>Keşif sonrası</span></div>
+                        <div class="price-row"><span>Kurumsal / Ofis</span><span>Ölçüye göre</span><span>Keşif sonrası</span></div>
                     </div>
-                    <p style="font-size:.88rem;color:var(--gray-600);margin-top:.75rem;">* Fiyatlar yaklaşık olup keşif sonrası netleşir. Kat, asansör ve montaj hizmetleri fiyata dahildir.</p>
+                    <p style="font-size:.88rem;color:var(--gray-600);margin-top:.75rem;">* Fiyatlara ambalaj, nakliyat sigortası ve söküm-montaj dahildir. Kesin fiyat ücretsiz keşif sonrası sabitlenir.</p>
+
+                    <h2>Şehirlerarası Taşımada Nelere Dikkat Edilmeli?</h2>
+                    <ul style="padding-left:1.5rem;color:var(--gray-800);line-height:2.2;font-size:.97rem;">
+                        <li><strong>Firma belgesi sorun:</strong> "C Tipi Yetki Belgesi var mı?" diye mutlaka sorun. Cevap belirsizse vazgeçin.</li>
+                        <li><strong>Yazılı sözleşme isteyin:</strong> Taşıma bedeli, içerik listesi ve sigorta kapsamı sözleşmede yer almalıdır.</li>
+                        <li><strong>Fotoğraflı teslim tutanağı:</strong> Yükleme öncesi ve boşaltma sonrası eşya durumu fotoğraflanmalıdır.</li>
+                        <li><strong>Aynı gün teslimat mu, ertesi gün mü?</strong> Anlaşmadan önce net olarak teyit edin.</li>
+                        <li><strong>Ek ücret tuzağına dikkat:</strong> Asansör, merdiven, uzak park mesafesi gibi kalemler sözleşmede açıkça belirtilmiş olmalıdır.</li>
+                    </ul>
 
                     <h2>Sıkça Sorulan Sorular</h2>
-                    <div class="faq-item"><button class="faq-question" aria-expanded="false">Tam araç mı parsiyel mi tercih etmeliyim? <span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-answer">2+1 ve üzeri daireler için tam araç, az eşya veya bütçe kısıtı varsa parsiyel öneririz. Tam araçta aynı gün teslimat garanti edilirken parsiyelde 1–3 iş günü sürebilir.</div></div>
-                    <div class="faq-item"><button class="faq-question" aria-expanded="false">Şehirlerarası nakliyat için belge gerekiyor mu? <span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-answer">Firmamızın C tipi Karayolu Taşıma Yetki Belgesi mevcuttur. Müşteriden herhangi bir belge talep edilmez, tüm yasal yükümlülük firmamıza aittir.</div></div>
-                    <div class="faq-item"><button class="faq-question" aria-expanded="false">Eşyalarım yolda zarar görürse ne olur? <span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-answer">Tüm taşımalarımızda nakliyat sigortası mevcuttur. Hasar tespiti teslimatta yapılır, sigorta şirketimiz devreye girerek zarar tam olarak tazmin edilir.</div></div>
-                    <div class="faq-item"><button class="faq-question" aria-expanded="false">Gece saatlerinde İstanbul'dan Ankara'ya taşıma yapılıyor mu? <span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-answer">Evet. Gece yükleme seçeneği mevcuttur. İstanbul trafiğini atlayarak gece çıkışı yapan araçlar sabah saatlerinde Ankara'ya ulaşabilir.</div></div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">C tipi yetki belgesi olmayan firma yasal mı? <span class="faq-icon" aria-hidden="true">+</span></button>
+                        <div class="faq-answer">Hayır. Şehirlerarası ücretli eşya taşıması yapan firmaların C tipi Karayolu Taşıma Yetki Belgesi olması yasal zorunluluktur. Belgesiz firmalar hem yasal olarak kuralsız hem de eşya hasarında müşteriye karşı yükümlülükleri belirsizdir.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">Parsiyel taşımada eşyam başka yüklerle karışır mı? <span class="faq-icon" aria-hidden="true">+</span></button>
+                        <div class="faq-answer">Karışmaz — her müşterinin yükü ayrı kolilerle etiketlenir ve araç içinde bölümlenir. Ancak aynı araçta başka müşteri yükü de bulunur. Fiziksel karışma riski yoktur; teslimatta her eşya kontrol edilir.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">İstanbul'dan Ankara'ya yol kaç saat sürer? <span class="faq-icon" aria-hidden="true">+</span></button>
+                        <div class="faq-answer">TEM üzerinden araç yol süresi 4,5–5,5 saat. Yükleme ve boşaltma dahil tam operasyon 8–12 saat. Gece çıkışlı taşımalarda trafik yoktur, süre daha kısa tutulabilir.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">Yol sırasında eşyam zarar görürse ne olur? <span class="faq-icon" aria-hidden="true">+</span></button>
+                        <div class="faq-answer">Nakliyat sigortamız yükleme anından Ankara teslimatına kadar aktiftir. Teslim sırasında eşyalar kontrol edilir; hasar tespiti yerinde yapılır ve sigorta şirketimiz süreci yürütür. Tazminat eksiksiz ödenir.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">Eşyaları GPS ile takip edebilir miyim? <span class="faq-icon" aria-hidden="true">+</span></button>
+                        <div class="faq-answer">Evet. Araçlarımızın tamamı GPS takip sistemiyle donatılmıştır. İstediğinizde araç konumunu paylaşırız. Sürücümüz hareket ve Ankara varış bilgisi için sizi ayrıca arar.</div>
+                    </div>
 
                 </article>
             </div>
@@ -179,7 +205,7 @@
                 <div class="page-sidebar">
                     <div class="sidebar-cta">
                         <h3>Şehirlerarası Teklif Alın</h3>
-                        <p>İstanbul → Ankara taşıma için hemen arayın.</p>
+                        <p>C Tipi belgeli, sigortalı taşıma için hemen arayın.</p>
                         <a href="tel:+905325436837" class="btn btn-primary" style="width:100%;justify-content:center;margin-bottom:.75rem;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                             0532 543 68 37
@@ -190,10 +216,11 @@
                         <h4>İlgili Sayfalar</h4>
                         <ul class="sidebar-links">
                             <li><a href="/istanbul-ankara-nakliyat">→ İstanbul Ankara Nakliyat</a></li>
-                            <li><a href="/evden-eve-nakliyat">→ Evden Eve Nakliyat</a></li>
-                            <li><a href="/parca-esya-tasima">→ Parça Eşya Taşıma</a></li>
-                            <li><a href="/nakliyat-ucreti">→ Fiyat Listesi 2026</a></li>
+                            <li><a href="/istanbul-ankara-evden-eve-nakliyat">→ Evden Eve Nakliyat</a></li>
+                            <li><a href="/istanbul-ankara-kamyonet-nakliyat">→ Kamyonet ile Taşıma</a></li>
+                            <li><a href="/parca-esya-tasima">→ Parça Eşya / Parsiyel</a></li>
                             <li><a href="/ankara-istanbul-sehirlerarasi-nakliyat">→ Ankara → İstanbul</a></li>
+                            <li><a href="/nakliyat-ucreti">→ 2026 Fiyat Listesi</a></li>
                         </ul>
                     </div>
                     <div class="sidebar-box">
@@ -201,7 +228,8 @@
                         <ul class="sidebar-trust">
                             <li>✓ C Tipi Yetki Belgesi</li>
                             <li>✓ Nakliyat Sigortası</li>
-                            <li>✓ GPS Takip</li>
+                            <li>✓ GPS Takipli Araçlar</li>
+                            <li>✓ Yazılı Sözleşme</li>
                             <li>✓ Aynı Gün Teslimat</li>
                             <li>✓ Gizli Ücret Yok</li>
                         </ul>
@@ -215,14 +243,15 @@
 
 <section class="cta-band" aria-label="Teklif Al">
     <div class="container">
-        <h2>İstanbul'dan Ankara'ya Şehirlerarası Taşınmaya Hazır mısınız?</h2>
-        <p>10 yıllık şehirlerarası nakliyat deneyimimiz ve sigorta güvencesiyle yanınızdayız.</p>
+        <h2>Yasal Güvenceli, Sigortalı Şehirlerarası Taşıma</h2>
+        <p>C Tipi belgeli firmamızla İstanbul'dan Ankara'ya güvenle taşının. Ücretsiz keşif, net fiyat.</p>
         <div class="cta-actions">
             <a href="tel:+905325436837" class="btn btn-primary">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                 0532 543 68 37
             </a>
             <a href="https://wa.me/905325436837" target="_blank" rel="noopener noreferrer" class="btn btn-wa">WhatsApp ile Yaz</a>
+            <a href="/istanbul-ankara-nakliyat" class="btn btn-outline">Tüm Seçenekler</a>
         </div>
     </div>
 </section>
