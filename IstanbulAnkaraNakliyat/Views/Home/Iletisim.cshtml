@@ -105,6 +105,19 @@
     <div style="border:1px solid var(--gray-200); border-radius:var(--radius-lg); padding:2.25rem;">
         <h2 style="font-size:1.3rem; font-weight:700; margin-bottom:1.5rem;">Ücretsiz Teklif Alın</h2>
 
+        @if (Context.Request.Query["basarili"] == "1")
+        {
+            <div style="background:#f0fdf4;border:1px solid #22c55e;border-radius:var(--radius);padding:1rem 1.25rem;margin-bottom:1.25rem;color:#15803d;font-weight:600;">
+                ✓ Talebiniz alındı! En kısa sürede sizi arayacağız.
+            </div>
+        }
+        else if (Context.Request.Query["hata"] == "1")
+        {
+            <div style="background:#fef2f2;border:1px solid #f87171;border-radius:var(--radius);padding:1rem 1.25rem;margin-bottom:1.25rem;color:#dc2626;font-weight:600;">
+                Ad ve geçerli telefon numarası zorunludur.
+            </div>
+        }
+
         <form method="post" action="/iletisim/gonder" style="display:flex; flex-direction:column; gap:1rem;">
             @Html.AntiForgeryToken()
 

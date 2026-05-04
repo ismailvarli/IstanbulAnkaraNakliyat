@@ -45,8 +45,8 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <!-- Bundle: bootstrap-grid + site.css -->
-    <link rel="stylesheet" href="~/css/bundle.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-grid.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
     <!-- LocalBusiness JSON-LD -->
     <script type="application/ld+json">
@@ -329,7 +329,7 @@
         </a>
     </div>
 
-    <script src="~/js/bundle.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
     <!-- ══ TEKLİF MODAL ════════════════════════════════════════ -->

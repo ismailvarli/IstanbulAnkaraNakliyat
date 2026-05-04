@@ -434,7 +434,94 @@ public class NakliyatController : Controller
         return View();
     }
 
+    [HttpGet("istanbul-ankara-fuar-nakliyat")]
+    public IActionResult IstanbulAnkaraFuar()
+    {
+        ViewData["Title"]       = "İstanbul Ankara Fuar Nakliyat | Stand ve Sergi Malzemesi Taşıma 2026";
+        ViewData["Description"] = "İstanbul'dan Ankara'ya fuar ve sergi malzemesi nakliyatı. Stand, display sistemi, vitrin, promo malzeme ve elektronik taşıma. Fuar öncesi zamanında teslimat: 0532 543 68 37";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/istanbul-ankara-fuar-nakliyat";
+        return View();
+    }
+
+    [HttpGet("istanbul-ankara-kamyon-nakliyat")]
+    public IActionResult IstanbulAnkaraKamyon()
+    {
+        ViewData["Title"]       = "İstanbul Ankara Kamyon Nakliyat | 2+1, 3+1 Büyük Ev Taşıma 2026";
+        ViewData["Description"] = "İstanbul'dan Ankara'ya kamyon ile büyük ev ve ofis taşıma. 2+1, 3+1 ve villa için tam araçlı sigortalı nakliyat. C Tipi belgeli hizmet: 0532 543 68 37";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/istanbul-ankara-kamyon-nakliyat";
+        return View();
+    }
+
+    [HttpGet("istanbul-ankara-parsiyel-nakliyat")]
+    public IActionResult IstanbulAnkaraParsiyel()
+    {
+        ViewData["Title"]       = "İstanbul Ankara Parsiyel Nakliyat | Parça Eşya Paylaşımlı Taşıma 2026";
+        ViewData["Description"] = "İstanbul'dan Ankara'ya parsiyel nakliyat. Az eşyanız için paylaşımlı araç seçeneği. Tek koliden mobilyaya sigortalı, ekonomik taşıma. 1.200 ₺'den: 0532 543 68 37";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/istanbul-ankara-parsiyel-nakliyat";
+        return View();
+    }
+
+    [HttpGet("istanbul-ankara-ambar-nakliyat")]
+    public IActionResult IstanbulAnkaraAmbar()
+    {
+        ViewData["Title"]       = "İstanbul Ankara Ambar Nakliyat | Depolama + Taşıma Kombine 2026";
+        ViewData["Description"] = "İstanbul'dan Ankara'ya ambar nakliyat hizmeti. Güvenli eşya depolama ve şehirlerarası taşıma birleşik hizmet. Esnek teslim tarihleri: 0532 543 68 37";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/istanbul-ankara-ambar-nakliyat";
+        return View();
+    }
+
+    [HttpGet("ankara-istanbul-kamyon-nakliyat")]
+    public IActionResult AnkaraIstanbulKamyon()
+    {
+        ViewData["Title"]       = "Ankara İstanbul Kamyon Nakliyat | 2+1, 3+1 Büyük Ev Taşıma 2026";
+        ViewData["Description"] = "Ankara'dan İstanbul'a kamyon ile büyük ev ve ofis taşıma. 2+1, 3+1 ve villa için tam araçlı sigortalı nakliyat. Anadolu ve Avrupa yakasına teslimat: 0532 543 68 37";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/ankara-istanbul-kamyon-nakliyat";
+        return View();
+    }
+
+    [HttpGet("ankara-istanbul-ambar-nakliyat")]
+    public IActionResult AnkaraIstanbulAmbar()
+    {
+        ViewData["Title"]       = "Ankara İstanbul Ambar Nakliyat | Depolama + Taşıma Kombine 2026";
+        ViewData["Description"] = "Ankara'dan İstanbul'a ambar nakliyat hizmeti. Güvenli eşya depolama ve şehirlerarası taşıma birleşik çözüm. Esnek teslim tarihleri: 0532 543 68 37";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/ankara-istanbul-ambar-nakliyat";
+        return View();
+    }
+
+    [HttpGet("ankara-istanbul-fuar-nakliyat")]
+    public IActionResult AnkaraIstanbulFuar()
+    {
+        ViewData["Title"]       = "Ankara İstanbul Fuar Nakliyat | Stand ve Sergi Malzemesi Taşıma 2026";
+        ViewData["Description"] = "Ankara'dan İstanbul'a fuar ve sergi malzemesi nakliyatı. ATO, Armada, Başkent Kongre'den CNR Expo ve Tüyap'a stand taşıma. Zamanında teslimat: 0532 543 68 37";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/ankara-istanbul-fuar-nakliyat";
+        return View();
+    }
+
+    [HttpGet("ankara-istanbul-ofis-nakliyat")]
+    public IActionResult AnkaraIstanbulOfis()
+    {
+        ViewData["Title"]       = "Ankara İstanbul Ofis Nakliyat | Kurumsal Taşıma Hizmeti 2026";
+        ViewData["Description"] = "Ankara'dan İstanbul'a kurumsal ofis taşıma. IT ekipmanı, sunucu, arşiv ve kasa dahil. Hafta sonu ve gece taşıma seçeneği. İş sürekliliği: 0532 543 68 37";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/ankara-istanbul-ofis-nakliyat";
+        return View();
+    }
+
+    [HttpGet("ankara-istanbul-parsiyel-nakliyat")]
+    public IActionResult AnkaraIstanbulParsiyel()
+    {
+        ViewData["Title"]       = "Ankara İstanbul Parsiyel Nakliyat | Parça Eşya Paylaşımlı Taşıma 2026";
+        ViewData["Description"] = "Ankara'dan İstanbul'a parsiyel nakliyat. Az eşyanız için paylaşımlı araç seçeneği. Tek parçadan başlayan sigortalı, ekonomik taşıma. 0532 543 68 37";
+        ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/ankara-istanbul-parsiyel-nakliyat";
+        return View();
+    }
+
     // ── Tüm ilçe listesi (sitemap için) ─────────────────────────
     public static IReadOnlyList<string> IstanbulSlugs => _istanbul.Keys.ToList();
     public static IReadOnlyList<string> AnkaraSlugs   => _ankara.Keys.ToList();
+
+    // ── İlçe verisi (dış controller erişimi için) ────────────────
+    public static (string Name, string Ozellik, string[] Mahalleler, (string N, string S)[] Yakin)? GetIstanbul(string slug)
+        => _istanbul.TryGetValue(slug, out var d) ? d : null;
+    public static (string Name, string Ozellik, string[] Mahalleler, (string N, string S)[] Yakin)? GetAnkara(string slug)
+        => _ankara.TryGetValue(slug, out var d) ? d : null;
 }

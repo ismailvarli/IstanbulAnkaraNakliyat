@@ -1,0 +1,533 @@
+@model IstanbulAnkaraNakliyat.Models.AnkaraIlceServisModel
+@using IstanbulAnkaraNakliyat.Models
+@{
+    Layout = "_Layout";
+    var ilce    = Model.IlceAdi;
+    var servis  = Model.ServisAdi;
+    var slug    = Model.IlceSlug;
+    var sSlug   = Model.ServisSlug;
+    var yon     = "ankara-istanbul-nakliyat";
+    var yonText = "Ankara İstanbul Nakliyat";
+    var ilceUrl = $"/{slug}-istanbul-nakliyat";
+}
+
+@section Scripts {
+<script type="application/ld+json">
+{
+    "@@context": "https://schema.org",
+    "@@graph": [
+        {
+            "@@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.istanbulankaranakliyat.tr/" },
+                { "@@type": "ListItem", "position": 2, "name": "@yonText", "item": "https://www.istanbulankaranakliyat.tr/@yon" },
+                { "@@type": "ListItem", "position": 3, "name": "@ilce İstanbul Nakliyat", "item": "https://www.istanbulankaranakliyat.tr@ilceUrl" },
+                { "@@type": "ListItem", "position": 4, "name": "@Model.H1", "item": "@Model.PageUrl" }
+            ]
+        },
+        {
+            "@@type": "Service",
+            "name": "@Model.H1",
+            "provider": { "@@id": "https://www.istanbulankaranakliyat.tr/#organization" },
+            "areaServed": "@ilce, Ankara",
+            "description": "@Model.SeoDescription",
+            "url": "@Model.PageUrl"
+        },
+        {
+            "@@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@@type": "Question",
+                    "name": "Ankara @ilce'@(ilce.Last() switch {'a' or 'ı' or 'o' or 'u' => "dan", _ => "den"}) İstanbul'a @servis fiyatı ne kadar?",
+                    "acceptedAnswer": { "@@type": "Answer", "text": "Ankara @ilce ilçesinden İstanbul'a @servis @Model.FiyatBaslangic'dan başlamaktadır. Kesin fiyat için ücretsiz keşif yapılmaktadır. 0532 543 68 37" }
+                },
+                {
+                    "@@type": "Question",
+                    "name": "Ankara @ilce'@(ilce.Last() switch {'a' or 'ı' or 'o' or 'u' => "dan", _ => "den"}) İstanbul'a taşıma kaç saatte tamamlanır?",
+                    "acceptedAnswer": { "@@type": "Answer", "text": "Ankara @ilce'den İstanbul'a yaklaşık 450 km mesafe yükleme, yol ve boşaltma dahil ortalama 8–12 saatte tamamlanmaktadır." }
+                },
+                {
+                    "@@type": "Question",
+                    "name": "Ankara @ilce'de ücretsiz keşif yapıyor musunuz?",
+                    "acceptedAnswer": { "@@type": "Answer", "text": "Evet. @ilce ilçesinin @Model.MahallelerJoined mahallelerinde ücretsiz keşif yapıyoruz. 0532 543 68 37 numaramızı arayabilirsiniz." }
+                }
+            ]
+        }
+    ]
+}
+</script>
+}
+
+<div class="container">
+    <nav class="breadcrumb" aria-label="Konum">
+        <a href="/">Ana Sayfa</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <a href="/@yon">@yonText</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <a href="@ilceUrl">@ilce İstanbul Nakliyat</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span aria-current="page">@servis</span>
+    </nav>
+</div>
+
+<div class="page-header">
+    <div class="container">
+        <p style="font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.6rem;">
+            Ankara @ilce &rsaquo; İstanbul &nbsp;·&nbsp; yaklaşık 450 km &nbsp;·&nbsp; @servis
+        </p>
+        <h1>@Model.H1</h1>
+        <p>Ankara @ilce'den İstanbul'a @Model.ServisAciklama — @Model.FiyatBaslangic'dan başlar</p>
+        <div style="display:flex;gap:.75rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <a href="tel:+905325436837" class="btn btn-primary" style="background:#fff;color:#0a0a0a;border-color:#fff;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                Ücretsiz Keşif: 0532 543 68 37
+            </a>
+            <a href="https://wa.me/905325436837" target="_blank" rel="noopener noreferrer" class="btn btn-wa">WhatsApp ile Yaz</a>
+        </div>
+    </div>
+</div>
+
+<div style="background:var(--gray-100);border-bottom:1px solid var(--gray-200);">
+    <div class="container">
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0;text-align:center;">
+            <div style="padding:1.1rem 1.5rem;border-right:1px solid var(--gray-200);">
+                <div style="font-size:1.1rem;font-weight:800;">10+ Yıl</div>
+                <div style="font-size:.75rem;color:var(--gray-600);margin-top:.1rem;">Sektör Deneyimi</div>
+            </div>
+            <div style="padding:1.1rem 1.5rem;border-right:1px solid var(--gray-200);">
+                <div style="font-size:1.1rem;font-weight:800;">~450 km</div>
+                <div style="font-size:.75rem;color:var(--gray-600);margin-top:.1rem;">Ankara–İstanbul Mesafe</div>
+            </div>
+            <div style="padding:1.1rem 1.5rem;border-right:1px solid var(--gray-200);">
+                <div style="font-size:1.1rem;font-weight:800;">8–12 saat</div>
+                <div style="font-size:.75rem;color:var(--gray-600);margin-top:.1rem;">Ortalama Teslimat</div>
+            </div>
+            <div style="padding:1.1rem 1.5rem;border-right:1px solid var(--gray-200);">
+                <div style="font-size:1.1rem;font-weight:800;">Sigortalı</div>
+                <div style="font-size:.75rem;color:var(--gray-600);margin-top:.1rem;">Tüm Eşyalar</div>
+            </div>
+            <div style="padding:1.1rem 1.5rem;">
+                <div style="font-size:1.1rem;font-weight:800;">7/24</div>
+                <div style="font-size:.75rem;color:var(--gray-600);margin-top:.1rem;">Müşteri Desteği</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section style="padding:64px 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <article>
+
+                    <!-- GİRİŞ: İlçeye + servis tipine özgü -->
+                    <h2 style="margin-bottom:1rem;">Ankara @ilce'den İstanbul'a @servis</h2>
+
+                    @if (Model.Servis == ServisTipi.Kamyonet)
+                    {
+                        <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                            <strong>@ilce</strong>, @Model.IlceOzellik olarak öne çıkan bir Ankara ilçesidir. Bu ilçeden İstanbul'a
+                            taşınmanın en ekonomik yolu, az eşya hacmi için <strong>kamyonet nakliyatıdır.</strong>
+                            Stüdyo daire, 1+1 veya bekar eşyasını tek seferde, uygun maliyetle ve sigortalı olarak İstanbul'a ulaştırıyoruz.
+                        </p>
+                        <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                            3,5 tonluk panelvan kamyonetimiz yaklaşık 15–20 m³ kapasiteyle @ilce'nin @Model.Mahalleler[0], @Model.Mahalleler[1]
+                            ve diğer mahallelerindeki dar sokak ve apartman girişlerine rahatlıkla ulaşır. Büyük kamyonların giremediği
+                            bölgelerde bile hizmet kesintisiz sürer.
+                        </p>
+                        <p style="margin-bottom:2rem;line-height:1.9;color:var(--gray-700);">
+                            <strong>Ankara @ilce'den İstanbul'a kamyonet nakliyat</strong> hizmetimiz; ambalajlama, yükleme, ~450 km sigortalı yol ve
+                            İstanbul'daki adresinize boşaltma dahil kapsamlı bir pakettir. Keşif ücretsizdir; fiyat keşif sonrası sabitlenir.
+                        </p>
+                    }
+                    else if (Model.Servis == ServisTipi.Sehirlerarasi)
+                    {
+                        <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                            <strong>@ilce</strong>, @Model.IlceOzellik olarak öne çıkan bir Ankara ilçesidir. Buradan İstanbul'a yapılacak
+                            <strong>şehirlerarası nakliyat</strong>, yasal olarak yalnızca <strong>C Tipi Yetki Belgesi</strong>'ne sahip
+                            firmalar tarafından gerçekleştirilebilir. Bu belge, ticari taşıma aracının yasal güvencesini ve sigorta
+                            kapsamının geçerliliğini doğrular.
+                        </p>
+                        <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                            C Tipi Yetki Belgeli araçlarımızla @ilce'nin @Model.Mahalleler[0], @Model.Mahalleler[1] ve diğer mahallelerinden
+                            eşyalarınızı İstanbul'un istediğiniz semtine —Kadıköy, Beşiktaş, Şişli, Ataşehir veya diğer ilçelerine—
+                            kapıdan kapıya taşıyoruz.
+                        </p>
+                        <p style="margin-bottom:2rem;line-height:1.9;color:var(--gray-700);">
+                            <strong>Ankara @ilce'den İstanbul'a şehirlerarası nakliyat</strong> hizmetimize ambalajlama, sigorta, yükleme-boşaltma
+                            ve söküm-montaj dahildir. Ücretsiz keşif sonrası sabit fiyat teklifi sunulur; herhangi bir gizli ücret bulunmaz.
+                        </p>
+                    }
+                    else if (Model.Servis == ServisTipi.EvdenEve)
+                    {
+                        <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                            <strong>@ilce</strong>, @Model.IlceOzellik olarak öne çıkan bir Ankara ilçesidir. Bu ilçeden İstanbul'a
+                            <strong>evden eve nakliyat</strong>, tek bir aramadan başlayarak İstanbul'daki yeni evinize yerleştirilmiş
+                            mobilyalara kadar eksiksiz bir kapıdan kapıya deneyim sunar.
+                        </p>
+                        <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                            @ilce'nin @Model.Mahalleler[0], @Model.Mahalleler[1] ve @Model.Mahalleler[2] mahallelerinde ücretsiz keşif
+                            yapıyoruz. Uzman eksperimiz evinize gelir, eşya miktarını ve daire özelliklerini değerlendirerek size özel
+                            sabit fiyat teklifi sunar. Karyola, dolap, kanepe gibi büyük mobilyalar sökülerek taşınır, İstanbul'da monte edilir.
+                        </p>
+                        <p style="margin-bottom:2rem;line-height:1.9;color:var(--gray-700);">
+                            Nakliyat sigortamız tüm eşyaları kapsamaktadır. Taşıma süresince oluşabilecek herhangi bir hasarda sigorta
+                            şirketimiz zararınızı tazmin eder. <strong>Ankara @ilce'den İstanbul'a evden eve nakliyat</strong> hizmetimiz
+                            güvenli, hızlı ve stressiz bir taşınma deneyimi için tasarlanmıştır.
+                        </p>
+                    }
+                    else if (Model.Servis == ServisTipi.Ofis)
+                    {
+                        <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                            <strong>@ilce</strong>, @Model.IlceOzellik olarak öne çıkan bir Ankara ilçesidir. Buradan İstanbul'a
+                            <strong>ofis nakliyatı</strong> yaparken öncelik, iş sürekliliğinin korunmasıdır. Hafta sonu veya gece
+                            taşıma seçeneğiyle çalışma saatlerinizi hiç kesmeden ofisinizi İstanbul'a taşıyoruz.
+                        </p>
+                        <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                            @ilce'deki ofisinizden İstanbul'a taşınan ekipmanlar arasında masalar, sandalyeler, toplantı mobilyası,
+                            IT ekipmanları (sunucu, bilgisayar, ağ cihazları), arşiv dolapları, kasalar ve dekorasyon öğeleri yer alır.
+                            Her cihaz paketleme öncesi ekibimizce kayıt altına alınır, teslimatta kontrol edilir.
+                        </p>
+                        <p style="margin-bottom:2rem;line-height:1.9;color:var(--gray-700);">
+                            <strong>Ankara @ilce'den İstanbul'a ofis nakliyatı</strong> hizmetimizde kurumsal fatura kesiyoruz. Gece taşıma,
+                            hafta sonu ve resmi tatil seçenekleri için önceden rezervasyon yapılması önerilir.
+                        </p>
+                    }
+                    else if (Model.Servis == ServisTipi.Fuar)
+                    {
+                        <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                            <strong>@ilce</strong>, @Model.IlceOzellik olarak öne çıkan bir Ankara ilçesidir. Fuar ve sergi
+                            organizasyonlarınızda İstanbul'a taşıma yapmanız gerektiğinde, zaman baskısı ve hassas malzeme gerekliliği
+                            nedeniyle doğru firmanın seçimi kritik önem taşır.
+                        </p>
+                        <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                            @ilce ilçesinden İstanbul'a <strong>fuar nakliyatı</strong> kapsamında stand sistemleri, vitrin dolapları,
+                            display üniteleri, promosyon materyalleri ve elektronik ekipmanlar özel ambalajla taşınır. CNR, Tüyap veya IFM
+                            gibi İstanbul fuar merkezlerine açılıştan 1–2 gün önce ulaşacak şekilde kalkış planlanır.
+                        </p>
+                        <p style="margin-bottom:2rem;line-height:1.9;color:var(--gray-700);">
+                            Fuar kapanışı sonrası Ankara'ya geri dönüş taşıması da yapıyoruz. Gidişli-dönüşlü paket için önceden
+                            rezervasyon yapılması ve fuar tarihlerinin paylaşılması yeterlidir.
+                        </p>
+                    }
+                    else if (Model.Servis == ServisTipi.Kamyon)
+                    {
+                        <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                            <strong>@ilce</strong>, @Model.IlceOzellik olarak öne çıkan bir Ankara ilçesidir. Buradan İstanbul'a
+                            <strong>kamyon nakliyatı</strong>, 2+1 ve üzeri dairelerin büyük eşya hacmini tek seferde, güvenle ve
+                            ekonomik biçimde taşımanın en doğru yoludur.
+                        </p>
+                        <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                            12 ton veya 18 ton kapasiteli kapalı kasalı kamyonlarımız, @ilce'nin @Model.Mahalleler[0], @Model.Mahalleler[1]
+                            ve diğer mahallelerindeki adreslerden büyük mobilya ve beyaz eşyayı tek seferde İstanbul'a ulaştırır.
+                            Kamyonet ile 2–3 sefer yapılacak taşımayı, kamyon ile tek seferde ve daha güvenli biçimde tamamlıyoruz.
+                        </p>
+                        <p style="margin-bottom:2rem;line-height:1.9;color:var(--gray-700);">
+                            Dar sokak olan bölgelerde kamyon gerektiğinde en yakın noktada bekleyerek minivan kombine hizmetiyle
+                            iç taşıma yapılır. <strong>Ankara @ilce'den İstanbul'a kamyon nakliyat</strong> için ücretsiz keşif rezervasyonu alın.
+                        </p>
+                    }
+                    else if (Model.Servis == ServisTipi.Parsiyel)
+                    {
+                        <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                            <strong>@ilce</strong>, @Model.IlceOzellik olarak öne çıkan bir Ankara ilçesidir. Buradan İstanbul'a
+                            taşınacak eşyanız tam araç doldurmuyorsa, <strong>parsiyel nakliyat</strong> en akıllıca seçenektir:
+                            sadece kullandığınız araç kapasitesi için ödeme yaparsınız.
+                        </p>
+                        <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                            @ilce'den İstanbul'a parsiyel taşıma kapsamında; tek koltuk, yatak, masa, beyaz eşya, kargo kutuları
+                            veya birkaç parça mobilya gibi az hacimli yükler sigortalı araçlarla ekonomik biçimde taşınmaktadır.
+                            @Model.Mahalleler[0], @Model.Mahalleler[1] ve @ilce'nin tüm mahallelerinden hizmet veriyoruz.
+                        </p>
+                        <p style="margin-bottom:2rem;line-height:1.9;color:var(--gray-700);">
+                            <strong>Ankara @ilce'den İstanbul'a parsiyel nakliyat</strong> için teslim süresi, tam araç yüklemelere kıyasla
+                            1–3 gün daha uzun olabilir. Acil durumlarda özel parsiyel araç da organize edebiliyoruz.
+                        </p>
+                    }
+                    else if (Model.Servis == ServisTipi.Ambar)
+                    {
+                        <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                            <strong>@ilce</strong>, @Model.IlceOzellik olarak öne çıkan bir Ankara ilçesidir. İstanbul'a taşınma
+                            tarihiniz henüz netleşmemişse ya da yeni eviniz hazır olmadan eşyalarınızın taşınması gerekiyorsa,
+                            <strong>ambar nakliyat</strong> (depolama + taşıma) servisi size esnek ve güvenli bir çözüm sunar.
+                        </p>
+                        <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">
+                            @ilce'den alınan eşyalar önce güvenli kapalı depomuza alınır. İstediğiniz tarihte İstanbul'daki adresinize
+                            teslim edilir. Depo süresi boyunca eşyalarınız kameralı, kuru, güvenli ortamda muhafaza edilmektedir.
+                            Minimum depolama süresi 1 haftadır.
+                        </p>
+                        <p style="margin-bottom:2rem;line-height:1.9;color:var(--gray-700);">
+                            <strong>Ankara @ilce'den İstanbul'a ambar nakliyat</strong> için önce eşyalarınız @ilce'den teslim alınır,
+                            depoya yerleştirilir; İstanbul'a taşınacak güne kadar güvende tutulur. Bu hizmet hem konut hem de
+                            ticari müşterilere açıktır.
+                        </p>
+                    }
+
+                    @if (!string.IsNullOrEmpty(Model.IlceDetay))
+                    {
+                        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:.75rem;">@ilce İlçesinde Nakliyat</h3>
+                        <p style="margin-bottom:1.25rem;line-height:1.9;color:var(--gray-700);">@Model.IlceDetay</p>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.ServisDetay))
+                    {
+                        <p style="margin-bottom:1.75rem;line-height:1.9;color:var(--gray-700);">@Model.ServisDetay</p>
+                    }
+
+                    <figure style="margin:1.75rem 0 2rem;">
+                        <img src="~/img/galeri/galeri@(Math.Abs(Model.IlceSlug.GetHashCode()) % 20 + 1).webp" loading="lazy"
+                             alt="@Model.H1 - Profesyonel Nakliyat"
+                             style="width:100%;border-radius:var(--radius-lg);object-fit:cover;max-height:380px;"
+                             onerror="this.style.display='none'">
+                    </figure>
+
+                    <!-- SERVİSE ÖZGÜ DETAY BÖLÜMÜ -->
+                    @if (Model.Servis == ServisTipi.Kamyonet)
+                    {
+                        <h2 style="margin-bottom:1rem;">@ilce İstanbul Kamyonet Nakliyat Fiyatları 2026</h2>
+                        <div class="price-table" style="margin-bottom:2.5rem;">
+                            <div class="price-row price-row--header"><span>Hacim</span><span>Kullanım</span><span>Fiyat Aralığı</span></div>
+                            <div class="price-row"><span>Stüdyo / Oda</span><span>8–12 m³ — koli, yatak, masa</span><span>4.500 – 6.500 ₺</span></div>
+                            <div class="price-row"><span>1+1 Daire</span><span>12–18 m³ — tam mobilyalı küçük ev</span><span>6.000 – 9.000 ₺</span></div>
+                            <div class="price-row"><span>Parça Eşya</span><span>1–5 m³ — tek koltuk, kargo, kasa</span><span>1.500 – 4.000 ₺</span></div>
+                        </div>
+                    }
+                    else if (Model.Servis == ServisTipi.Kamyon)
+                    {
+                        <h2 style="margin-bottom:1rem;">@ilce İstanbul Kamyon Nakliyat Fiyatları 2026</h2>
+                        <div class="price-table" style="margin-bottom:2.5rem;">
+                            <div class="price-row price-row--header"><span>Daire Tipi</span><span>Araç</span><span>Fiyat Aralığı</span></div>
+                            <div class="price-row"><span>2+1 Daire</span><span>12t Kamyon</span><span>10.000 – 16.000 ₺</span></div>
+                            <div class="price-row"><span>3+1 Daire</span><span>12t Kamyon</span><span>14.000 – 22.000 ₺</span></div>
+                            <div class="price-row"><span>4+1 / Villa</span><span>18t Kamyon</span><span>Keşif Sonrası</span></div>
+                        </div>
+                    }
+                    else if (Model.Servis == ServisTipi.Parsiyel)
+                    {
+                        <h2 style="margin-bottom:1rem;">@ilce İstanbul Parsiyel Nakliyat Fiyatları 2026</h2>
+                        <div class="price-table" style="margin-bottom:2.5rem;">
+                            <div class="price-row price-row--header"><span>Ürün / Hacim</span><span>Fiyat Başlangıcı</span></div>
+                            <div class="price-row"><span>Kargo kutusu / Tekli parça</span><span>1.200 ₺</span></div>
+                            <div class="price-row"><span>Koltuk / Yatak / Masa</span><span>1.800 – 3.500 ₺</span></div>
+                            <div class="price-row"><span>Beyaz eşya (tek cihaz)</span><span>2.000 – 3.000 ₺</span></div>
+                            <div class="price-row"><span>5+ parça karışık eşya</span><span>3.500 – 6.000 ₺</span></div>
+                        </div>
+                    }
+                    else
+                    {
+                        <h2 style="margin-bottom:1rem;">@ilce – İstanbul @servis Fiyatları 2026</h2>
+                        <div class="price-table" style="margin-bottom:2.5rem;">
+                            <div class="price-row price-row--header"><span>Daire / Hacim</span><span>Yaklaşık m³</span><span>Fiyat Aralığı</span></div>
+                            <div class="price-row"><span>1+1 Daire</span><span>15–25 m³</span><span>8.000 – 14.000 ₺</span></div>
+                            <div class="price-row"><span>2+1 Daire</span><span>25–40 m³</span><span>12.000 – 20.000 ₺</span></div>
+                            <div class="price-row"><span>3+1 Daire</span><span>40–60 m³</span><span>16.000 – 26.000 ₺</span></div>
+                            <div class="price-row"><span>Ofis / İşyeri</span><span>Değişken</span><span>Keşif Sonrası</span></div>
+                        </div>
+                    }
+
+                    <!-- MAHALLE LİSTESİ -->
+                    <div style="background:var(--gray-100);border-radius:var(--radius-lg);padding:1.75rem;margin-bottom:2.5rem;">
+                        <h3 style="margin-bottom:.75rem;">@ilce — @servis Hizmet Bölgelerimiz</h3>
+                        <p style="margin-bottom:1rem;font-size:.95rem;color:var(--gray-700);">
+                            @ilce ilçesinin tüm mahallelerinden <strong>İstanbul'a @servis</strong> hizmeti sunuyoruz:
+                        </p>
+                        <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem;">
+                            @foreach (var m in Model.Mahalleler)
+                            {
+                                <span style="background:var(--white);border:1px solid var(--gray-200);border-radius:50px;padding:.3rem .9rem;font-size:.82rem;font-weight:500;">@m</span>
+                            }
+                        </div>
+                        <p style="font-size:.85rem;color:var(--gray-500);margin:0;">
+                            Mahalleniz listede olmasa da @ilce sınırları içindeki tüm adreslere hizmet veriyoruz.
+                        </p>
+                    </div>
+
+                    <!-- NEDEN BİZ -->
+                    <h2 style="margin-bottom:1.25rem;">Neden İstanbul Ankara Nakliyat?</h2>
+                    <div class="row" style="row-gap:1rem;margin-bottom:2.5rem;">
+                        @{
+                            var nedenler = new[] {
+                                new { I="🛡️", T="Nakliyat Sigortası", A="Tüm eşyalarınız taşıma süresince sigorta kapsamında. Hasar durumunda sigorta şirketimiz zararınızı karşılar." },
+                                new { I="🔍", T="Ücretsiz Keşif", A=$"Uzman eksperimiz {ilce} adresinize gelir, eşyaları yerinde değerlendirir, sabit fiyat teklifi sunar." },
+                                new { I="📋", T="C Tipi Yetki Belgesi", A="Yasal şehirlerarası taşıma yetkinliğimizi belgeleyen C Tipi Yetki Belgesi'ne sahibiz. Güvenli ve yasal nakliyat güvencesi." },
+                                new { I="🔧", T="Söküm-Montaj Dahil", A="Karyola, gardırop, yatak odası takımı sökülerek taşınır; İstanbul'da monte edilir. Ek ücret yoktur." },
+                                new { I="💬", T="7/24 İletişim", A="Taşıma öncesinde, sırasında ve sonrasında her an ulaşabilirsiniz. Anlık bilgi için WhatsApp kullanabilirsiniz." },
+                                new { I="💰", T="Sabit Fiyat Garantisi", A="Keşif sonrası verilen fiyat değişmez. Sürpriz fatura, gizli ek ücret yoktur. Her şey yazılı teklife dahildir." }
+                            };
+                        }
+                        @foreach (var n in nedenler)
+                        {
+                            <div class="col-md-6">
+                                <div style="display:flex;gap:1rem;align-items:flex-start;padding:1.1rem;border:1px solid var(--gray-200);border-radius:var(--radius);">
+                                    <span style="font-size:1.5rem;flex-shrink:0;line-height:1;">@n.I</span>
+                                    <div>
+                                        <h4 style="font-size:.9rem;margin-bottom:.3rem;">@n.T</h4>
+                                        <p style="font-size:.83rem;color:var(--gray-600);margin:0;line-height:1.6;">@n.A</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                    <!-- SSS -->
+                    <h2 style="margin-bottom:1.25rem;">Sıkça Sorulan Sorular</h2>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Ankara @ilce'den İstanbul'a @servis fiyatı ne kadar?
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Ankara @ilce'den İstanbul'a @servis fiyatı @Model.FiyatBaslangic'dan başlamaktadır.
+                                Kesin fiyat; eşya miktarı, daire büyüklüğü, kat sayısı, asansör durumu ve
+                                seçilen ek hizmetlere (ambalaj, montaj, sigorta) göre ücretsiz keşif sonrası belirlenir.
+                                Sabit fiyat garantimizle keşif sonrası verilen teklif değişmez.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Ankara @ilce'den İstanbul'a taşıma kaç saatte tamamlanır?
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Ankara @ilce'den İstanbul'a yükleme, yol (~450 km) ve boşaltma dahil ortalama
+                                <strong>8–12 saat</strong> içinde teslimat tamamlanmaktadır. Sabah erken saatte
+                                başlayan taşımalar aynı gün akşamına kadar İstanbul'da teslim edilmektedir.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            @ilce'de ücretsiz keşif yapıyor musunuz?
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Evet. @ilce ilçesinin @Model.MahallelerJoined mahallelerinde ücretsiz keşif
+                                yapıyoruz. Uzman eksperimiz adresinize gelir, eşyaları yerinde değerlendirir
+                                ve sabit fiyat teklifi sunar. Keşif sonrasında herhangi bir yükümlülük oluşmaz.
+                                Randevu için 0532 543 68 37 numaramızı arayın.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Mobilya sökümü ve montajı dahil mi?
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Evet. Karyola, gardırop, yatak odası takımı ve TV ünitesi gibi söküm gerektiren
+                                mobilyalar ekibimizce sökülerek paketlenir, İstanbul'daki yeni adresinizde monte edilir.
+                                Beyaz eşya bağlantıları (çamaşır makinesi, bulaşık makinesi vb.) da yapılmaktadır.
+                                Bu hizmet taşıma paketine dahildir.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Eşyalar sigortalı mı taşınıyor?
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Evet. @ilce'den İstanbul'a taşınan tüm eşyalar nakliyat sigortası kapsamındadır.
+                                Taşıma sırasında oluşan hasarlarda sigorta şirketimiz devreye girerek zararınız tazmin edilir.
+                                Antika veya yüksek değerli eşyalar için ek sigorta da yaptırılabilmektedir.
+                            </p>
+                        </div>
+                    </div>
+
+                </article>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="page-sidebar">
+
+                    <div style="background:var(--black);border-radius:var(--radius-lg);padding:1.75rem;margin-bottom:1.5rem;text-align:center;">
+                        <h3 style="color:#fff;font-size:1.1rem;margin-bottom:.5rem;">Hemen Teklif Alın</h3>
+                        <p style="color:rgba(255,255,255,.65);font-size:.85rem;margin-bottom:1.25rem;">@ilce'den İstanbul'a @servis için ücretsiz keşif</p>
+                        <a href="tel:+905325436837" class="btn btn-primary" style="background:#fff;color:#0a0a0a;border-color:#fff;width:100%;margin-bottom:.75rem;display:block;">
+                            0532 543 68 37
+                        </a>
+                        <a href="https://wa.me/905325436837" target="_blank" rel="noopener noreferrer" class="btn btn-wa" style="width:100%;display:block;">
+                            WhatsApp ile Yaz
+                        </a>
+                    </div>
+
+                    <!-- Diğer Servisler -->
+                    <div style="background:var(--gray-100);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1.5rem;">
+                        <h4 style="font-size:.95rem;margin-bottom:1rem;">@ilce'den İstanbul'a Diğer Hizmetler</h4>
+                        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.45rem;">
+                            @{
+                                var tumServisler = new[]
+                                {
+                                    ("kamyonet","Kamyonet Nakliyat"),
+                                    ("sehirlerarasi","Şehirlerarası Nakliyat"),
+                                    ("evden-eve","Evden Eve Nakliyat"),
+                                    ("ofis","Ofis Nakliyat"),
+                                    ("fuar","Fuar Nakliyat"),
+                                    ("kamyon","Kamyon Nakliyat"),
+                                    ("parsiyel","Parsiyel Nakliyat"),
+                                    ("ambar","Ambar Nakliyat")
+                                };
+                            }
+                            @foreach (var s in tumServisler.Where(x => x.Item1 != sSlug))
+                            {
+                                <li><a href="/@slug-istanbul-@s.Item1-nakliyat" style="font-size:.88rem;font-weight:500;">@s.Item2 →</a></li>
+                            }
+                        </ul>
+                    </div>
+
+                    <!-- Yakın İlçeler -->
+                    <div style="background:var(--gray-100);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1.5rem;">
+                        <h4 style="font-size:.95rem;margin-bottom:1rem;">Yakın İlçelerden @servis</h4>
+                        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.5rem;">
+                            @foreach (var y in Model.YakinIlceler)
+                            {
+                                <li><a href="/@y.Slug-istanbul-@sSlug-nakliyat" style="font-size:.88rem;font-weight:500;">@y.Name → @servis</a></li>
+                            }
+                        </ul>
+                        <a href="@ilceUrl" style="display:block;margin-top:.75rem;font-size:.85rem;color:var(--gray-600);text-decoration:underline;">
+                            @ilce İstanbul Nakliyat (Genel) →
+                        </a>
+                    </div>
+
+                    <div style="border:1px solid #e0e0e0;border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1rem;">
+                        <h4 style="font-size:.95rem;margin-bottom:.75rem;">Maliyet Hesapla</h4>
+                        <p style="font-size:.84rem;color:var(--gray-600);margin-bottom:.75rem;">Taşıma maliyetinizi anında hesaplayın.</p>
+                        <a href="/nakliyat-maliyet-hesaplayici" style="display:block;background:var(--black);color:#fff;text-align:center;padding:10px;border-radius:6px;font-weight:600;text-decoration:none;font-size:.88rem;">🧮 Hesaplayıcıyı Aç →</a>
+                    </div>
+
+                    <div style="border:1px solid #e0e0e0;border-radius:var(--radius-lg);padding:1.5rem;">
+                        <h4 style="font-size:.95rem;margin-bottom:.75rem;">Müşteri Yorumları</h4>
+                        <p style="font-size:.84rem;color:var(--gray-600);margin-bottom:.75rem;">Gerçek müşteri deneyimlerini okuyun.</p>
+                        <a href="/yorumlar" style="display:block;background:var(--black);color:#fff;text-align:center;padding:10px;border-radius:6px;font-weight:600;text-decoration:none;font-size:.88rem;">⭐ Yorumları Gör →</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-band">
+    <div class="container">
+        <h2>Ankara @ilce'den İstanbul'a @servis — Hazır mısınız?</h2>
+        <p>Ücretsiz keşif için hemen arayın. Sabit fiyat, sigortalı taşıma, C Tipi Yetki Belgesi güvencesi.</p>
+        <div class="cta-actions">
+            <a href="tel:+905325436837" class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                0532 543 68 37
+            </a>
+            <a href="https://wa.me/905325436837" target="_blank" rel="noopener noreferrer" class="btn btn-wa">WhatsApp ile Yaz</a>
+            <a href="/@yon" class="btn btn-outline">Tüm Ankara İstanbul Hizmetleri</a>
+        </div>
+    </div>
+</section>

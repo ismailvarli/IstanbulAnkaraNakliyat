@@ -1,18 +1,6 @@
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddWebOptimizer(pipeline =>
-{
-    // CSS: bootstrap-grid + site.css → tek istek
-    pipeline.AddCssBundle("/css/bundle.css",
-        "lib/bootstrap/dist/css/bootstrap-grid.min.css",
-        "css/site.css");
-
-    // JS: site.js → minified
-    pipeline.AddJavaScriptBundle("/js/bundle.js",
-        "js/site.js");
-});
-
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
@@ -22,10 +10,35 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseWebOptimizer();
+
+// non-www → www kalıcı yönlendirme
+app.Use(async (ctx, next) =>
+{
+    var host = ctx.Request.Host.Host;
+    if (!host.StartsWith("www.") && host != "localhost" && !host.StartsWith("192.") && !host.StartsWith("10."))
+    {
+        var to = $"https://www.{host}{ctx.Request.Path}{ctx.Request.QueryString}";
+        ctx.Response.Redirect(to, permanent: true);
+        return;
+    }
+    await next();
+});
+
 app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
+
+// ── Eski / hatalı URL yönlendirmeleri (301) ─────────────────────────
+app.MapGet("/sarefikochsar-istanbul-nakliyat", ctx =>
+{
+    ctx.Response.Redirect("/sereflikocehisar-istanbul-nakliyat", permanent: true);
+    return Task.CompletedTask;
+});
+app.MapGet("/teklifgonder", ctx =>
+{
+    ctx.Response.Redirect("/iletisim", permanent: true);
+    return Task.CompletedTask;
+});
 
 // ── Yorum gönder ────────────────────────────────────────────────────
 app.MapControllerRoute("review-post", "yorum/gonder",

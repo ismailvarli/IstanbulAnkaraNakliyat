@@ -1,3 +1,4 @@
+using System.Text.Json;
 using IstanbulAnkaraNakliyat.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -124,13 +125,47 @@ namespace IstanbulAnkaraNakliyat.Controllers
             return View();
         }
 
+        [HttpPost("/iletisim/gonder")]
+        [ValidateAntiForgeryToken]
+        public IActionResult IletisimGonder(string adSoyad, string telefon, string nereden, string nereye, string hizmet, string tarih, string mesaj)
+        {
+            if (string.IsNullOrWhiteSpace(adSoyad) || string.IsNullOrWhiteSpace(telefon))
+                return Redirect("/iletisim?hata=1");
+
+            var tel = telefon.Trim().Replace(" ", "").Replace("-", "");
+            if (tel.Length < 10)
+                return Redirect("/iletisim?hata=1");
+
+            var kayit = new
+            {
+                Ad       = adSoyad.Trim()[..Math.Min(80, adSoyad.Trim().Length)],
+                Telefon  = tel,
+                Nereden  = (nereden ?? "").Trim(),
+                Nereye   = (nereye ?? "").Trim(),
+                Hizmet   = hizmet ?? "",
+                Tarih    = tarih ?? "",
+                Mesaj    = (mesaj ?? "").Trim()[..Math.Min(500, (mesaj ?? "").Trim().Length)],
+                Tarih2   = DateTime.Now.ToString("dd.MM.yyyy HH:mm")
+            };
+
+            var path = Path.Combine(_env.ContentRootPath, "App_Data", "iletisimler.json");
+            Directory.CreateDirectory(Path.GetDirectoryName(path)!);
+            var liste = System.IO.File.Exists(path)
+                ? JsonSerializer.Deserialize<List<System.Text.Json.Nodes.JsonObject>>(System.IO.File.ReadAllText(path)) ?? new()
+                : new List<System.Text.Json.Nodes.JsonObject>();
+            var json  = JsonSerializer.SerializeToNode(kayit)?.AsObject();
+            if (json is not null) liste.Insert(0, json);
+            System.IO.File.WriteAllText(path, JsonSerializer.Serialize(liste, new JsonSerializerOptions { WriteIndented = true }));
+
+            return Redirect("/iletisim?basarili=1");
+        }
+
         [HttpGet("/gizlilik-politikasi")]
         public IActionResult GizlilikPolitikasi()
         {
             ViewData["Title"]       = "Gizlilik Politikası | İstanbul Ankara Nakliyat";
             ViewData["Description"] = "İstanbul Ankara Nakliyat gizlilik politikası. Kişisel verilerinizin nasıl toplandığı, kullanıldığı ve korunduğuna dair bilgi edinin.";
             ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/gizlilik-politikasi";
-            ViewData["Noindex"]     = true;
             return View();
         }
 
@@ -140,7 +175,6 @@ namespace IstanbulAnkaraNakliyat.Controllers
             ViewData["Title"]       = "Kullanım Koşulları | İstanbul Ankara Nakliyat";
             ViewData["Description"] = "İstanbul Ankara Nakliyat web sitesi kullanım koşulları ve hizmet şartları.";
             ViewData["Canonical"]   = "https://www.istanbulankaranakliyat.tr/kullanim-kosullari";
-            ViewData["Noindex"]     = true;
             return View();
         }
 
