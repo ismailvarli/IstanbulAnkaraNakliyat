@@ -4,6 +4,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#1a1a1a" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RBWKDENVX8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+
+        // Consent Mode v2 — 4 sinyal
+        gtag('consent', 'default', {
+            'ad_storage':         'granted',
+            'analytics_storage':  'granted',
+            'ad_user_data':       'granted',
+            'ad_personalization': 'granted'
+        });
+
+        gtag('js', new Date());
+        gtag('config', 'G-RBWKDENVX8');
+    </script>
     <link rel="icon" type="image/png" href="~/img/logo.png" />
     <link rel="apple-touch-icon" href="~/img/logo.png" />
 
