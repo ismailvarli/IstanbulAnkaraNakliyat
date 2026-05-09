@@ -53,6 +53,7 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:site"        content="@@istanbulanknakliyat" />
     <meta name="twitter:title"       content="@ViewData["Title"]" />
     <meta name="twitter:description" content="@ViewData["Description"]" />
 
@@ -83,7 +84,32 @@
         },
         "areaServed": ["İstanbul", "Ankara"],
         "priceRange": "₺₺",
-        "image": "https://www.istanbulankaranakliyat.tr/img/og-image.jpg"
+        "image": "https://www.istanbulankaranakliyat.tr/img/og-image.jpg",
+        "aggregateRating": {
+            "@@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "8",
+            "bestRating": "5",
+            "worstRating": "1"
+        }
+    }
+    </script>
+
+    <!-- Organization JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "Organization",
+        "name": "İstanbul Ankara Nakliyat",
+        "url": "https://www.istanbulankaranakliyat.tr",
+        "logo": "https://www.istanbulankaranakliyat.tr/img/logo.png",
+        "contactPoint": {
+            "@@type": "ContactPoint",
+            "telephone": "+90-532-543-68-37",
+            "contactType": "customer service",
+            "areaServed": "TR",
+            "availableLanguage": "Turkish"
+        }
     }
     </script>
 
