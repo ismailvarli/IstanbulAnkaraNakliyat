@@ -1,5 +1,19 @@
+using Microsoft.AspNetCore.ResponseCompression;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
+
+// Brotli + Gzip sıkıştırma
+builder.Services.AddResponseCompression(o =>
+{
+    o.EnableForHttps = true;
+    o.Providers.Add<BrotliCompressionProvider>();
+    o.Providers.Add<GzipCompressionProvider>();
+});
+builder.Services.Configure<BrotliCompressionProviderOptions>(o =>
+    o.Level = System.IO.Compression.CompressionLevel.Fastest);
+builder.Services.Configure<GzipCompressionProviderOptions>(o =>
+    o.Level = System.IO.Compression.CompressionLevel.Fastest);
 
 var app = builder.Build();
 
@@ -10,6 +24,17 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseResponseCompression();
+
+// Güvenlik header'ları
+app.Use(async (ctx, next) =>
+{
+    ctx.Response.Headers["X-Content-Type-Options"] = "nosniff";
+    ctx.Response.Headers["X-Frame-Options"]        = "SAMEORIGIN";
+    ctx.Response.Headers["Referrer-Policy"]        = "strict-origin-when-cross-origin";
+    ctx.Response.Headers["Permissions-Policy"]     = "camera=(), microphone=(), geolocation=()";
+    await next();
+});
 
 // non-www → www kalıcı yönlendirme
 app.Use(async (ctx, next) =>
@@ -24,7 +49,12 @@ app.Use(async (ctx, next) =>
     await next();
 });
 
-app.UseStaticFiles();
+// Statik dosyalar 1 yıl önbellek
+app.UseStaticFiles(new StaticFileOptions
+{
+    OnPrepareResponse = ctx =>
+        ctx.Context.Response.Headers["Cache-Control"] = "public,max-age=31536000,immutable"
+});
 app.UseRouting();
 app.UseAuthorization();
 
