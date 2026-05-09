@@ -24,6 +24,7 @@
     </script>
     <link rel="icon" type="image/png" href="~/img/logo.png" />
     <link rel="apple-touch-icon" href="~/img/logo.png" />
+    <link rel="manifest" href="~/site.webmanifest" />
 
     <title>@ViewData["Title"]</title>
     <meta name="description" content="@ViewData["Description"]" />
@@ -121,7 +122,12 @@
         "@@id": "https://www.istanbulankaranakliyat.tr/#website",
         "url": "https://www.istanbulankaranakliyat.tr",
         "name": "İstanbul Ankara Nakliyat",
-        "inLanguage": "tr-TR"
+        "inLanguage": "tr-TR",
+        "potentialAction": {
+            "@@type": "SearchAction",
+            "target": "https://www.istanbulankaranakliyat.tr/blog?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
     }
     </script>
 

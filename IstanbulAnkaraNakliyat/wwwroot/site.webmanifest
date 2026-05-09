@@ -1,0 +1,13 @@
+{
+  "name": "İstanbul Ankara Nakliyat",
+  "short_name": "İstAnk Nakliyat",
+  "description": "İstanbul ve Ankara arası profesyonel evden eve nakliyat hizmeti.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a1a1a",
+  "icons": [
+    { "src": "/img/logo.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/img/logo.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
