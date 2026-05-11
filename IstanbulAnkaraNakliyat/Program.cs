@@ -49,6 +49,22 @@ app.Use(async (ctx, next) =>
     await next();
 });
 
+// URL normalizasyon — büyük harf → küçük harf 301
+app.Use(async (ctx, next) =>
+{
+    var path = ctx.Request.Path.Value;
+    if (path != null && path.Length > 1)
+    {
+        var lower = path.ToLowerInvariant();
+        if (lower != path)
+        {
+            ctx.Response.Redirect(lower + ctx.Request.QueryString, permanent: true);
+            return;
+        }
+    }
+    await next();
+});
+
 // Statik dosyalar 1 yıl önbellek
 app.UseStaticFiles(new StaticFileOptions
 {

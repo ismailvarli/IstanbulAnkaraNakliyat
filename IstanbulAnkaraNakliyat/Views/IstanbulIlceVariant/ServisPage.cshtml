@@ -270,7 +270,10 @@
                     }
                     @if (!string.IsNullOrEmpty(Model.ServisDetay))
                     {
-                        <p style="margin-bottom:1.75rem;line-height:1.9;color:var(--gray-700);">@Model.ServisDetay</p>
+                        @foreach (var para in Model.ServisDetay.Split("\n\n", System.StringSplitOptions.RemoveEmptyEntries))
+                        {
+                            <p style="margin-bottom:1.75rem;line-height:1.9;color:var(--gray-700);">@para</p>
+                        }
                     }
 
                     <figure style="margin:1.75rem 0 2rem;">
